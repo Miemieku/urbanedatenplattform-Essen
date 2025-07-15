@@ -25,7 +25,7 @@ function fetchStationCoordinates() {
 
             // 过滤出 Essen 
             let filteredStations = stations.filter(entry => 
-                entry[3] === "Essen" && entry[6] === null
+                entry[3] === "Düsseldorf" && entry[6] === null
             );
             
             // 先检查是否有匹配的 Essen 站点
