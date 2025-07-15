@@ -1,0 +1,4881 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 0,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0395014318253457,
+          51.423691337598441
+        ]
+      },
+      "properties" : {
+        "FID" : 0,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Ardeyschule",
+        "S_STRASSE" : "Oberstr.",
+        "S_HNR" : 51,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45134",
+        "S_KOO_X" : 7.0395014299999996,
+        "S_KOO_Y" : 51.423691339999998,
+        "S_STADTT_1" : "Stadtwald"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0309378341728719,
+          51.422825188312878
+        ]
+      },
+      "properties" : {
+        "FID" : 1,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Stiftsschule",
+        "S_STRASSE" : "Amselstr.",
+        "S_HNR" : 30,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45134",
+        "S_KOO_X" : 7.0309378300000001,
+        "S_KOO_Y" : 51.422825189999998,
+        "S_STADTT_1" : "Stadtwald"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0154095532460969,
+          51.438113517065048
+        ]
+      },
+      "properties" : {
+        "FID" : 2,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Andreasschule",
+        "S_STRASSE" : "Von-Einem-Str.",
+        "S_HNR" : 56,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0154095500000002,
+        "S_KOO_Y" : 51.438113520000002,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0062042292062134,
+          51.43290672595294
+        ]
+      },
+      "properties" : {
+        "FID" : 3,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Käthe-Kollwitz-Schule",
+        "S_STRASSE" : "Christinenstr.",
+        "S_HNR" : 4,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45131",
+        "S_KOO_X" : 7.0062042299999998,
+        "S_KOO_Y" : 51.432906729999999,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0359357565566913,
+          51.434911729746283
+        ]
+      },
+      "properties" : {
+        "FID" : 4,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule Am Krausen Bäumchen",
+        "S_STRASSE" : "Elbestr.",
+        "S_HNR" : 20,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45136",
+        "S_KOO_X" : 7.0359357600000001,
+        "S_KOO_Y" : 51.434911730000003,
+        "S_STADTT_1" : "Bergerhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0105393540279692,
+          51.438483444393093
+        ]
+      },
+      "properties" : {
+        "FID" : 5,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Sternschule",
+        "S_STRASSE" : "Brigittastr.",
+        "S_HNR" : 34,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0105393500000002,
+        "S_KOO_Y" : 51.438483439999999,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0363587785158845,
+          51.437068352298461
+        ]
+      },
+      "properties" : {
+        "FID" : 6,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Theodor-Heuss-Schule",
+        "S_STRASSE" : "Elbestr.",
+        "S_HNR" : 43,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45136",
+        "S_KOO_X" : 7.0363587799999996,
+        "S_KOO_Y" : 51.437068349999997,
+        "S_STADTT_1" : "Bergerhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9557232352139273,
+          51.415843811873572
+        ]
+      },
+      "properties" : {
+        "FID" : 7,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Haarzopf",
+        "S_STRASSE" : "Raadter Str.",
+        "S_HNR" : 121,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45149",
+        "S_KOO_X" : 6.9557232400000002,
+        "S_KOO_Y" : 51.415843809999998,
+        "S_STADTT_1" : "Haarzopf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9761711217930547,
+          51.428830173194712
+        ]
+      },
+      "properties" : {
+        "FID" : 8,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Waldlehne",
+        "S_STRASSE" : "Waldlehne",
+        "S_HNR" : 111,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45149",
+        "S_KOO_X" : 6.9761711200000001,
+        "S_KOO_Y" : 51.428830169999998,
+        "S_STADTT_1" : "Margarethenhöhe"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9957727818278519,
+          51.439706688061797
+        ]
+      },
+      "properties" : {
+        "FID" : 9,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bardelebenschule",
+        "S_STRASSE" : "Bardelebenstr.",
+        "S_HNR" : 5,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9957727800000002,
+        "S_KOO_Y" : 51.439706690000001,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9889620411089544,
+          51.439773220480355
+        ]
+      },
+      "properties" : {
+        "FID" : 10,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Cranachschule",
+        "S_STRASSE" : "Rubensstr.",
+        "S_HNR" : 29,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9889620399999997,
+        "S_KOO_Y" : 51.439773219999999,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 11,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9910753986797323,
+          51.439106281991322
+        ]
+      },
+      "properties" : {
+        "FID" : 11,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Cranachschule (OGS-Gebäude)",
+        "S_STRASSE" : "Cranachstr.",
+        "S_HNR" : 27,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9910753999999997,
+        "S_KOO_Y" : 51.439106279999997,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 12,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9732878539093335,
+          51.446047745403398
+        ]
+      },
+      "properties" : {
+        "FID" : 12,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Berliner Schule",
+        "S_STRASSE" : "Berliner Str.",
+        "S_HNR" : 57,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9732878500000002,
+        "S_KOO_Y" : 51.446047749999998,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 13,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9732602409193554,
+          51.446344983218587
+        ]
+      },
+      "properties" : {
+        "FID" : 13,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Cosmas und Damian-Schule",
+        "S_STRASSE" : "Berliner Str.",
+        "S_HNR" : 63,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9732602400000001,
+        "S_KOO_Y" : 51.446344979999999,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 14,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9632883274458566,
+          51.446075095678964
+        ]
+      },
+      "properties" : {
+        "FID" : 14,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Herderschule",
+        "S_STRASSE" : "Postreitweg",
+        "S_HNR" : 76,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9632883300000001,
+        "S_KOO_Y" : 51.446075100000002,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 15,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9572334049250442,
+          51.44745895102767
+        ]
+      },
+      "properties" : {
+        "FID" : 15,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Elisabethschule",
+        "S_STRASSE" : "Hamburger Str.",
+        "S_HNR" : 4,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9572333999999998,
+        "S_KOO_Y" : 51.447458949999998,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 16,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9712271478967693,
+          51.451410239699143
+        ]
+      },
+      "properties" : {
+        "FID" : 16,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Gervinusschule",
+        "S_STRASSE" : "Gervinusstr.",
+        "S_HNR" : 28,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9712271499999998,
+        "S_KOO_Y" : 51.451410240000001,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 17,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9861412078761491,
+          51.451163451864581
+        ]
+      },
+      "properties" : {
+        "FID" : 17,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Gervinusschule (Abzweig)",
+        "S_STRASSE" : "Diergardtstr.",
+        "S_HNR" : 10,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9861412100000004,
+        "S_KOO_Y" : 51.451163450000003,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 18,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.976532572756895,
+          51.459030789431928
+        ]
+      },
+      "properties" : {
+        "FID" : 18,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bodelschwinghschule",
+        "S_STRASSE" : "Heinrich-Strunk-Str.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.9765325699999998,
+        "S_KOO_Y" : 51.45903079,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 19,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9659706877362808,
+          51.458474929065417
+        ]
+      },
+      "properties" : {
+        "FID" : 19,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Heinrich-Strunk-Str.",
+        "S_STRASSE" : "Heinrich-Strunk-Str.",
+        "S_HNR" : 148,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.9659706899999998,
+        "S_KOO_Y" : 51.458474930000001,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 20,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9725441668306232,
+          51.46437163263905
+        ]
+      },
+      "properties" : {
+        "FID" : 20,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hüttmannschule",
+        "S_STRASSE" : "Hüttmannstr.",
+        "S_HNR" : 86,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.9725441699999999,
+        "S_KOO_Y" : 51.464371630000002,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 21,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9573315298371954,
+          51.46537645414876
+        ]
+      },
+      "properties" : {
+        "FID" : 21,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bischof-von-Ketteler-Schule",
+        "S_STRASSE" : "Kampstr.",
+        "S_HNR" : 32,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9573315300000003,
+        "S_KOO_Y" : 51.465376450000001,
+        "S_STADTT_1" : "Bochold"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 22,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9428717804886624,
+          51.460078354278835
+        ]
+      },
+      "properties" : {
+        "FID" : 22,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Eichendorffschule Schönebeck",
+        "S_STRASSE" : "Heißener Str.",
+        "S_HNR" : 74,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45359",
+        "S_KOO_X" : 6.9428717799999999,
+        "S_KOO_Y" : 51.460078350000003,
+        "S_STADTT_1" : "Schönebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 23,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9273765354210814,
+          51.470597602435639
+        ]
+      },
+      "properties" : {
+        "FID" : 23,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Bedingrade",
+        "S_STRASSE" : "Bergheimer Str.",
+        "S_HNR" : 67,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45359",
+        "S_KOO_X" : 6.92737654,
+        "S_KOO_Y" : 51.470597599999998,
+        "S_STADTT_1" : "Bedingrade"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 24,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9438431602311477,
+          51.462143167654268
+        ]
+      },
+      "properties" : {
+        "FID" : 24,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Eichendorffschule Schönebeck (Teilstandort)",
+        "S_STRASSE" : "Heißener Str.",
+        "S_HNR" : 49,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45359",
+        "S_KOO_X" : 6.9438431600000001,
+        "S_KOO_Y" : 51.462143169999997,
+        "S_STADTT_1" : "Schönebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 25,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9346545456227906,
+          51.47002443128801
+        ]
+      },
+      "properties" : {
+        "FID" : 25,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schlossschule",
+        "S_STRASSE" : "Schloßstr.",
+        "S_HNR" : 192,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9346545500000003,
+        "S_KOO_Y" : 51.470024430000002,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 26,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9143164650314262,
+          51.47580621172645
+        ]
+      },
+      "properties" : {
+        "FID" : 26,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Altfriedschule",
+        "S_STRASSE" : "Frintroper Str.",
+        "S_HNR" : 432,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45359",
+        "S_KOO_X" : 6.9143164700000002,
+        "S_KOO_Y" : 51.475806210000002,
+        "S_STADTT_1" : "Frintrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 27,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9322723874010199,
+          51.48690050429645
+        ]
+      },
+      "properties" : {
+        "FID" : 27,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule am Reuenberg",
+        "S_STRASSE" : "Reuenberg",
+        "S_HNR" : 163,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45357",
+        "S_KOO_X" : 6.9322723899999996,
+        "S_KOO_Y" : 51.486900499999997,
+        "S_STADTT_1" : "Dellwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 28,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9411526761080093,
+          51.492367166633088
+        ]
+      },
+      "properties" : {
+        "FID" : 28,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Kraienbruchschule",
+        "S_STRASSE" : "Kraienbruch",
+        "S_HNR" : 79,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45357",
+        "S_KOO_X" : 6.9411526800000001,
+        "S_KOO_Y" : 51.492367170000001,
+        "S_STADTT_1" : "Dellwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 29,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9370742318609286,
+          51.478866308605191
+        ]
+      },
+      "properties" : {
+        "FID" : 29,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule Gerschede",
+        "S_STRASSE" : "Ackerstr.",
+        "S_HNR" : 107,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45357",
+        "S_KOO_X" : 6.9370742300000003,
+        "S_KOO_Y" : 51.478866310000001,
+        "S_STADTT_1" : "Gerschede"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 30,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9520082339713012,
+          51.476321049850689
+        ]
+      },
+      "properties" : {
+        "FID" : 30,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Dionysiusschule",
+        "S_STRASSE" : "Kraftstr.",
+        "S_HNR" : 10,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9520082299999997,
+        "S_KOO_Y" : 51.476321050000003,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 31,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9498064760032703,
+          51.470511180753803
+        ]
+      },
+      "properties" : {
+        "FID" : 31,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Dürerschule",
+        "S_STRASSE" : "Wallstr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9498064800000003,
+        "S_KOO_Y" : 51.470511180000003,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 32,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9625344161744644,
+          51.479731775492581
+        ]
+      },
+      "properties" : {
+        "FID" : 32,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Höltingschule",
+        "S_STRASSE" : "Zechenstr.",
+        "S_HNR" : 8,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9625344199999999,
+        "S_KOO_Y" : 51.479731780000002,
+        "S_STADTT_1" : "Berbeborbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 33,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9714998381308497,
+          51.47538044331553
+        ]
+      },
+      "properties" : {
+        "FID" : 33,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bergmühlenschule",
+        "S_STRASSE" : "Roggenstr.",
+        "S_HNR" : 5,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45356",
+        "S_KOO_X" : 6.9714998399999999,
+        "S_KOO_Y" : 51.475380440000002,
+        "S_STADTT_1" : "Bochold"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 34,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9828909143292242,
+          51.491858206718831
+        ]
+      },
+      "properties" : {
+        "FID" : 34,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Stadthafenschule",
+        "S_STRASSE" : "Forststr.",
+        "S_HNR" : 12,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45356",
+        "S_KOO_X" : 6.9828909100000001,
+        "S_KOO_Y" : 51.491858209999997,
+        "S_STADTT_1" : "Vogelheim"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 35,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0051074389380981,
+          51.482223359583038
+        ]
+      },
+      "properties" : {
+        "FID" : 35,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hövelschule",
+        "S_STRASSE" : "Hövelstr.",
+        "S_HNR" : 49,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0051074399999997,
+        "S_KOO_Y" : 51.482223359999999,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 36,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9990803363832192,
+          51.480120930354168
+        ]
+      },
+      "properties" : {
+        "FID" : 36,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Großenbruchschule",
+        "S_STRASSE" : "Großenbruchstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 6.9990803399999999,
+        "S_KOO_Y" : 51.480120929999998,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 37,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0169496946970247,
+          51.448932561098815
+        ]
+      },
+      "properties" : {
+        "FID" : 37,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Heinickestr.",
+        "S_STRASSE" : "Heinickestr.",
+        "S_HNR" : 8,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45128",
+        "S_KOO_X" : 7.0169496899999997,
+        "S_KOO_Y" : 51.448932560000003,
+        "S_STADTT_1" : "Südviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 38,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0555990362898493,
+          51.441656272761094
+        ]
+      },
+      "properties" : {
+        "FID" : 38,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Montessorischule am Lönsberg",
+        "S_STRASSE" : "Lönsberg",
+        "S_HNR" : 44,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45136",
+        "S_KOO_X" : 7.0555990399999997,
+        "S_KOO_Y" : 51.441656270000003,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 39,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.042697908442384,
+          51.445390522009752
+        ]
+      },
+      "properties" : {
+        "FID" : 39,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Winfriedschule",
+        "S_STRASSE" : "Siepenstr.",
+        "S_HNR" : 19,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0426979100000002,
+        "S_KOO_Y" : 51.445390519999997,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 40,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0198134580827629,
+          51.457941483882486
+        ]
+      },
+      "properties" : {
+        "FID" : 40,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Münsterschule",
+        "S_STRASSE" : "Severinstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0198134599999999,
+        "S_KOO_Y" : 51.457941480000002,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 41,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0168214378623492,
+          51.465389827434223
+        ]
+      },
+      "properties" : {
+        "FID" : 41,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Nordviertel",
+        "S_STRASSE" : "Beisingstr.",
+        "S_HNR" : 22,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0168214400000002,
+        "S_KOO_Y" : 51.465389829999999,
+        "S_STADTT_1" : "Nordviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 42,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0157763353247935,
+          51.464850143389555
+        ]
+      },
+      "properties" : {
+        "FID" : 42,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Nordviertel (Abzweig)",
+        "S_STRASSE" : "Gertrudisstr.",
+        "S_HNR" : 24,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0157763400000004,
+        "S_KOO_Y" : 51.464850140000003,
+        "S_STADTT_1" : "Nordviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 43,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0284453850662221,
+          51.453935104718646
+        ]
+      },
+      "properties" : {
+        "FID" : 43,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule am Wasserturm",
+        "S_STRASSE" : "Steinmetzstr.",
+        "S_HNR" : 11,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0284453899999999,
+        "S_KOO_Y" : 51.453935100000002,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 44,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0438794336356541,
+          51.463049985747617
+        ]
+      },
+      "properties" : {
+        "FID" : 44,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Regenbogenschule",
+        "S_STRASSE" : "Auf'm Böntchen",
+        "S_HNR" : 65,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0438794299999996,
+        "S_KOO_Y" : 51.463049990000002,
+        "S_STADTT_1" : "Frillendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 45,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0420698831132382,
+          51.452887403315998
+        ]
+      },
+      "properties" : {
+        "FID" : 45,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Schwanenbuschstr.",
+        "S_STRASSE" : "Schwanenbuschstr.",
+        "S_HNR" : 161,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0420698799999997,
+        "S_KOO_Y" : 51.452887400000002,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 46,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0279964631085567,
+          51.447662325841527
+        ]
+      },
+      "properties" : {
+        "FID" : 46,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Friedenschule",
+        "S_STRASSE" : "Schinkelstr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0279964599999998,
+        "S_KOO_Y" : 51.44766233,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 47,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9442046561655859,
+          51.364111083758537
+        ]
+      },
+      "properties" : {
+        "FID" : 47,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Ruhr (Abzweig)",
+        "S_STRASSE" : "Gustavstr.",
+        "S_HNR" : 26,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9442046599999996,
+        "S_KOO_Y" : 51.364111080000001,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 48,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0261261613446884,
+          51.45171028855053
+        ]
+      },
+      "properties" : {
+        "FID" : 48,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "HS an der Wächtlerstr.",
+        "S_STRASSE" : "Wächtlerstr.",
+        "S_HNR" : 37,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0261261599999996,
+        "S_KOO_Y" : 51.451710290000001,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 49,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9661449077637716,
+          51.474357059745756
+        ]
+      },
+      "properties" : {
+        "FID" : 49,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "HS Bochold",
+        "S_STRASSE" : "Jahnstr.",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9661449099999997,
+        "S_KOO_Y" : 51.474357060000003,
+        "S_STADTT_1" : "Bochold"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 50,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0474222797751214,
+          51.500961231261883
+        ]
+      },
+      "properties" : {
+        "FID" : 50,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "Glückauf-Schule (Abzweig)",
+        "S_STRASSE" : "Termeerhöfe",
+        "S_HNR" : 30,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0474222800000001,
+        "S_KOO_Y" : 51.500961230000001,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 51,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9709872658260661,
+          51.464414757803972
+        ]
+      },
+      "properties" : {
+        "FID" : 51,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hüttmannschule (Abzweig)",
+        "S_STRASSE" : "Hüttmannstr.",
+        "S_HNR" : 90,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.9709872700000002,
+        "S_KOO_Y" : 51.464414759999997,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 52,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0878962596287671,
+          51.445502056383766
+        ]
+      },
+      "properties" : {
+        "FID" : 52,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "Kath. HS Steele - Marienschule -",
+        "S_STRASSE" : "Steeler Bergstr.",
+        "S_HNR" : 8,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0878962599999999,
+        "S_KOO_Y" : 51.445502060000003,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 53,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0913003019765606,
+          51.446653769697697
+        ]
+      },
+      "properties" : {
+        "FID" : 53,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "Kath. HS Steele - Marienschule - (Abzweig)",
+        "S_STRASSE" : "Krekelerweg",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0913003000000003,
+        "S_KOO_Y" : 51.446653769999998,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 54,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0503615882413371,
+          51.447390512080943
+        ]
+      },
+      "properties" : {
+        "FID" : 54,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Pestalozzi-Schule",
+        "S_STRASSE" : "Mathilde-Kaiser-Str.",
+        "S_HNR" : 11,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0503615899999996,
+        "S_KOO_Y" : 51.447390509999998,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 55,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0207600202292912,
+          51.45663619433045
+        ]
+      },
+      "properties" : {
+        "FID" : 55,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Schule Am Steeler Tor",
+        "S_STRASSE" : "Engelbertstr.",
+        "S_HNR" : 4,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.02076002,
+        "S_KOO_Y" : 51.456636189999998,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 56,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0196395899933233,
+          51.455437280779002
+        ]
+      },
+      "properties" : {
+        "FID" : 56,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Schule Am Steeler Tor (Abzweig)",
+        "S_STRASSE" : "Steeler Str.",
+        "S_HNR" : 55,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0196395899999997,
+        "S_KOO_Y" : 51.455437279999998,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 57,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0121891388241737,
+          51.470302246156081
+        ]
+      },
+      "properties" : {
+        "FID" : 57,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Schule Am Steeler Tor (Abzweig)",
+        "S_STRASSE" : "Altenbergstr.",
+        "S_HNR" : 12,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0121891400000003,
+        "S_KOO_Y" : 51.470302250000003,
+        "S_STADTT_1" : "Nordviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 58,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9687955531682046,
+          51.444383174082468
+        ]
+      },
+      "properties" : {
+        "FID" : 58,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Theodor-Fliedner-Schule",
+        "S_STRASSE" : "Lübecker Str.",
+        "S_HNR" : 15,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9687955500000003,
+        "S_KOO_Y" : 51.444383170000002,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 59,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0285845985171571,
+          51.391144732309257
+        ]
+      },
+      "properties" : {
+        "FID" : 59,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Theodor-Fliedner-Schule (Abzweig)",
+        "S_STRASSE" : "Fischlaker Str.",
+        "S_HNR" : 62,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0285846000000003,
+        "S_KOO_Y" : 51.391144730000001,
+        "S_STADTT_1" : "Fischlaken"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 60,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9605908964090695,
+          51.452188623410706
+        ]
+      },
+      "properties" : {
+        "FID" : 60,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Nelli Neumann Schule",
+        "S_STRASSE" : "Raumerstr.",
+        "S_HNR" : 55,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9605908999999997,
+        "S_KOO_Y" : 51.452188620000001,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 61,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0261405284481233,
+          51.491773101547864
+        ]
+      },
+      "properties" : {
+        "FID" : 61,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Nelli Neumann Schule (Abzweig)",
+        "S_STRASSE" : "Ramers Kamp",
+        "S_HNR" : 40,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0261405300000002,
+        "S_KOO_Y" : 51.491773100000003,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 62,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9420286976352115,
+          51.474692289263409
+        ]
+      },
+      "properties" : {
+        "FID" : 62,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Möllhovenschule",
+        "S_STRASSE" : "Möllhoven",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9420286999999998,
+        "S_KOO_Y" : 51.47469229,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 63,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9523280916624302,
+          51.470330744976124
+        ]
+      },
+      "properties" : {
+        "FID" : 63,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Traugott-Weise-Schule",
+        "S_STRASSE" : "Wüstenhöferstr.",
+        "S_HNR" : 175,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.95232809,
+        "S_KOO_Y" : 51.470330740000001,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 64,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9323974573917022,
+          51.464636318381501
+        ]
+      },
+      "properties" : {
+        "FID" : 64,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Albert-Liebmann-Schule",
+        "S_STRASSE" : "Schloßwiese",
+        "S_HNR" : 79,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9323974599999998,
+        "S_KOO_Y" : 51.464636319999997,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 65,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0125112390563382,
+          51.488394763066374
+        ]
+      },
+      "properties" : {
+        "FID" : 65,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Parkschule",
+        "S_STRASSE" : "Tiefenbruchstr.",
+        "S_HNR" : 20,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0125112400000003,
+        "S_KOO_Y" : 51.488394759999998,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 66,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0467345327754218,
+          51.495455949713126
+        ]
+      },
+      "properties" : {
+        "FID" : 66,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Parkschule (Abzweig)",
+        "S_STRASSE" : "Schonnebeckhöfe",
+        "S_HNR" : 231,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0467345300000002,
+        "S_KOO_Y" : 51.49545595,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 67,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1056215898772486,
+          51.454354009271192
+        ]
+      },
+      "properties" : {
+        "FID" : 67,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Schule am Hellweg",
+        "S_STRASSE" : "Hellweg",
+        "S_HNR" : 179,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1056215900000002,
+        "S_KOO_Y" : 51.454354010000003,
+        "S_STADTT_1" : "Freisenbruch"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 68,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1028001032730188,
+          51.437250618333842
+        ]
+      },
+      "properties" : {
+        "FID" : 68,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Schule am Hellweg (Abzweig)",
+        "S_STRASSE" : "Dahlhauser Str.",
+        "S_HNR" : 153,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1028000999999996,
+        "S_KOO_Y" : 51.43725062,
+        "S_STADTT_1" : "Horst"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 69,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1148802660654926,
+          51.416664217688606
+        ]
+      },
+      "properties" : {
+        "FID" : 69,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Comenius-Schule",
+        "S_STRASSE" : "Auf dem Loh",
+        "S_HNR" : 15,
+        "S_HNR_ZUSA" : "S",
+        "S_PLZ" : "45289",
+        "S_KOO_X" : 7.1148802699999996,
+        "S_KOO_Y" : 51.416664220000001,
+        "S_STADTT_1" : "Burgaltendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 70,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9333107132205409,
+          51.368314450985878
+        ]
+      },
+      "properties" : {
+        "FID" : 70,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Jakob Muth-Schule",
+        "S_STRASSE" : "Am Bögelsknappen",
+        "S_HNR" : 7,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9333107099999998,
+        "S_KOO_Y" : 51.36831445,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 71,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9874179312241056,
+          51.436535850801455
+        ]
+      },
+      "properties" : {
+        "FID" : 71,
+        "S_SCHULFOR" : "Klinikschule",
+        "S_BEZEICHN" : "Ruhrlandschule",
+        "S_STRASSE" : "Holsterhauser Str.",
+        "S_HNR" : 151,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9874179300000003,
+        "S_KOO_Y" : 51.436535849999999,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 72,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9219085458748637,
+          51.467417851318658
+        ]
+      },
+      "properties" : {
+        "FID" : 72,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "LVR-David-Ludwig-Bloch-Schule",
+        "S_STRASSE" : "Tonstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45359",
+        "S_KOO_X" : 6.9219085500000004,
+        "S_KOO_Y" : 51.467417849999997,
+        "S_STADTT_1" : "Bedingrade"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 73,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0200746886490455,
+          51.469452614219897
+        ]
+      },
+      "properties" : {
+        "FID" : 73,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "LVR-Helen-Keller-Schule",
+        "S_STRASSE" : "Helen-Keller-Str.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0200746900000004,
+        "S_KOO_Y" : 51.469452609999998,
+        "S_STADTT_1" : "Nordviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 74,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0228715385548712,
+          51.452282549804671
+        ]
+      },
+      "properties" : {
+        "FID" : 74,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "LVR-Wilhelm-Körber-Schule",
+        "S_STRASSE" : "Franz-Arens-Str.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0228715399999997,
+        "S_KOO_Y" : 51.45228255,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 75,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.041558519973858,
+          51.448012051665991
+        ]
+      },
+      "properties" : {
+        "FID" : 75,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Franz Sales-Förderschule",
+        "S_STRASSE" : "Steeler Str.",
+        "S_HNR" : 261,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0415585199999997,
+        "S_KOO_Y" : 51.448012050000003,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 76,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0294190246061747,
+          51.458832768696539
+        ]
+      },
+      "properties" : {
+        "FID" : 76,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Theodor Goldschmidt Realschule",
+        "S_STRASSE" : "Frillendorfer Str.",
+        "S_HNR" : 42,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0294190199999997,
+        "S_KOO_Y" : 51.458832770000001,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 77,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0387376058141848,
+          51.443111304943244
+        ]
+      },
+      "properties" : {
+        "FID" : 77,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Elsa-Brändström-Realschule",
+        "S_STRASSE" : "Bergerhauser Str.",
+        "S_HNR" : 13,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45136",
+        "S_KOO_X" : 7.0387376100000001,
+        "S_KOO_Y" : 51.443111299999998,
+        "S_STADTT_1" : "Bergerhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 78,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.044544301604283,
+          51.424978602233637
+        ]
+      },
+      "properties" : {
+        "FID" : 78,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Albert-Einstein-Realschule",
+        "S_STRASSE" : "Ardeyplatz",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45134",
+        "S_KOO_X" : 7.0445443000000001,
+        "S_KOO_Y" : 51.424978600000003,
+        "S_STADTT_1" : "Rellinghausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 79,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0196039730992918,
+          51.437060955948006
+        ]
+      },
+      "properties" : {
+        "FID" : 79,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Bertha-von-Suttner-Realschule",
+        "S_STRASSE" : "Karolinenstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0196039700000004,
+        "S_KOO_Y" : 51.437060959999997,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 80,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0007636887069227,
+          51.49080515623745
+        ]
+      },
+      "properties" : {
+        "FID" : 80,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bückmannshofschule",
+        "S_STRASSE" : "Bückmannshof",
+        "S_HNR" : 16,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0007636900000003,
+        "S_KOO_Y" : 51.490805160000001,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 81,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0203607798570067,
+          51.492056353147731
+        ]
+      },
+      "properties" : {
+        "FID" : 81,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Rahmstr.",
+        "S_STRASSE" : "Rahmstr.",
+        "S_HNR" : 174,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0203607799999999,
+        "S_KOO_Y" : 51.492056349999999,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 82,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0091680621437495,
+          51.495462827832213
+        ]
+      },
+      "properties" : {
+        "FID" : 82,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Karlschule",
+        "S_STRASSE" : "Wilhelm-Nieswandt-Allee",
+        "S_HNR" : 85,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0091680600000004,
+        "S_KOO_Y" : 51.495462830000001,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 83,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0071762981739409,
+          51.503455071939605
+        ]
+      },
+      "properties" : {
+        "FID" : 83,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Neuessener Schule",
+        "S_STRASSE" : "Altenessener Str.",
+        "S_HNR" : 491,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0071763000000002,
+        "S_KOO_Y" : 51.503455070000001,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 84,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.009916210792916,
+          51.521220254649187
+        ]
+      },
+      "properties" : {
+        "FID" : 84,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Maria-Kunigunda-Schule",
+        "S_STRASSE" : "Timpestr.",
+        "S_HNR" : 52,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0099162100000001,
+        "S_KOO_Y" : 51.521220249999999,
+        "S_STADTT_1" : "Karnap"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 85,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0251388670958272,
+          51.509190071519747
+        ]
+      },
+      "properties" : {
+        "FID" : 85,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Adolf-Reichwein-Schule",
+        "S_STRASSE" : "Kuhlhoffstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0251388700000001,
+        "S_KOO_Y" : 51.509190070000002,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 86,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0054288523611667,
+          51.508522874160491
+        ]
+      },
+      "properties" : {
+        "FID" : 86,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Emscherschule",
+        "S_STRASSE" : "Stapenhorststr.",
+        "S_HNR" : 20,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0054288500000004,
+        "S_KOO_Y" : 51.50852287,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 87,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0395881487587584,
+          51.500506002876556
+        ]
+      },
+      "properties" : {
+        "FID" : 87,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Zollvereinschule",
+        "S_STRASSE" : "Heinrich-Lersch-Str.",
+        "S_HNR" : 40,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0395881500000002,
+        "S_KOO_Y" : 51.500506000000001,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 88,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0416639424996381,
+          51.499509896588684
+        ]
+      },
+      "properties" : {
+        "FID" : 88,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Zollvereinschule (Abzweig)",
+        "S_STRASSE" : "Distelbeckhof",
+        "S_HNR" : 128,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0416639400000003,
+        "S_KOO_Y" : 51.4995099,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 89,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0454489032818461,
+          51.498561367465349
+        ]
+      },
+      "properties" : {
+        "FID" : 89,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Viktoriastr.",
+        "S_STRASSE" : "Viktoriastr.",
+        "S_HNR" : 32,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0454489000000002,
+        "S_KOO_Y" : 51.498561369999997,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 90,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0721070525804954,
+          51.49112287776498
+        ]
+      },
+      "properties" : {
+        "FID" : 90,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Peter-Ustinov-Schule",
+        "S_STRASSE" : "Auf der Reihe",
+        "S_HNR" : 106,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0721070499999996,
+        "S_KOO_Y" : 51.491122879999999,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 91,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.052393411630689,
+          51.489768457351744
+        ]
+      },
+      "properties" : {
+        "FID" : 91,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Kantschule",
+        "S_STRASSE" : "Büchelsloh",
+        "S_HNR" : 33,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45327",
+        "S_KOO_X" : 7.0523934099999996,
+        "S_KOO_Y" : 51.489768460000001,
+        "S_STADTT_1" : "Katernberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 92,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0613769298254017,
+          51.480623636860159
+        ]
+      },
+      "properties" : {
+        "FID" : 92,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schillerschule",
+        "S_STRASSE" : "Immelmannstr.",
+        "S_HNR" : 8,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0613769299999998,
+        "S_KOO_Y" : 51.480623639999997,
+        "S_STADTT_1" : "Schonnebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 93,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0617809642360161,
+          51.480662547888954
+        ]
+      },
+      "properties" : {
+        "FID" : 93,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Johann-Michael-Sailer-Schule",
+        "S_STRASSE" : "Immelmannstr.",
+        "S_HNR" : 6,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0617809600000001,
+        "S_KOO_Y" : 51.480662549999998,
+        "S_STADTT_1" : "Schonnebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 94,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0392521096074168,
+          51.482076929394907
+        ]
+      },
+      "properties" : {
+        "FID" : 94,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Nikolausschule",
+        "S_STRASSE" : "Nikolausstr.",
+        "S_HNR" : 24,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0392521099999996,
+        "S_KOO_Y" : 51.482076929999998,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 95,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0313928652740652,
+          51.477033391577741
+        ]
+      },
+      "properties" : {
+        "FID" : 95,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Tuttmannschule",
+        "S_STRASSE" : "Twentmannstr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0313928700000004,
+        "S_KOO_Y" : 51.477033390000003,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 96,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0349445183589001,
+          51.476544463223618
+        ]
+      },
+      "properties" : {
+        "FID" : 96,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Tuttmannschule (Abzweig)",
+        "S_STRASSE" : "Grabenstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0349445199999998,
+        "S_KOO_Y" : 51.47654446,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 97,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0769312070877151,
+          51.472659854530299
+        ]
+      },
+      "properties" : {
+        "FID" : 97,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bonifaciusschule",
+        "S_STRASSE" : "Kellinghausstr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0769312099999997,
+        "S_KOO_Y" : 51.472659849999999,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 98,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0761785619500559,
+          51.473568063799789
+        ]
+      },
+      "properties" : {
+        "FID" : 98,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Bonifaciusschule (OGS-Gebäude)",
+        "S_STRASSE" : "Bonifaciusstr.",
+        "S_HNR" : 196,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0761785599999998,
+        "S_KOO_Y" : 51.473568059999998,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 99,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0796031568169306,
+          51.466612969930686
+        ]
+      },
+      "properties" : {
+        "FID" : 99,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Joachimschule",
+        "S_STRASSE" : "Joachimstr.",
+        "S_HNR" : 7,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.0796031599999996,
+        "S_KOO_Y" : 51.46661297,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 100,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0962509843768764,
+          51.465097432671854
+        ]
+      },
+      "properties" : {
+        "FID" : 100,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Leither Schule",
+        "S_STRASSE" : "Korumhöhe",
+        "S_HNR" : 11,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.0962509799999998,
+        "S_KOO_Y" : 51.46509743,
+        "S_STADTT_1" : "Leithe"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 101,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0835200881974449,
+          51.460109436781266
+        ]
+      },
+      "properties" : {
+        "FID" : 101,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "GGS Meistersingerstraße",
+        "S_STRASSE" : "Meistersingerstr.",
+        "S_HNR" : 4,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.0835200900000004,
+        "S_KOO_Y" : 51.460109439999997,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 102,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.106586789874223,
+          51.455864582839659
+        ]
+      },
+      "properties" : {
+        "FID" : 102,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Antoniusschule",
+        "S_STRASSE" : "Im Haferfeld",
+        "S_HNR" : 39,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1065867899999997,
+        "S_KOO_Y" : 51.455864579999997,
+        "S_STADTT_1" : "Freisenbruch"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 103,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0832428665831548,
+          51.460449242489538
+        ]
+      },
+      "properties" : {
+        "FID" : 103,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Christophorusschule",
+        "S_STRASSE" : "Meistersingerstr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.0832428700000003,
+        "S_KOO_Y" : 51.460449240000003,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 104,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0757808273674021,
+          51.453074425022777
+        ]
+      },
+      "properties" : {
+        "FID" : 104,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule Im Steeler Rott",
+        "S_STRASSE" : "Fürstinstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0757808300000002,
+        "S_KOO_Y" : 51.453074430000001,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 105,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0730631365408598,
+          51.44805719671804
+        ]
+      },
+      "properties" : {
+        "FID" : 105,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Laurentiusschule",
+        "S_STRASSE" : "Laurentiusweg",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0730631400000004,
+        "S_KOO_Y" : 51.448057200000001,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 106,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0951208447511451,
+          51.445773072139836
+        ]
+      },
+      "properties" : {
+        "FID" : 106,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule am Morungenweg",
+        "S_STRASSE" : "Morungenweg",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.0951208399999999,
+        "S_KOO_Y" : 51.445773070000001,
+        "S_STADTT_1" : "Freisenbruch"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 107,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1047379050806407,
+          51.445572662834842
+        ]
+      },
+      "properties" : {
+        "FID" : 107,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule im Bergmannsfeld",
+        "S_STRASSE" : "Erasmusstr.",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1047379099999999,
+        "S_KOO_Y" : 51.445572660000003,
+        "S_STADTT_1" : "Freisenbruch"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 108,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1008440934319053,
+          51.437126724331854
+        ]
+      },
+      "properties" : {
+        "FID" : 108,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Josefschule (Horst)",
+        "S_STRASSE" : "Dahlhauser Str.",
+        "S_HNR" : 144,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1008440899999998,
+        "S_KOO_Y" : 51.437126720000002,
+        "S_STADTT_1" : "Horst"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 109,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1012001598766705,
+          51.437008940061354
+        ]
+      },
+      "properties" : {
+        "FID" : 109,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Josefschule (Horst) (Abzweig)",
+        "S_STRASSE" : "Dahlhauser Str.",
+        "S_HNR" : 146,
+        "S_HNR_ZUSA" : "L",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1012001600000003,
+        "S_KOO_Y" : 51.437008939999998,
+        "S_STADTT_1" : "Horst"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 110,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.109077808381973,
+          51.432950744137294
+        ]
+      },
+      "properties" : {
+        "FID" : 110,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Astrid Lindgren-Schule",
+        "S_STRASSE" : "Lindkenshofer Weg",
+        "S_HNR" : 51,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.1090778099999996,
+        "S_KOO_Y" : 51.432950740000003,
+        "S_STADTT_1" : "Horst"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 111,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0799225621801289,
+          51.42996648664473
+        ]
+      },
+      "properties" : {
+        "FID" : 111,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hinseler Schule",
+        "S_STRASSE" : "Treibweg",
+        "S_HNR" : 40,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.07992256,
+        "S_KOO_Y" : 51.429966489999998,
+        "S_STADTT_1" : "Überruhr-Hinsel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 112,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0802651802713159,
+          51.421583393384687
+        ]
+      },
+      "properties" : {
+        "FID" : 112,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Überruhr",
+        "S_STRASSE" : "Hinseler Hof",
+        "S_HNR" : 125,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.0802651799999996,
+        "S_KOO_Y" : 51.421583390000002,
+        "S_STADTT_1" : "Überruhr-Holthausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 113,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.081870960573216,
+          51.420755951137622
+        ]
+      },
+      "properties" : {
+        "FID" : 113,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Überruhr (Abzweig)",
+        "S_STRASSE" : "Klapperstr.",
+        "S_HNR" : 60,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.0818709599999998,
+        "S_KOO_Y" : 51.42075595,
+        "S_STADTT_1" : "Überruhr-Holthausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 114,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1149063298875816,
+          51.415847610909545
+        ]
+      },
+      "properties" : {
+        "FID" : 114,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Burgaltendorf",
+        "S_STRASSE" : "Alte Hauptstr.",
+        "S_HNR" : 50,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45289",
+        "S_KOO_X" : 7.1149063300000002,
+        "S_KOO_Y" : 51.41584761,
+        "S_STADTT_1" : "Burgaltendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 115,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.1203207530908337,
+          51.41800775722345
+        ]
+      },
+      "properties" : {
+        "FID" : 115,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Burgaltendorf (Abzweig)",
+        "S_STRASSE" : "Holteyer Str.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45289",
+        "S_KOO_X" : 7.1203207500000003,
+        "S_KOO_Y" : 51.418007760000002,
+        "S_STADTT_1" : "Burgaltendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 116,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0849866952010059,
+          51.390505287143689
+        ]
+      },
+      "properties" : {
+        "FID" : 116,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Josefschule (Kupferdreh)",
+        "S_STRASSE" : "Byfanger Str.",
+        "S_HNR" : 20,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45257",
+        "S_KOO_X" : 7.0849867,
+        "S_KOO_Y" : 51.39050529,
+        "S_STADTT_1" : "Kupferdreh"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 117,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0669935854408168,
+          51.402248804899358
+        ]
+      },
+      "properties" : {
+        "FID" : 117,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Georgschule",
+        "S_STRASSE" : "Heisinger Str.",
+        "S_HNR" : 500,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45259",
+        "S_KOO_X" : 7.06699359,
+        "S_KOO_Y" : 51.402248800000002,
+        "S_STADTT_1" : "Heisingen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 118,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0647489341135934,
+          51.400979194433162
+        ]
+      },
+      "properties" : {
+        "FID" : 118,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Georgschule (Abzweig)",
+        "S_STRASSE" : "Bahnhofstr.",
+        "S_HNR" : 33,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45259",
+        "S_KOO_X" : 7.0647489300000004,
+        "S_KOO_Y" : 51.400979190000001,
+        "S_STADTT_1" : "Heisingen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 119,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0700928371044709,
+          51.400783001791815
+        ]
+      },
+      "properties" : {
+        "FID" : 119,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Carl-Funke-Schule",
+        "S_STRASSE" : "Baderweg",
+        "S_HNR" : 24,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45259",
+        "S_KOO_X" : 7.07009284,
+        "S_KOO_Y" : 51.400782999999997,
+        "S_STADTT_1" : "Heisingen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 120,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0841857191089277,
+          51.391578114569882
+        ]
+      },
+      "properties" : {
+        "FID" : 120,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hinsbeckschule",
+        "S_STRASSE" : "Schwermannstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45257",
+        "S_KOO_X" : 7.0841857199999998,
+        "S_KOO_Y" : 51.391578109999998,
+        "S_STADTT_1" : "Kupferdreh"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 121,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0251470166657297,
+          51.392333147585873
+        ]
+      },
+      "properties" : {
+        "FID" : 121,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Fischlaker Schule",
+        "S_STRASSE" : "Bernhardstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0251470200000004,
+        "S_KOO_Y" : 51.392333149999999,
+        "S_STADTT_1" : "Fischlaken"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 122,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0158425806015972,
+          51.377535118906941
+        ]
+      },
+      "properties" : {
+        "FID" : 122,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Jacobsallee",
+        "S_STRASSE" : "Jacobsallee",
+        "S_HNR" : 7,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0158425800000002,
+        "S_KOO_Y" : 51.377535119999997,
+        "S_STADTT_1" : "Heidhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 123,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0133234751901785,
+          51.387751371280956
+        ]
+      },
+      "properties" : {
+        "FID" : 123,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Ludgerusschule",
+        "S_STRASSE" : "Kellerstr.",
+        "S_HNR" : 86,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0133234800000004,
+        "S_KOO_Y" : 51.387751369999997,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 124,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0091430455534987,
+          51.393322361987515
+        ]
+      },
+      "properties" : {
+        "FID" : 124,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Heckerschule",
+        "S_STRASSE" : "Urbachstr.",
+        "S_HNR" : 21,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0091430499999996,
+        "S_KOO_Y" : 51.393322359999999,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 125,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0036530504766539,
+          51.417136366779651
+        ]
+      },
+      "properties" : {
+        "FID" : 125,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Graf-Spee-Schule",
+        "S_STRASSE" : "Graf-Spee-Str.",
+        "S_HNR" : 23,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45133",
+        "S_KOO_X" : 7.0036530499999996,
+        "S_KOO_Y" : 51.417136370000001,
+        "S_STADTT_1" : "Bredeney"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 126,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9869029332954495,
+          51.411449292526854
+        ]
+      },
+      "properties" : {
+        "FID" : 126,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Meisenburgschule",
+        "S_STRASSE" : "Meisenburgstr.",
+        "S_HNR" : 57,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45133",
+        "S_KOO_X" : 6.9869029300000003,
+        "S_KOO_Y" : 51.41144929,
+        "S_STADTT_1" : "Bredeney"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 127,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9541336495656179,
+          51.368936611045932
+        ]
+      },
+      "properties" : {
+        "FID" : 127,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schmachtenbergschule",
+        "S_STRASSE" : "Schmachtenbergstr.",
+        "S_HNR" : 62,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9541336500000002,
+        "S_KOO_Y" : 51.368936609999999,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 128,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9301398592604002,
+          51.362059004400848
+        ]
+      },
+      "properties" : {
+        "FID" : 128,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Schule an der Ruhr",
+        "S_STRASSE" : "Mintarder Weg",
+        "S_HNR" : 43,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9301398599999997,
+        "S_KOO_Y" : 51.362059000000002,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 129,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0307366083693674,
+          51.455299700571935
+        ]
+      },
+      "properties" : {
+        "FID" : 129,
+        "S_SCHULFOR" : "Weiterbildungskolleg",
+        "S_BEZEICHN" : "Nikolaus-Groß-Weiterbildungskolleg",
+        "S_STRASSE" : "Franziskanerstr.",
+        "S_HNR" : 67,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0307366099999999,
+        "S_KOO_Y" : 51.455299699999998,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 130,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0177453683093338,
+          51.454659157110186
+        ]
+      },
+      "properties" : {
+        "FID" : 130,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Frida-Levy-Gesamtschule",
+        "S_STRASSE" : "Varnhorststr.",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0177453700000001,
+        "S_KOO_Y" : 51.454659159999999,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 131,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0178596683914494,
+          51.458581873440274
+        ]
+      },
+      "properties" : {
+        "FID" : 131,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Frida-Levy-Gesamtschule (Abzweig)",
+        "S_STRASSE" : "Hofterbergstr.",
+        "S_HNR" : 26,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.01785967,
+        "S_KOO_Y" : 51.458581870000003,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 132,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9691301125004363,
+          51.460071878182838
+        ]
+      },
+      "properties" : {
+        "FID" : 132,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Bockmühle",
+        "S_STRASSE" : "Ohmstr.",
+        "S_HNR" : 32,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.96913011,
+        "S_KOO_Y" : 51.460071880000001,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 133,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9875916091866452,
+          51.439563323872555
+        ]
+      },
+      "properties" : {
+        "FID" : 133,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Holsterhausen",
+        "S_STRASSE" : "Böcklinstr.",
+        "S_HNR" : 27,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.98759161,
+        "S_KOO_Y" : 51.439563319999998,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 134,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9849099787099487,
+          51.442777317333629
+        ]
+      },
+      "properties" : {
+        "FID" : 134,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Holsterhausen (Abzweig)",
+        "S_STRASSE" : "Keplerstr.",
+        "S_HNR" : 58,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9849099800000003,
+        "S_KOO_Y" : 51.442777319999998,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 135,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9395353489951166,
+          51.482445123074946
+        ]
+      },
+      "properties" : {
+        "FID" : 135,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Borbeck",
+        "S_STRASSE" : "Hansemannstr.",
+        "S_HNR" : 15,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45357",
+        "S_KOO_X" : 6.9395353499999999,
+        "S_KOO_Y" : 51.482445120000001,
+        "S_STADTT_1" : "Gerschede"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 136,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9259107160311224,
+          51.483786547829872
+        ]
+      },
+      "properties" : {
+        "FID" : 136,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Borbeck (Abzweig)",
+        "S_STRASSE" : "Ripshorster Str.",
+        "S_HNR" : 285,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45357",
+        "S_KOO_X" : 6.9259107200000001,
+        "S_KOO_Y" : 51.483786549999998,
+        "S_STADTT_1" : "Dellwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 137,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0195298668110109,
+          51.5023144572272
+        ]
+      },
+      "properties" : {
+        "FID" : 137,
+        "S_SCHULFOR" : "Hauptschule",
+        "S_BEZEICHN" : "Glückauf-Schule",
+        "S_STRASSE" : "Bischoffstr.",
+        "S_HNR" : 120,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0195298700000004,
+        "S_KOO_Y" : 51.502314460000001,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 138,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0399481124534082,
+          51.482684457446879
+        ]
+      },
+      "properties" : {
+        "FID" : 138,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Nikolausschule (Abzweig)",
+        "S_STRASSE" : "Kapitelwiese",
+        "S_HNR" : 35,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0399481100000001,
+        "S_KOO_Y" : 51.482684460000002,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 139,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9642438689054353,
+          51.418857979916005
+        ]
+      },
+      "properties" : {
+        "FID" : 139,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Grundschule Haarzopf (Abzweig)",
+        "S_STRASSE" : "Hatzper Str.",
+        "S_HNR" : 186,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45149",
+        "S_KOO_X" : 6.9642438699999998,
+        "S_KOO_Y" : 51.418857979999999,
+        "S_STADTT_1" : "Haarzopf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 140,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9859712126571027,
+          51.493414293514256
+        ]
+      },
+      "properties" : {
+        "FID" : 140,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Nord",
+        "S_STRASSE" : "Förderstr.",
+        "S_HNR" : 60,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45356",
+        "S_KOO_X" : 6.9859712099999998,
+        "S_KOO_Y" : 51.493414289999997,
+        "S_STADTT_1" : "Vogelheim"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 141,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9863069578124284,
+          51.492327466977251
+        ]
+      },
+      "properties" : {
+        "FID" : 141,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gesamtschule Nord (Abzweig)",
+        "S_STRASSE" : "Kleinstr.",
+        "S_HNR" : 34,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45356",
+        "S_KOO_X" : 6.9863069600000003,
+        "S_KOO_Y" : 51.492327469999999,
+        "S_STADTT_1" : "Vogelheim"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 142,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.053958287676708,
+          51.48651873945321
+        ]
+      },
+      "properties" : {
+        "FID" : 142,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Gustav-Heinemann-Gesamtschule",
+        "S_STRASSE" : "Schonnebeckhöfe",
+        "S_HNR" : 64,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0539582899999997,
+        "S_KOO_Y" : 51.486518740000001,
+        "S_STADTT_1" : "Schonnebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 143,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0894731535165612,
+          51.452317452569609
+        ]
+      },
+      "properties" : {
+        "FID" : 143,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Erich Kästner-Gesamtschule",
+        "S_STRASSE" : "Pinxtenweg",
+        "S_HNR" : 8,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0894731499999999,
+        "S_KOO_Y" : 51.452317450000002,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 144,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0820999428631488,
+          51.459490005968568
+        ]
+      },
+      "properties" : {
+        "FID" : 144,
+        "S_SCHULFOR" : "Gesamtschule",
+        "S_BEZEICHN" : "Erich Kästner-Gesamtschule (Abzweig)",
+        "S_STRASSE" : "Brembergstr.",
+        "S_HNR" : 17,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.08209994,
+        "S_KOO_Y" : 51.459490010000003,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 145,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0293193678127635,
+          51.414886685324305
+        ]
+      },
+      "properties" : {
+        "FID" : 145,
+        "S_SCHULFOR" : "Waldorfschule",
+        "S_BEZEICHN" : "Freie Waldorfschule",
+        "S_STRASSE" : "Schellstr.",
+        "S_HNR" : 47,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45134",
+        "S_KOO_X" : 7.0293193699999996,
+        "S_KOO_Y" : 51.414886690000003,
+        "S_STADTT_1" : "Stadtwald"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 146,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0021106123092034,
+          51.453757926252912
+        ]
+      },
+      "properties" : {
+        "FID" : 146,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg Mitte",
+        "S_STRASSE" : "Schwanenkampstr.",
+        "S_HNR" : 53,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0021106099999999,
+        "S_KOO_Y" : 51.453757930000002,
+        "S_STADTT_1" : "Westviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 147,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0033509529865086,
+          51.448521788459992
+        ]
+      },
+      "properties" : {
+        "FID" : 147,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Erich-Brost-Berufskolleg",
+        "S_STRASSE" : "Sachsenstr.",
+        "S_HNR" : 29,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45128",
+        "S_KOO_X" : 7.0033509499999997,
+        "S_KOO_Y" : 51.448521790000001,
+        "S_STADTT_1" : "Südviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 148,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9771066651921165,
+          51.459593447013717
+        ]
+      },
+      "properties" : {
+        "FID" : 148,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Erich-Brost-Berufskolleg (Abzweig)",
+        "S_STRASSE" : "Dechenstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45143",
+        "S_KOO_X" : 6.9771066700000004,
+        "S_KOO_Y" : 51.45959345,
+        "S_STADTT_1" : "Altendorf"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 149,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0037764361985264,
+          51.448708779683471
+        ]
+      },
+      "properties" : {
+        "FID" : 149,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Robert-Schuman-Berufskolleg",
+        "S_STRASSE" : "Sachsenstr.",
+        "S_HNR" : 27,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45128",
+        "S_KOO_X" : 7.0037764400000002,
+        "S_KOO_Y" : 51.448708779999997,
+        "S_STADTT_1" : "Südviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 150,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0034666525477292,
+          51.44464704635638
+        ]
+      },
+      "properties" : {
+        "FID" : 150,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Robert-Schuman-Berufskolleg (Abzweig)",
+        "S_STRASSE" : "Kaupenstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45128",
+        "S_KOO_X" : 7.00346665,
+        "S_KOO_Y" : 51.44464705,
+        "S_STADTT_1" : "Südviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 151,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0161450105643368,
+          51.448238154743947
+        ]
+      },
+      "properties" : {
+        "FID" : 151,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg im Bildungspark (Abzweig)",
+        "S_STRASSE" : "Gärtnerstr.",
+        "S_HNR" : 11,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45128",
+        "S_KOO_X" : 7.0161450099999998,
+        "S_KOO_Y" : 51.448238150000002,
+        "S_STADTT_1" : "Südviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 152,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.025715971809662,
+          51.443196877419005
+        ]
+      },
+      "properties" : {
+        "FID" : 152,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Robert-Schmidt-Berufskolleg",
+        "S_STRASSE" : "Robert-Schmidt-Str.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0257159700000003,
+        "S_KOO_Y" : 51.443196880000002,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 153,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0429614249185217,
+          51.449811948419942
+        ]
+      },
+      "properties" : {
+        "FID" : 153,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg Ost",
+        "S_STRASSE" : "Knaudtstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0429614200000001,
+        "S_KOO_Y" : 51.449811949999997,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 154,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9827980490839812,
+          51.428166653346089
+        ]
+      },
+      "properties" : {
+        "FID" : 154,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg Ost (Abzweig)",
+        "S_STRASSE" : "Külshammerweg",
+        "S_HNR" : 2,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45149",
+        "S_KOO_X" : 6.9827980500000004,
+        "S_KOO_Y" : 51.428166650000001,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 155,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0147168382670984,
+          51.470918096667958
+        ]
+      },
+      "properties" : {
+        "FID" : 155,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg im Bildungspark",
+        "S_STRASSE" : "Blücherstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0147168400000002,
+        "S_KOO_Y" : 51.470918099999999,
+        "S_STADTT_1" : "Nordviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 156,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9796252999094008,
+          51.453101204248227
+        ]
+      },
+      "properties" : {
+        "FID" : 156,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Heinz-Nixdorf-Berufskolleg",
+        "S_STRASSE" : "Dahnstr.",
+        "S_HNR" : 50,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9796253000000004,
+        "S_KOO_Y" : 51.453101199999999,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 157,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9813082367572248,
+          51.453183432144392
+        ]
+      },
+      "properties" : {
+        "FID" : 157,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg West",
+        "S_STRASSE" : "Am Westbahnhof",
+        "S_HNR" : 5,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9813082399999997,
+        "S_KOO_Y" : 51.453183430000003,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 158,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.983302544101849,
+          51.429793550333741
+        ]
+      },
+      "properties" : {
+        "FID" : 158,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg der Landwirtschaftskammer NRW",
+        "S_STRASSE" : "Külshammerweg",
+        "S_HNR" : 18,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45149",
+        "S_KOO_X" : 6.9833025400000004,
+        "S_KOO_Y" : 51.429793549999999,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 159,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0175671913931845,
+          51.459367887630606
+        ]
+      },
+      "properties" : {
+        "FID" : 159,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Münsterschule (Abzweig)",
+        "S_STRASSE" : "Hofterbergstr.",
+        "S_HNR" : 10,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0175671900000003,
+        "S_KOO_Y" : 51.459367890000003,
+        "S_STADTT_1" : "Ostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 160,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9767764975498858,
+          51.45254285800852
+        ]
+      },
+      "properties" : {
+        "FID" : 160,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Rheinisch-Westfälisches Berufskolleg Essen",
+        "S_STRASSE" : "Kerckhoffstr.",
+        "S_HNR" : 100,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.9767764999999997,
+        "S_KOO_Y" : 51.452542860000001,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 161,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0023326070907261,
+          51.393807265263561
+        ]
+      },
+      "properties" : {
+        "FID" : 161,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg Johannes-Kessels-Akademie",
+        "S_STRASSE" : "Ludgerusstr.",
+        "S_HNR" : 7,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0023326099999998,
+        "S_KOO_Y" : 51.393807270000003,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 162,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9692030324288456,
+          51.443533546735871
+        ]
+      },
+      "properties" : {
+        "FID" : 162,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Helmut-Rahn-Realschule",
+        "S_STRASSE" : "Mülheimer Str.",
+        "S_HNR" : 126,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45145",
+        "S_KOO_X" : 6.9692030300000001,
+        "S_KOO_Y" : 51.443533549999998,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 163,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9850215272091951,
+          51.452183641244162
+        ]
+      },
+      "properties" : {
+        "FID" : 163,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Bertha-Krupp-Realschule",
+        "S_STRASSE" : "Kerckhoffstr.",
+        "S_HNR" : 43,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.98502153,
+        "S_KOO_Y" : 51.452183640000001,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 164,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9408470446228989,
+          51.46982266519084
+        ]
+      },
+      "properties" : {
+        "FID" : 164,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule am Schloss Borbeck",
+        "S_STRASSE" : "Schloßstr.",
+        "S_HNR" : 121,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9408470400000004,
+        "S_KOO_Y" : 51.469822669999999,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 165,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9503561956997499,
+          51.47824448649547
+        ]
+      },
+      "properties" : {
+        "FID" : 165,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Geschwister-Scholl-Realschule",
+        "S_STRASSE" : "Hülsmannstr.",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9503561999999999,
+        "S_KOO_Y" : 51.478244490000002,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 166,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0062758798452887,
+          51.492580533566837
+        ]
+      },
+      "properties" : {
+        "FID" : 166,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Gertrud-Bäumer-Realschule",
+        "S_STRASSE" : "Grünstr.",
+        "S_HNR" : 54,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0062758799999996,
+        "S_KOO_Y" : 51.492580529999998,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 167,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0685832809208806,
+          51.455366518796389
+        ]
+      },
+      "properties" : {
+        "FID" : 167,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Franz-Dinnendahl-Realschule",
+        "S_STRASSE" : "Schönscheidtstr.",
+        "S_HNR" : 174,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.0685832800000004,
+        "S_KOO_Y" : 51.455366519999998,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 168,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0455781659710954,
+          51.484622655165907
+        ]
+      },
+      "properties" : {
+        "FID" : 168,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule im Bezirk Zollverein",
+        "S_STRASSE" : "Gelsenkirchener Str.",
+        "S_HNR" : 138,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45309",
+        "S_KOO_X" : 7.0455781699999998,
+        "S_KOO_Y" : 51.484622659999999,
+        "S_STADTT_1" : "Schonnebeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 169,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0729813512247475,
+          51.445064080300938
+        ]
+      },
+      "properties" : {
+        "FID" : 169,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Helene-Lange-Realschule",
+        "S_STRASSE" : "Joseph-Boismard-Weg",
+        "S_HNR" : 10,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0729813500000001,
+        "S_KOO_Y" : 51.445064080000002,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 170,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.072294739266356,
+          51.44513408539153
+        ]
+      },
+      "properties" : {
+        "FID" : 170,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Helene-Lange-Realschule (Abzweig)",
+        "S_STRASSE" : "Joseph-Boismard-Weg",
+        "S_HNR" : 3,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0722947400000002,
+        "S_KOO_Y" : 51.445134090000003,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 171,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.108756531441661,
+          51.440303642617948
+        ]
+      },
+      "properties" : {
+        "FID" : 171,
+        "S_SCHULFOR" : "Weiterbildungskolleg",
+        "S_BEZEICHN" : "Abendrealschule Eiberg",
+        "S_STRASSE" : "Sachsenring",
+        "S_HNR" : 301,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45279",
+        "S_KOO_X" : 7.10875653,
+        "S_KOO_Y" : 51.440303640000003,
+        "S_STADTT_1" : "Horst"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 172,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0826015955213766,
+          51.420435357794943
+        ]
+      },
+      "properties" : {
+        "FID" : 172,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule Essen-Überruhr",
+        "S_STRASSE" : "Dellmannsweg",
+        "S_HNR" : 14,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.0826016000000003,
+        "S_KOO_Y" : 51.420435359999999,
+        "S_STADTT_1" : "Überruhr-Holthausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 173,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.078156665106345,
+          51.431516964055689
+        ]
+      },
+      "properties" : {
+        "FID" : 173,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule Essen-Überruhr (Abzweig)",
+        "S_STRASSE" : "Überruhrstr.",
+        "S_HNR" : 115,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.0781566700000003,
+        "S_KOO_Y" : 51.431516960000003,
+        "S_STADTT_1" : "Überruhr-Hinsel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 174,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9387244381427076,
+          51.367465305002824
+        ]
+      },
+      "properties" : {
+        "FID" : 174,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule Kettwig",
+        "S_STRASSE" : "Brederbachstr.",
+        "S_HNR" : 19,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9387244399999997,
+        "S_KOO_Y" : 51.36746531,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 175,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.937239967245584,
+          51.366431615328416
+        ]
+      },
+      "properties" : {
+        "FID" : 175,
+        "S_SCHULFOR" : "Realschule",
+        "S_BEZEICHN" : "Realschule Kettwig (Abzweig)",
+        "S_STRASSE" : "Brederbachstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9372399700000003,
+        "S_KOO_Y" : 51.36643162,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 176,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0338230851311989,
+          51.481233799017694
+        ]
+      },
+      "properties" : {
+        "FID" : 176,
+        "S_SCHULFOR" : "Sekundarschule",
+        "S_BEZEICHN" : "Sekundarschule am Stoppenberg",
+        "S_STRASSE" : "Im Mühlenbruch",
+        "S_HNR" : 47,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0338230900000003,
+        "S_KOO_Y" : 51.481233799999998,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 177,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0149631615269357,
+          51.455141974573166
+        ]
+      },
+      "properties" : {
+        "FID" : 177,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Burggymnasium",
+        "S_STRASSE" : "Burgplatz",
+        "S_HNR" : 4,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45127",
+        "S_KOO_X" : 7.0149631599999998,
+        "S_KOO_Y" : 51.45514197,
+        "S_STADTT_1" : "Stadtkern"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 178,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0818285795361859,
+          51.385441761288234
+        ]
+      },
+      "properties" : {
+        "FID" : 178,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Hinsbeckschule (Abzweig)",
+        "S_STRASSE" : "Oslenderstr.",
+        "S_HNR" : 36,
+        "S_HNR_ZUSA" : "b",
+        "S_PLZ" : "45257",
+        "S_KOO_X" : 7.0818285799999998,
+        "S_KOO_Y" : 51.385441759999999,
+        "S_STADTT_1" : "Kupferdreh"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 179,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0281407579404123,
+          51.454015098837722
+        ]
+      },
+      "properties" : {
+        "FID" : 179,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "UNESCO-Schule Essen",
+        "S_STRASSE" : "Steinmetzstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45139",
+        "S_KOO_X" : 7.0281407600000003,
+        "S_KOO_Y" : 51.454015099999999,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 180,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0250439657182637,
+          51.450801131600059
+        ]
+      },
+      "properties" : {
+        "FID" : 180,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Burggymnasium (Abzweig)",
+        "S_STRASSE" : "Kurfürstenplatz",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0250439699999996,
+        "S_KOO_Y" : 51.450801130000002,
+        "S_STADTT_1" : "Südostviertel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 181,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0164996202234153,
+          51.436359455979144
+        ]
+      },
+      "properties" : {
+        "FID" : 181,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Helmholtz-Gymnasium",
+        "S_STRASSE" : "Rosastr.",
+        "S_HNR" : 83,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0164996200000003,
+        "S_KOO_Y" : 51.436359459999998,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 182,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0138309716819265,
+          51.436537671748411
+        ]
+      },
+      "properties" : {
+        "FID" : 182,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Maria-Wächtler-Gymnasium",
+        "S_STRASSE" : "Rosastr.",
+        "S_HNR" : 75,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0138309699999999,
+        "S_KOO_Y" : 51.43653767,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 183,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0177291108075357,
+          51.436933086936442
+        ]
+      },
+      "properties" : {
+        "FID" : 183,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Maria-Wächtler-Gymnasium (Abzweig)",
+        "S_STRASSE" : "Isenbergstr.",
+        "S_HNR" : 77,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45130",
+        "S_KOO_X" : 7.0177291100000003,
+        "S_KOO_Y" : 51.436933089999997,
+        "S_STADTT_1" : "Rüttenscheid"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 184,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9830576709042367,
+          51.449898813635237
+        ]
+      },
+      "properties" : {
+        "FID" : 184,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Alfred-Krupp-Schule",
+        "S_STRASSE" : "Margaretenstr.",
+        "S_HNR" : 40,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45144",
+        "S_KOO_X" : 6.98305767,
+        "S_KOO_Y" : 51.449898810000001,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 185,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9453003996353244,
+          51.471650636147203
+        ]
+      },
+      "properties" : {
+        "FID" : 185,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Mädchengymnasium Essen-Borbeck",
+        "S_STRASSE" : "Fürstäbtissinstr.",
+        "S_HNR" : 52,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9453003999999998,
+        "S_KOO_Y" : 51.47165064,
+        "S_STADTT_1" : "Borbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 186,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9530326715461994,
+          51.478050427174935
+        ]
+      },
+      "properties" : {
+        "FID" : 186,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Borbeck",
+        "S_STRASSE" : "Prinzenstr.",
+        "S_HNR" : 46,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9530326699999998,
+        "S_KOO_Y" : 51.478050430000003,
+        "S_STADTT_1" : "Bergeborbeck"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 187,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.955502685898959,
+          51.466597401458117
+        ]
+      },
+      "properties" : {
+        "FID" : 187,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Borbeck (Abzweig)",
+        "S_STRASSE" : "Wüstenhöferstr.",
+        "S_HNR" : 87,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9555026900000003,
+        "S_KOO_Y" : 51.466597399999998,
+        "S_STADTT_1" : "Bochold"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 188,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0131042739527825,
+          51.49238693055819
+        ]
+      },
+      "properties" : {
+        "FID" : 188,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Leibniz-Gymnasium",
+        "S_STRASSE" : "Stankeitstr.",
+        "S_HNR" : 22,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0131042700000004,
+        "S_KOO_Y" : 51.492386930000002,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 189,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0057781057835307,
+          51.497835941839327
+        ]
+      },
+      "properties" : {
+        "FID" : 189,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Leibniz-Gymnasium (Abzweig)",
+        "S_STRASSE" : "Mallinckrodtstr.",
+        "S_HNR" : 11,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0057781099999996,
+        "S_KOO_Y" : 51.497835940000002,
+        "S_STADTT_1" : "Altenessen-Nord"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 190,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0223399652786309,
+          51.47036973622366
+        ]
+      },
+      "properties" : {
+        "FID" : 190,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Nord-Ost",
+        "S_STRASSE" : "Katzenbruchstr.",
+        "S_HNR" : 79,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.02233997,
+        "S_KOO_Y" : 51.470369740000002,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 191,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0906210596805161,
+          51.451407018963856
+        ]
+      },
+      "properties" : {
+        "FID" : 191,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium an der Wolfskuhle",
+        "S_STRASSE" : "Pinxtenweg",
+        "S_HNR" : 6,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0906210600000001,
+        "S_KOO_Y" : 51.451407019999998,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 192,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0715055443578372,
+          51.447822906289339
+        ]
+      },
+      "properties" : {
+        "FID" : 192,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Carl-Humann-Gymnasium",
+        "S_STRASSE" : "Laurentiusweg",
+        "S_HNR" : 20,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45276",
+        "S_KOO_X" : 7.0715055400000004,
+        "S_KOO_Y" : 51.447822909999999,
+        "S_STADTT_1" : "Steele"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 193,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0696962164196444,
+          51.453592272768852
+        ]
+      },
+      "properties" : {
+        "FID" : 193,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Carl-Humann-Gymnasium (Abzweig)",
+        "S_STRASSE" : "Jacob-Weber-Str.",
+        "S_HNR" : 6,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45307",
+        "S_KOO_X" : 7.06969622,
+        "S_KOO_Y" : 51.453592270000001,
+        "S_STADTT_1" : "Kray"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 194,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0694201367142124,
+          51.424048040618253
+        ]
+      },
+      "properties" : {
+        "FID" : 194,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Überruhr",
+        "S_STRASSE" : "Langenberger Str.",
+        "S_HNR" : 394,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45277",
+        "S_KOO_X" : 7.0694201400000001,
+        "S_KOO_Y" : 51.424048040000002,
+        "S_STADTT_1" : "Überruhr-Hinsel"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 195,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9885848739081844,
+          51.416705653218315
+        ]
+      },
+      "properties" : {
+        "FID" : 195,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Grashof Gymnasium",
+        "S_STRASSE" : "Grashofstr.",
+        "S_HNR" : 55,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45133",
+        "S_KOO_X" : 6.9885848700000004,
+        "S_KOO_Y" : 51.416705649999997,
+        "S_STADTT_1" : "Bredeney"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 196,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9900131313150764,
+          51.40899478585834
+        ]
+      },
+      "properties" : {
+        "FID" : 196,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Goetheschule",
+        "S_STRASSE" : "Ruschenstr.",
+        "S_HNR" : 1,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45133",
+        "S_KOO_X" : 6.9900131300000004,
+        "S_KOO_Y" : 51.408994790000001,
+        "S_STADTT_1" : "Bredeney"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 197,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9999437602370795,
+          51.38852951572224
+        ]
+      },
+      "properties" : {
+        "FID" : 197,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Werden",
+        "S_STRASSE" : "Grafenstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 6.9999437599999998,
+        "S_KOO_Y" : 51.388529519999999,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 198,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0012727828684298,
+          51.389903862581107
+        ]
+      },
+      "properties" : {
+        "FID" : 198,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Werden (Abzweig)",
+        "S_STRASSE" : "Joseph-Breuer-Str.",
+        "S_HNR" : 16,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0012727799999999,
+        "S_KOO_Y" : 51.389903859999997,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 199,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0003655484855987,
+          51.390440089127267
+        ]
+      },
+      "properties" : {
+        "FID" : 199,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Werden (Abzweig)",
+        "S_STRASSE" : "Joseph-Breuer-Str.",
+        "S_HNR" : 30,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0003655499999997,
+        "S_KOO_Y" : 51.390440089999998,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 200,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9967787607142027,
+          51.384442060359383
+        ]
+      },
+      "properties" : {
+        "FID" : 200,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium Essen-Werden (Abzweig) Alter Bahnhof Werden (Tanzhaus)",
+        "S_STRASSE" : "Im Löwental",
+        "S_HNR" : 48,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 6.9967787599999998,
+        "S_KOO_Y" : 51.384442059999998,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 201,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.934749144969695,
+          51.365557484376616
+        ]
+      },
+      "properties" : {
+        "FID" : 201,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Theodor-Heuss-Gymnasium",
+        "S_STRASSE" : "Hauptstr.",
+        "S_HNR" : 148,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45219",
+        "S_KOO_X" : 6.9347491400000001,
+        "S_KOO_Y" : 51.36555748,
+        "S_STADTT_1" : "Kettwig"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 202,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9958978012089892,
+          51.439142633016417
+        ]
+      },
+      "properties" : {
+        "FID" : 202,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "B.M.V.-Gymnasium",
+        "S_STRASSE" : "Bardelebenstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.9958977999999998,
+        "S_KOO_Y" : 51.439142629999999,
+        "S_STADTT_1" : "Holsterhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 203,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0089096637933102,
+          51.388112212654207
+        ]
+      },
+      "properties" : {
+        "FID" : 203,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Mariengymnasium",
+        "S_STRASSE" : "Brückstr.",
+        "S_HNR" : 108,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45239",
+        "S_KOO_X" : 7.0089096599999996,
+        "S_KOO_Y" : 51.388112210000003,
+        "S_STADTT_1" : "Werden"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 204,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0335506189620256,
+          51.482312033097877
+        ]
+      },
+      "properties" : {
+        "FID" : 204,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Gymnasium am Stoppenberg",
+        "S_STRASSE" : "Im Mühlenbruch",
+        "S_HNR" : 51,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45141",
+        "S_KOO_X" : 7.0335506199999998,
+        "S_KOO_Y" : 51.482312030000003,
+        "S_STADTT_1" : "Stoppenberg"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 205,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9619367629402333,
+          51.475957487395
+        ]
+      },
+      "properties" : {
+        "FID" : 205,
+        "S_SCHULFOR" : "Gymnasium",
+        "S_BEZEICHN" : "Don-Bosco-Gymnasium",
+        "S_STRASSE" : "Theodor-Hartz-Str.",
+        "S_HNR" : 15,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45355",
+        "S_KOO_X" : 6.9619367600000004,
+        "S_KOO_Y" : 51.475957489999999,
+        "S_STADTT_1" : "Bochold"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 206,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0190925616084181,
+          51.481845658723032
+        ]
+      },
+      "properties" : {
+        "FID" : 206,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Dore-Jacobs-Berufskolleg",
+        "S_STRASSE" : "Twentmannstr.",
+        "S_HNR" : 125,
+        "S_HNR_ZUSA" : "a",
+        "S_PLZ" : "45326",
+        "S_KOO_X" : 7.0190925599999998,
+        "S_KOO_Y" : 51.481845659999998,
+        "S_STADTT_1" : "Altenessen-Süd"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 207,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.041558519973858,
+          51.448012051665991
+        ]
+      },
+      "properties" : {
+        "FID" : 207,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Franz Sales Berufskolleg",
+        "S_STRASSE" : "Steeler Str.",
+        "S_HNR" : 261,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0415585199999997,
+        "S_KOO_Y" : 51.448012050000003,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 208,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          6.9701145416613484,
+          51.441491093771404
+        ]
+      },
+      "properties" : {
+        "FID" : 208,
+        "S_SCHULFOR" : "Förderschule",
+        "S_BEZEICHN" : "Albert-Liebmann-Schule (Abzweig)",
+        "S_STRASSE" : "Adelkampstr.",
+        "S_HNR" : 25,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45147",
+        "S_KOO_X" : 6.97011454,
+        "S_KOO_Y" : 51.44149109,
+        "S_STADTT_1" : "Frohnhausen"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 209,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0099052031785378,
+          51.521916695027812
+        ]
+      },
+      "properties" : {
+        "FID" : 209,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Maria-Kunigunda-Schule (Abzweig)",
+        "S_STRASSE" : "Sigambrerweg",
+        "S_HNR" : 10,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45329",
+        "S_KOO_X" : 7.0099052000000004,
+        "S_KOO_Y" : 51.521916699999998,
+        "S_STADTT_1" : "Karnap"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 210,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0449394156443379,
+          51.445336673687116
+        ]
+      },
+      "properties" : {
+        "FID" : 210,
+        "S_SCHULFOR" : "Grundschule",
+        "S_BEZEICHN" : "Winfriedschule (OGS-Gebäude)",
+        "S_STRASSE" : "Seminarstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0449394200000004,
+        "S_KOO_Y" : 51.445336670000003,
+        "S_STADTT_1" : "Huttrop"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 211,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          7.0449394156443379,
+          51.445336673687116
+        ]
+      },
+      "properties" : {
+        "FID" : 211,
+        "S_SCHULFOR" : "Berufskolleg",
+        "S_BEZEICHN" : "Berufskolleg Ost (Abzweig)",
+        "S_STRASSE" : "Seminarstr.",
+        "S_HNR" : 9,
+        "S_HNR_ZUSA" : " ",
+        "S_PLZ" : "45138",
+        "S_KOO_X" : 7.0449394200000004,
+        "S_KOO_Y" : 51.445336670000003,
+        "S_STADTT_1" : "Huttrop"
+      }
+    }
+  ]
+}

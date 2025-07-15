@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbane Daten Plattform Essen</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- 🔹 顶部导航栏 -->
+    <header>
+        <!-- 左侧菜单按钮 -->
+        <button id="menu-toggle">☰</button>
+        <h1 id="site-title">Datenplattform Essen</h1>
+    </header>
+
+    <!-- 🔹 左侧边栏（数据类型选择框） -->
+    <aside id="sidebar-container">
+        <div id="sidebar">
+            <h2>Daten Layer</h2>
+    <ul id="data-layer-list">
+        <li><input type="checkbox" id="kindertagesstaetten"> Kindertagesstätten</li>
+        <li><input type="checkbox" id="schulen"> Schulen</li>
+        <li><input type="checkbox" id="stadtteile"> Stadtteile</li>
+        <li><input type="checkbox" id="stadtbezirke"> Stadtbezirke</li>
+        <li><input type="checkbox" id="stadtgrenze"> Stadtgrenze</li>
+        <li><input type="checkbox" id="air-quality"> Luftqualität</li>
+    </ul>
+
+        </div>
+    </aside>
+    
+    <!-- 🔹 右侧信息面板 -->
+    <aside id="info-panel">
+        <h2>Messwerte</h2>
+        <div id="air-quality-panel">🔍 Klicken Sie auf eine Messstation.</div>
+    </aside>
+
+<!-- 🔹 搜索框 -->
+<div id="search-container">
+    <input type="text" id="search-box" placeholder="Adresse eingeben..." />
+    <button id="search-button">Suchen</button>
+</div>
+
+    <!-- 🔹 右侧地图 -->
+    <section id="map-container">
+        <div id="map"></div>
+    </section>
+
+    <script src="script.js"></script>  
+    <script src="airQuality.js"></script> <!-- ✅ 添加这个 -->
+</body>
+</html>
