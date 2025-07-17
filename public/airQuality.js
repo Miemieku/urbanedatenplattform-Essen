@@ -120,7 +120,27 @@ fetch("./components.json") // 确保路径正确
         console.error("❌ Fehler beim Laden der Schadstoff-Komponenten:", error);
     });
 
-// 4️⃣ 在地图上添加测量站点
+//  获得颜色
+function getWorstIndexColor(no2, pm10, pm25, o3) {
+  let level = 1; // 默认最优（sehr gut）
+
+  if (no2 > 200 || pm10 > 100 || pm25 > 50 || o3 > 240) level = 5;
+  else if (no2 > 100 || pm10 > 50 || pm25 > 25 || o3 > 180) level = 4;
+  else if (no2 > 40 || pm10 > 35 || pm25 > 20 || o3 > 120) level = 3;
+  else if (no2 > 20 || pm10 > 20 || pm25 > 10 || o3 > 60) level = 2;
+
+  const colorMap = {
+    1: '#00cccc', // sehr gut
+    2: '#00cc99', // gut
+    3: '#ffff66', // mäßig
+    4: '#cc6666', // schlecht
+    5: '#990033'  // sehr schlecht
+  };
+
+  return colorMap[level];
+}
+
+//  在地图上添加测量站点
 function addStationsToMap() {
     Object.keys(stationCoords).forEach(stationId => {
         fetchAirQualityData(stationId).then(result => {
