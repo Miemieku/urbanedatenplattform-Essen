@@ -136,16 +136,16 @@ header {
 #info-panel {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50px; /* ⬅️ 留出导航栏高度 */
     width: 300px;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 50px); /* ⬅️ 避开顶部 header */
     z-index: 3000; 
     background-color: white;
     border-left: 1px solid #ccc;
     padding: 20px;
-    display: none; /* Standardmäßig ausgeblendet */
+    display: none; /* 默认隐藏 */
+    overflow-y: auto; /* ⬅️ 若内容多可滚动 */
 }
-
 #info-panel.visible {
-    display: block; /* Sichtbar, wenn die Klasse 'visible' hinzugefügt wird */
+    display: block;
 }
