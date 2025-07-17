@@ -167,20 +167,26 @@ function addStationsToMap() {
 
 // 5️⃣ 在右侧面板显示空气质量数据
 function showDataInPanel(stationName, timestamp, pollutantData) {
-    console.log(`📊 Daten für Station ${stationName} werden im Panel angezeigt`);
-    let panel = document.getElementById("air-quality-panel");
+  console.log(`📊 Daten für Station ${stationName} werden im Panel angezeigt`);
 
-    if (!panel) {
-        console.error("❌ Fehler: Element mit ID 'air-quality-panel' nicht gefunden");
-        return;
-    }
+  const outerPanel = document.getElementById("info-panel");
+  const contentPanel = document.getElementById("air-quality-panel");
 
-    panel.innerHTML = `<h2>Messstation ${stationName}</h2><p><b>Zeit:</b> ${timestamp}</p>`;
-    pollutantData.forEach(entry => {
-        panel.innerHTML += `<p><b>ID ${entry[0]}:</b> ${entry[1]} µg/m³</p>`;
-    });
-    panel.style.display = "block";
+  if (!outerPanel || !contentPanel) {
+    console.error("❌ info-panel oder air-quality-panel nicht gefunden");
+    return;
+  }
+
+  let html = `<h3>${stationName}</h3>`;
+  html += `<p><strong>Zeit:</strong> ${timestamp}</p>`;
+  pollutantData.forEach(entry => {
+    html += `<p><strong>${entry[0]}:</strong> ${entry[1]} µg/m³</p>`;
+  });
+
+  contentPanel.innerHTML = html;
+  outerPanel.style.display = "block";
 }
+
 
 // 6️⃣ 监听 `Luftqualität` 复选框
 document.addEventListener("DOMContentLoaded", function () {
