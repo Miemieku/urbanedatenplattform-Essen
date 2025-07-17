@@ -31,10 +31,13 @@
     </aside>
     
     <!-- 🔹 右侧信息面板 -->
-    <aside id="info-panel">
-        <h2>Messwerte</h2>
-        <div id="air-quality-panel">🔍 Klicken Sie auf eine Messstation.</div>
-    </aside>
+<aside id="info-panel">
+  <button onclick="document.getElementById('info-panel').classList.remove('visible')" 
+          style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:20px;">×</button>
+  <h2>Messwerte</h2>
+  <div id="air-quality-panel">🔍 Klicken Sie auf eine Messstation.</div>
+</aside>
+
 
 <!-- 🔹 搜索框 -->
 <div id="search-container">
