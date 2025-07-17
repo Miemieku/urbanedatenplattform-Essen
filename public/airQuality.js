@@ -1,8 +1,8 @@
 const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/functions/ubaProxy?";
-let stationCoords = {}; // 存储Essen的测量站点
+let stationCoords = {}; // 存储Düsseldorf测量站点
 let components = {}; // 存储污染物 ID → 名称
 let mapMarkers = {};
-// 1️⃣ 获取测量站坐标（Essen）
+// 1️⃣ 获取Düsseldorf测量站坐标
 function fetchStationCoordinates() {
     const apiUrl = `${API_BASE_URL}api=stationCoordinates`;
 
@@ -23,17 +23,17 @@ function fetchStationCoordinates() {
             // 🚀 **确保 `data.data` 是数组**
             let stations = Array.isArray(data.data) ? data.data : Object.values(data.data);
 
-            // 过滤出 Essen 
+            // 过滤出 Düsseldorf
             let filteredStations = stations.filter(entry => 
                 entry[3] === "Düsseldorf" && entry[6] === null
             );
             
-            // 先检查是否有匹配的 Essen 站点
-            console.log("📌 过滤后的 Essen 站点:", filteredStations);
+            // 先检查是否有匹配的 Düsseldorf 站点
+            console.log("📌 过滤后的 Düsseldorf 站点:", filteredStations);
             // `3` 是城市名称字段
 
             if (filteredStations.length === 0) {
-                console.warn("⚠️ Keine Messstationen für Essen gefunden!");
+                console.warn("⚠️ Keine Messstationen für Düsseldorf gefunden!");
                 return;
             }
 
@@ -47,7 +47,7 @@ function fetchStationCoordinates() {
                 stationCoords[stationId] = { city, stationName, lat, lon };
             });
 
-            console.log("📍 Stationen in Essen gespeichert:", stationCoords);
+            console.log("📍 Stationen in Düsseldorf gespeichert:", stationCoords);
         })
         .catch(error => {
             console.error('Fehler beim Abrufen der Messstationen:', error);
@@ -128,6 +128,7 @@ function addStationsToMap() {
                 console.warn(`⚠️ Keine Luftqualitätsdaten ${stationId}`);
                 return;
             }
+
             let actualStationId = result.stationId;
             let timestamps = Object.keys(result.data);
             if (timestamps.length === 0) {
@@ -135,35 +136,68 @@ function addStationsToMap() {
                 return;
             }
 
-            let latestTimestamp = timestamps[timestamps.length-1];
+            let latestTimestamp = timestamps[timestamps.length - 1];
             let actualTimestamp = result.data[latestTimestamp][0];
-            let pollutantData = result.data[latestTimestamp].slice(3);//跳过前三项
+            let pollutantData = result.data[latestTimestamp].slice(3);
 
-            // 构建弹窗内容
-            let popupContent = `<h3>Messstation ${actualStationId}</h3><p><b>Messzeit:</b> ${actualTimestamp}</p>`;
+            // 🧠 从污染物数据中提取数值
+            let valueMap = {};
             pollutantData.forEach(entry => {
-                let pollutantId = entry[0]; // 例如 3
-                let value = entry[1]; // 例如 50.2
-                let pollutantInfo = components[pollutantId] || { name: `ID ${pollutantId}`, unit: "" };
+                const pollutantId = entry[0];
+                const value = entry[1];
+                const name = components[pollutantId]?.name || `ID ${pollutantId}`;
+                valueMap[name] = value;
+            });
 
+            // ✅ 从值中提取目标污染物（默认为 0）
+            const no2 = valueMap["NO2"] || 0;
+            const pm10 = valueMap["PM10"] || 0;
+            const pm25 = valueMap["PM2.5"] || 0;
+            const o3  = valueMap["O3"]  || 0;
+
+            const color = getWorstIndexColor(no2, pm10, pm25, o3);
+
+            const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
+
+            // ✅ 使用 Leaflet CircleMarker
+            const circle = L.circleMarker(latLng, {
+                radius: 10,
+                fillColor: color,
+                fillOpacity: 0.8,
+                color: "#333",
+                weight: 1
+            });
+
+            // Tooltip（站点名）
+            circle.bindTooltip(stationCoords[stationId].stationName || actualStationId, {
+                permanent: false,
+                sticky: true
+            });
+
+            // Popup 内容（详细数据）
+            let popupContent = `<h3>${stationCoords[stationId].stationName}</h3><p><b>Messzeit:</b> ${actualTimestamp}</p>`;
+            pollutantData.forEach(entry => {
+                const pollutantId = entry[0];
+                const value = entry[1];
+                const pollutantInfo = components[pollutantId] || { name: `ID ${pollutantId}`, unit: "" };
                 popupContent += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
             });
-            // 创建 Leaflet Marker
-            let latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
-            let marker = L.marker(latLng).bindPopup(popupContent);
 
-            if (!marker) {
-                console.error(`❌ Fehler: Marker für ${stationId} ist undefined`);
-                return;
-            }
+            // ✅ 点击显示右侧信息栏
+            circle.on("click", () => {
+                showDataInPanel(
+                    stationCoords[stationId].stationName,
+                    actualTimestamp,
+                    pollutantData
+                );
+            });
 
-            console.log(`📍 Station ${actualStationId} Marker erstellt:`, marker);
-            marker.on("click", () => showDataInPanel(actualStationId, latestTimestamp, pollutantData));
-            marker.addTo(map);
-            mapMarkers[actualStationId] = marker;
+            circle.addTo(map);
+            mapMarkers[actualStationId] = circle;
         });
     });
 }
+
 
 // 5️⃣ 在右侧面板显示空气质量数据
 function showDataInPanel(stationName, timestamp, pollutantData) {
@@ -203,57 +237,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// 🔹 Farbcode basierend auf UBA-Kategorien (inkl. O3)
-function getWorstIndexColor(no2, pm10, pm25, o3) {
-  let level = 1; // sehr gut
-
-  if (no2 > 200 || pm10 > 100 || pm25 > 50 || o3 > 240) level = 5;
-  else if (no2 > 100 || pm10 > 50 || pm25 > 25 || o3 > 180) level = 4;
-  else if (no2 > 40 || pm10 > 35 || pm25 > 20 || o3 > 120) level = 3;
-  else if (no2 > 20 || pm10 > 20 || pm25 > 10 || o3 > 60) level = 2;
-
-  const colorMap = {
-    1: '#00cccc', // sehr gut
-    2: '#00cc99', // gut
-    3: '#ffff66', // mäßig
-    4: '#cc6666', // schlecht
-    5: '#990033'  // sehr schlecht
-  };
-
-  return colorMap[level];
-}
-
-// 🔹 Darstellung von Messstationen auf der Karte
-function drawAirQualityStations(stations) {
-  const layer = L.layerGroup();
-
-  stations.forEach(station => {
-    const { id, name, lat, lng, values } = station;
-    const color = getWorstIndexColor(values.NO2, values.PM10, values.PM25, values.O3);
-
-    const circle = L.circleMarker([lat, lng], {
-      radius: 10,
-      fillColor: color,
-      fillOpacity: 0.8,
-      color: "#333",
-      weight: 1
-    });
-
-    // 🟡 Tooltip mit Stationsname
-    circle.bindTooltip(name || `Station ${id}`, { permanent: false, sticky: true });
-
-    // 🟢 Klick zeigt Detailpanel rechts
-    circle.on('click', () => {
-      showDataInPanel(name, values.timestamp, [
-        ["NO₂", values.NO2],
-        ["PM₁₀", values.PM10],
-        ["PM₂.₅", values.PM25],
-        ["O₃", values.O3]
-      ]);
-    });
-
-    layer.addLayer(circle);
-  });
-
-  layer.addTo(map);
-}
