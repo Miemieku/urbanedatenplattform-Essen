@@ -167,25 +167,28 @@ function addStationsToMap() {
 
 // 5️⃣ 在右侧面板显示空气质量数据
 function showDataInPanel(stationName, timestamp, pollutantData) {
-  console.log(`📊 Daten für Station ${stationName} werden im Panel angezeigt`);
+    console.log(`📊 Daten für Station ${stationName} werden im Panel angezeigt`);
 
-  const outerPanel = document.getElementById("info-panel");
-  const contentPanel = document.getElementById("air-quality-panel");
+    const contentPanel = document.getElementById("air-quality-panel");
+    const wrapperPanel = document.getElementById("info-panel");
 
-  if (!outerPanel || !contentPanel) {
-    console.error("❌ info-panel oder air-quality-panel nicht gefunden");
-    return;
-  }
+    if (!contentPanel || !wrapperPanel) {
+        console.error("❌ Panel nicht gefunden");
+        return;
+    }
 
-  let html = `<h3>${stationName}</h3>`;
-  html += `<p><strong>Zeit:</strong> ${timestamp}</p>`;
-  pollutantData.forEach(entry => {
-    html += `<p><strong>${entry[0]}:</strong> ${entry[1]} µg/m³</p>`;
-  });
+    let html = `<h3>${stationName}</h3>`;
+    html += `<p><strong>Zeit:</strong> ${timestamp}</p>`;
+    pollutantData.forEach(entry => {
+        html += `<p><strong>${entry[0]}:</strong> ${entry[1]} µg/m³</p>`;
+    });
 
-  contentPanel.innerHTML = html;
-  outerPanel.style.display = "block";
+    contentPanel.innerHTML = html;
+
+    // 👉 这行代码让右侧面板显示出来！
+    wrapperPanel.classList.add("visible");
 }
+
 
 
 // 6️⃣ 监听 `Luftqualität` 复选框
