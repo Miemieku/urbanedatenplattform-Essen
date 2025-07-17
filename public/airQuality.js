@@ -222,65 +222,26 @@ function addStationsToMap() {
 
 
 
-//  在右侧面板显示空气质量数据
 function showDataInPanel(stationName, timestamp, pollutantData) {
-    const wrapper = document.getElementById("info-panel");
-    const content = document.getElementById("air-quality-panel");
+  const wrapper = document.getElementById("info-panel");
+  const content = document.getElementById("air-quality-panel");
 
-    if (!wrapper || !content) return;
+  if (!wrapper || !content) return;
 
-    // 构建污染物值映射
-    const values = {};
-    pollutantData.forEach(([id, value]) => {
-        const info = components[id];
-        if (info) values[info.name] = { value, unit: info.unit };
-    });
-
-    // 判断整体空气质量（最差项）
-    const no2 = values["NO2"]?.value || 0;
-    const pm10 = values["PM10"]?.value || 0;
-    const pm25 = values["PM2.5"]?.value || 0;
-    const o3  = values["O3"]?.value  || 0;
-    const qualityTextMap = {
-        1: "Sehr gut", 2: "Gut", 3: "Mäßig", 4: "Schlecht", 5: "Sehr schlecht"
-    };
-    const level = getWorstIndexLevel(no2, pm10, pm25, o3); // 返回等级数字 1–5
-    const qualityLabel = qualityTextMap[level];
-
-    // 🔧 构建 HTML 内容
-    let html = `
-        <h3>${stationName}</h3>
-        <p><strong>Luftqualität:</strong> ${qualityLabel}</p>
-        <p><strong>Zeit:</strong> ${timestamp}</p>
-        <hr>
-        <h4>Schadstoffkonzentrationen</h4>
-        <ul style="list-style:none; padding:0;">
-    `;
-
-    const pollutantColors = {
-        "NO2": "#00cccc",
-        "PM10": "#66ccff",
-        "PM2.5": "#99ccff",
-        "O3": "#66ffcc"
-    };
-
-    ["NO2", "PM10", "O3", "PM2.5"].forEach(name => {
-        if (values[name]) {
-        const dot = `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${pollutantColors[name]};margin-right:5px;"></span>`;
-        html += `<li>${dot} ${name}: ${values[name].value} ${values[name].unit}</li>`;
-        }
-    });
-
-    html += `</ul>`;
-
-    // 可选建议
-    if (level <= 2) {
-        html += `<p style="font-size: 0.9em; color: #555; margin-top:10px;"><em>Genießen Sie Ihre Aktivitäten im Freien, gesundheitlich nachteilige Wirkungen sind nicht zu erwarten.</em></p>`;
-    }
+  // 用你原来的 popupContent 逻辑生成右栏内容
+  let html = `<h3>${stationName}</h3><p><b>Messzeit:</b> ${timestamp}</p>`;
+  pollutantData.forEach(entry => {
+    const pollutantId = entry[0];
+    const value = entry[1];
+    const pollutantInfo = components[pollutantId] || { name: `ID ${pollutantId}`, unit: "" };
+    html += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
+  });
 
   content.innerHTML = html;
   wrapper.classList.add("visible");
 }
+
+
 
 
 // 6️⃣ 监听 `Luftqualität` 复选框
