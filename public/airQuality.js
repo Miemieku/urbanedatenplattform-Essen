@@ -2,6 +2,33 @@ const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/function
 let stationCoords = {}; // 存储Düsseldorf测量站点
 let components = {}; // 存储污染物 ID → 名称
 let mapMarkers = {};
+
+// 获取污染物 ID → 名称
+fetch("./components.json") // 确保路径正确
+    .then(response => response.json())
+    .then(data => {
+        console.log("📌 Komponenten JSON Datei geladen:", data);
+
+        if (!data || !data[1]) {
+            console.warn("⚠️ Keine gültigen Schadstoffdaten gefunden!");
+            return;
+        }
+
+        // 遍历 JSON 数据，将污染物 ID 映射到名称和单位
+        Object.values(data).forEach(entry => {
+            const pollutantId = entry[0]; // 例如 "1"
+            const pollutantName = entry[2]; // 例如 "PM10"
+            const pollutantUnit = entry[3]; // 例如 "µg/m³"
+
+            components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
+        });
+
+        console.log("📍 Schadstoff-Komponenten gespeichert:", components);
+    })
+    .catch(error => {
+        console.error("❌ Fehler beim Laden der Schadstoff-Komponenten:", error);
+    });
+
 // 1️⃣ 获取Düsseldorf测量站坐标
 function fetchStationCoordinates() {
     const apiUrl = `${API_BASE_URL}api=stationCoordinates`;
@@ -94,31 +121,6 @@ function fetchAirQualityData(stationId) {
         });
 }
 
-// 获取污染物 ID → 名称
-fetch("./components.json") // 确保路径正确
-    .then(response => response.json())
-    .then(data => {
-        console.log("📌 Komponenten JSON Datei geladen:", data);
-
-        if (!data || !data[1]) {
-            console.warn("⚠️ Keine gültigen Schadstoffdaten gefunden!");
-            return;
-        }
-
-        // 遍历 JSON 数据，将污染物 ID 映射到名称和单位
-        Object.values(data).forEach(entry => {
-            const pollutantId = entry[0]; // 例如 "1"
-            const pollutantName = entry[2]; // 例如 "PM10"
-            const pollutantUnit = entry[3]; // 例如 "µg/m³"
-
-            components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
-        });
-
-        console.log("📍 Schadstoff-Komponenten gespeichert:", components);
-    })
-    .catch(error => {
-        console.error("❌ Fehler beim Laden der Schadstoff-Komponenten:", error);
-    });
 
 //  获得颜色
 function getWorstIndexColor(no2, pm10, pm25, o3) {
@@ -219,61 +221,62 @@ function addStationsToMap() {
 }
 
 
+
 //  在右侧面板显示空气质量数据
 function showDataInPanel(stationName, timestamp, pollutantData) {
-  const wrapper = document.getElementById("info-panel");
-  const content = document.getElementById("air-quality-panel");
+    const wrapper = document.getElementById("info-panel");
+    const content = document.getElementById("air-quality-panel");
 
-  if (!wrapper || !content) return;
+    if (!wrapper || !content) return;
 
-  // 构建污染物值映射
-  const values = {};
-  pollutantData.forEach(([id, value]) => {
-    const info = components[id];
-    if (info) values[info.name] = { value, unit: info.unit };
-  });
+    // 构建污染物值映射
+    const values = {};
+    pollutantData.forEach(([id, value]) => {
+        const info = components[id];
+        if (info) values[info.name] = { value, unit: info.unit };
+    });
 
-  // 判断整体空气质量（最差项）
-  const no2 = values["NO2"]?.value || 0;
-  const pm10 = values["PM10"]?.value || 0;
-  const pm25 = values["PM2.5"]?.value || 0;
-  const o3  = values["O3"]?.value  || 0;
-  const qualityTextMap = {
-    1: "Sehr gut", 2: "Gut", 3: "Mäßig", 4: "Schlecht", 5: "Sehr schlecht"
-  };
-  const level = getWorstIndexLevel(no2, pm10, pm25, o3); // 返回等级数字 1–5
-  const qualityLabel = qualityTextMap[level];
+    // 判断整体空气质量（最差项）
+    const no2 = values["NO2"]?.value || 0;
+    const pm10 = values["PM10"]?.value || 0;
+    const pm25 = values["PM2.5"]?.value || 0;
+    const o3  = values["O3"]?.value  || 0;
+    const qualityTextMap = {
+        1: "Sehr gut", 2: "Gut", 3: "Mäßig", 4: "Schlecht", 5: "Sehr schlecht"
+    };
+    const level = getWorstIndexLevel(no2, pm10, pm25, o3); // 返回等级数字 1–5
+    const qualityLabel = qualityTextMap[level];
 
-  // 🔧 构建 HTML 内容
-  let html = `
-    <h3>${stationName}</h3>
-    <p><strong>Luftqualität:</strong> ${qualityLabel}</p>
-    <p><strong>Zeit:</strong> ${timestamp}</p>
-    <hr>
-    <h4>Schadstoffkonzentrationen</h4>
-    <ul style="list-style:none; padding:0;">
-  `;
+    // 🔧 构建 HTML 内容
+    let html = `
+        <h3>${stationName}</h3>
+        <p><strong>Luftqualität:</strong> ${qualityLabel}</p>
+        <p><strong>Zeit:</strong> ${timestamp}</p>
+        <hr>
+        <h4>Schadstoffkonzentrationen</h4>
+        <ul style="list-style:none; padding:0;">
+    `;
 
-  const pollutantColors = {
-    "NO2": "#00cccc",
-    "PM10": "#66ccff",
-    "PM2.5": "#99ccff",
-    "O3": "#66ffcc"
-  };
+    const pollutantColors = {
+        "NO2": "#00cccc",
+        "PM10": "#66ccff",
+        "PM2.5": "#99ccff",
+        "O3": "#66ffcc"
+    };
 
-  ["NO2", "PM10", "O3", "PM2.5"].forEach(name => {
-    if (values[name]) {
-      const dot = `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${pollutantColors[name]};margin-right:5px;"></span>`;
-      html += `<li>${dot} ${name}: ${values[name].value} ${values[name].unit}</li>`;
+    ["NO2", "PM10", "O3", "PM2.5"].forEach(name => {
+        if (values[name]) {
+        const dot = `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${pollutantColors[name]};margin-right:5px;"></span>`;
+        html += `<li>${dot} ${name}: ${values[name].value} ${values[name].unit}</li>`;
+        }
+    });
+
+    html += `</ul>`;
+
+    // 可选建议
+    if (level <= 2) {
+        html += `<p style="font-size: 0.9em; color: #555; margin-top:10px;"><em>Genießen Sie Ihre Aktivitäten im Freien, gesundheitlich nachteilige Wirkungen sind nicht zu erwarten.</em></p>`;
     }
-  });
-
-  html += `</ul>`;
-
-  // 可选建议
-  if (level <= 2) {
-    html += `<p style="font-size: 0.9em; color: #555; margin-top:10px;"><em>Genießen Sie Ihre Aktivitäten im Freien, gesundheitlich nachteilige Wirkungen sind nicht zu erwarten.</em></p>`;
-  }
 
   content.innerHTML = html;
   wrapper.classList.add("visible");
