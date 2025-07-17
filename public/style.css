@@ -139,7 +139,7 @@ header {
     top: 50px; /* ⬅️ 留出导航栏高度 */
     width: 300px;
     height: calc(100vh - 50px); /* ⬅️ 避开顶部 header */
-    z-index: 3000; 
+    z-index: 1500; 
     background-color: white;
     border-left: 1px solid #ccc;
     padding: 20px;
