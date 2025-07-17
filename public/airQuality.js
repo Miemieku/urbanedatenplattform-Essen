@@ -190,7 +190,6 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
 }
 
 
-
 // 6️⃣ 监听 `Luftqualität` 复选框
 document.addEventListener("DOMContentLoaded", function () {
     fetchStationCoordinates().then(() => {
