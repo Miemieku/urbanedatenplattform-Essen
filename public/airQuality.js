@@ -189,7 +189,6 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
     wrapperPanel.classList.add("visible");
 }
 
-
 // 6️⃣ 监听 `Luftqualität` 复选框
 document.addEventListener("DOMContentLoaded", function () {
     fetchStationCoordinates().then(() => {
@@ -203,3 +202,58 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// 🔹 Farbcode basierend auf UBA-Kategorien (inkl. O3)
+function getWorstIndexColor(no2, pm10, pm25, o3) {
+  let level = 1; // sehr gut
+
+  if (no2 > 200 || pm10 > 100 || pm25 > 50 || o3 > 240) level = 5;
+  else if (no2 > 100 || pm10 > 50 || pm25 > 25 || o3 > 180) level = 4;
+  else if (no2 > 40 || pm10 > 35 || pm25 > 20 || o3 > 120) level = 3;
+  else if (no2 > 20 || pm10 > 20 || pm25 > 10 || o3 > 60) level = 2;
+
+  const colorMap = {
+    1: '#00cccc', // sehr gut
+    2: '#00cc99', // gut
+    3: '#ffff66', // mäßig
+    4: '#cc6666', // schlecht
+    5: '#990033'  // sehr schlecht
+  };
+
+  return colorMap[level];
+}
+
+// 🔹 Darstellung von Messstationen auf der Karte
+function drawAirQualityStations(stations) {
+  const layer = L.layerGroup();
+
+  stations.forEach(station => {
+    const { id, name, lat, lng, values } = station;
+    const color = getWorstIndexColor(values.NO2, values.PM10, values.PM25, values.O3);
+
+    const circle = L.circleMarker([lat, lng], {
+      radius: 10,
+      fillColor: color,
+      fillOpacity: 0.8,
+      color: "#333",
+      weight: 1
+    });
+
+    // 🟡 Tooltip mit Stationsname
+    circle.bindTooltip(name || `Station ${id}`, { permanent: false, sticky: true });
+
+    // 🟢 Klick zeigt Detailpanel rechts
+    circle.on('click', () => {
+      showDataInPanel(name, values.timestamp, [
+        ["NO₂", values.NO2],
+        ["PM₁₀", values.PM10],
+        ["PM₂.₅", values.PM25],
+        ["O₃", values.O3]
+      ]);
+    });
+
+    layer.addLayer(circle);
+  });
+
+  layer.addTo(map);
+}
