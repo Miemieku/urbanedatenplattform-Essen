@@ -34,11 +34,7 @@ const layerGroups = {};
 
 function initializeGeoJSONLayers() {
     const geojsonFiles = [
-        { url: "kitas_2024_2025.geojson", color: "green", name: "kindertagesstaetten" },
-        { url: "Schulen_2024_2025.geojson", color: "blue", name: "schulen" },
         { url: "Stadtteile_WGS84.geojson", color: "green", name: "stadtteile" },
-        { url: "Stadtbezirke_WGS84.geojson", color: "purple", name: "stadtbezirke" },
-        { url: "Stadtgrenze_WGS84.geojson", color: "red", name: "stadtgrenze" }
     ];
 
     geojsonFiles.forEach(file => {
