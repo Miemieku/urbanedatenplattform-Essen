@@ -140,7 +140,7 @@ header {
     width: 300px;
     height: calc(100vh - 50px); /*避开顶部 header */
     z-index: 1500; 
-     background-color: rgba(255, 255, 255, 0.85); /* 半透明白色 */
+     background-color: rgba(255, 255, 255, 0.75); /* 半透明白色 */
     border-left: 1px solid #ccc;
     padding: 20px;
     display: none; /* 默认隐藏 */
@@ -149,4 +149,21 @@ header {
 }
 #info-panel.visible {
     display: block;
+}
+#info-panel .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.8);  /* 有背景对比 */
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2000; /* 确保在panel最上层 */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
