@@ -1,4 +1,4 @@
-/* 🔹 全局布局 */
+/* 全局布局 */
 html, body {
     margin: 0;
     padding: 0;
@@ -9,8 +9,8 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-/* 🔹 顶部导航栏 */
-/* 🔹 确保 `header` 的层级比 `sidebar` 高 */
+/* 顶部导航栏 */
+/* 确保 `header` 的层级比 `sidebar` 高 */
 header {
     background: #333;
     color: white;
@@ -23,10 +23,10 @@ header {
     width: 100%;
     top: 0;
     height: 50px;
-    z-index: 2000; /* ✅ 确保 `header` 在 `sidebar` 之上 */
+    z-index: 2000; /*确保 `header` 在 `sidebar` 之上 */
 }
 
-/* 🔹 左侧菜单按钮（☰） */
+/* 左侧菜单按钮（☰） */
 #menu-toggle {
     background: none;
     border: none;
@@ -35,14 +35,14 @@ header {
     cursor: pointer;
     padding: 5px 10px;
 }
-/* 🔹 主内容容器（地图 + 侧边栏） */
+/* 主内容容器（地图 + 侧边栏） */
 #main-container {
     display: flex;
     width: 100%;
     height: calc(100vh - 50px); /* 让内容填充整个屏幕，顶部留给导航栏 */
     margin-top: 50px;
 }
-/* 🔹 侧边栏（默认隐藏） */
+/* 侧边栏（默认隐藏） */
 #sidebar-container {
     position: fixed;
     left: -250px; /* 默认隐藏在屏幕外 */
@@ -54,15 +54,15 @@ header {
     transition: left 0.3s ease-in-out;
     z-index: 1500;
 }
-/* 🔹 侧边栏展开状态 */
+/* 侧边栏展开状态 */
 #sidebar-container.active {
     left: 0; /* 显示侧边栏 */
 }
-/* 🔹 侧边栏内容 */
+/* 侧边栏内容 */
 #sidebar {
     padding: 15px;
 }
-/* 🔹 关闭按钮 */
+/* 关闭按钮 */
 #close-sidebar {
     background: none;
     border: none;
@@ -70,7 +70,7 @@ header {
     cursor: pointer;
     float: right;
 }
-/* 🔹 数据选项列表 */
+/* 数据选项列表 */
 #data-layer-list {
     list-style: none;
     padding: 0;
@@ -81,19 +81,19 @@ header {
     padding: 5px 10px;
 }
 
-/* 🔹 右侧地图（占据整个剩余空间） */
+/* 右侧地图（占据整个剩余空间） */
 #map-container {
     flex-grow: 1;
     height: calc(100vh - 50px);
 }
 
-/* 🔹 让地图铺满 */
+/* 让地图铺满 */
 #map {
     width: 100%;
     height: 100%;
 }
 
-/* 🔹 让地图缩放控件（+ 和 - 按钮）固定在右下角 */
+/* 让地图缩放控件（+ 和 - 按钮）固定在右下角 */
 .leaflet-control-zoom {
     position: absolute !important;
     bottom: 20px !important;
@@ -136,15 +136,16 @@ header {
 #info-panel {
     position: absolute;
     right: 0;
-    top: 50px; /* ⬅️ 留出导航栏高度 */
+    top: 50px; /* 留出导航栏高度 */
     width: 300px;
-    height: calc(100vh - 50px); /* ⬅️ 避开顶部 header */
+    height: calc(100vh - 50px); /*避开顶部 header */
     z-index: 1500; 
-    background-color: white;
+     background-color: rgba(255, 255, 255, 0.85); /* 半透明白色 */
     border-left: 1px solid #ccc;
     padding: 20px;
     display: none; /* 默认隐藏 */
-    overflow-y: auto; /* ⬅️ 若内容多可滚动 */
+    overflow-y: auto; /* 若内容多可滚动 */
+    backdrop-filter: blur(4px); /* 添加模糊效果*/
 }
 #info-panel.visible {
     display: block;
