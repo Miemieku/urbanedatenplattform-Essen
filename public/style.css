@@ -152,7 +152,7 @@ header {
 }
 #info-panel .close-button {
     position: absolute;
-    top: 15px;         /* 往下移一点 */
+    top: 50px;         /* 往下移一点 */
     right: 15px;       /* 右边留白 */
     z-index: 2000;
     background: none;  /* 去除背景 */
