@@ -1,4 +1,4 @@
-// 1️⃣ 创建地图，默认显示埃森（Essen）
+// 1️⃣ 创建地图，默认Düsseldorf
 var map;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -27,44 +27,104 @@ document.addEventListener("DOMContentLoaded", function() {
     menuToggle.addEventListener("click", function() {
         sidebar.classList.toggle("active");
     });
+    
+     document.getElementById("stadtteile").addEventListener("change", async function () {
+        if (this.checked) {
+            if (!layerGroups["stadtteile"]) {
+                await loadStadtteileLayer();
+            } else {
+                map.addLayer(layerGroups["stadtteile"]);
+            }
+        } else {
+            if (layerGroups["stadtteile"]) {
+                map.removeLayer(layerGroups["stadtteile"]);
+            }
+        }
+    });
 });
 
 // 2️⃣ 存储 GeoJSON 图层（但不默认添加到地图）
-const layerGroups = {}; 
+const layerGroups = {};
 
 function initializeGeoJSONLayers() {
     const geojsonFiles = [
-        { url: "Stadtteile_WGS84.geojson", color: "green", name: "stadtteile" },
+        { url: "supabase", color: "green", name: "stadtteile" },
+        // 如果有其他本地文件也可以继续放在这里
     ];
 
     geojsonFiles.forEach(file => {
-        fetch(file.url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(`Geladene Daten von ${file.name}:`, data);
+        // 👇 来自 Supabase
+        if (file.url === "supabase") {
+            const SUPABASE_URL = "https://qmjzzsmzvawnxyuxajbg.supabase.co";
+            const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqbXp6c216dmF3bnh5dXhhamJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI0OTY0NjcsImV4cCI6MjA2ODA3MjQ2N30.VHPh9C2NEQIpOT5xy8mP7wfJyhDXUEZaf2IiDI1c3L4";
 
-                let layer = L.geoJSON(data, {
-                    style: function(feature) {
-                        return { color: file.color, weight: 2, fillOpacity: 0.3 };
-                    },
-                    pointToLayer: function(feature, latlng) {
-                        return L.circleMarker(latlng, { radius: 6, color: file.color });
-                    },
-                    onEachFeature: function(feature, layer) {
-                        if (feature.properties && feature.properties.name) {
-                            layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
-                        }
-                    }
-                });
-
-                layerGroups[file.name] = layer; // ✅ 存储图层，但不 `addTo(map)`
+            fetch(`${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson`, {
+                headers: {
+                    apikey: API_KEY,
+                    Authorization: `Bearer ${API_KEY}`,
+                    Accept: "application/json"
+                }
             })
-            .catch(error => console.error(`❌ Fehler beim Laden von ${file.name}:`, error));
+                .then(response => response.json())
+                .then(data => {
+                    const features = data.map(entry => ({
+                        type: "Feature",
+                        geometry: entry.geometry,
+                        properties: {
+                            name: entry.name,
+                            nummer: entry.nummer,
+                            id: entry.id
+                        }
+                    }));
+
+                    let layer = L.geoJSON({ type: "FeatureCollection", features }, {
+                        style: {
+                            color: file.color,
+                            weight: 2,
+                            fillOpacity: 0.3
+                        },
+                        onEachFeature: function (feature, layer) {
+                            if (feature.properties && feature.properties.name) {
+                                layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
+                            }
+                        }
+                    });
+
+                    layerGroups[file.name] = layer;
+                })
+                .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
+
+        } else {
+            // 👇 本地文件
+            fetch(file.url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`Geladene Daten von ${file.name}:`, data);
+
+                    let layer = L.geoJSON(data, {
+                        style: function (feature) {
+                            return { color: file.color, weight: 2, fillOpacity: 0.3 };
+                        },
+                        pointToLayer: function (feature, latlng) {
+                            return L.circleMarker(latlng, { radius: 6, color: file.color });
+                        },
+                        onEachFeature: function (feature, layer) {
+                            if (feature.properties && feature.properties.name) {
+                                layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
+                            }
+                        }
+                    });
+
+                    layerGroups[file.name] = layer;
+                })
+                .catch(error => console.error(`❌ Fehler beim Laden von ${file.name}:`, error));
+        }
     });
 
-    // 3️⃣ 绑定左侧菜单栏复选框
+    // 3️⃣ 绑定左侧菜单栏复选框（如有）
     setupLayerToggle();
 }
+
 
 // 4️⃣ 复选框控制数据可见性
 function setupLayerToggle() {
