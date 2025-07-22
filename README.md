@@ -1,6 +1,6 @@
-# Urbane Datenplattform Düsseldorf – Luftqualitäts-Demo
+# Urbane Datenplattform Düsseldorf – Demo
 
-Dies ist eine einfache Web-Demo zur Darstellung der aktuellen Luftqualität in Düsseldorf. Die Anwendung wurde im Rahmen einer Bewerbung im Bereich Geodatenmanagement erstellt.
+Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und Datenbankintegration.
 
 ## Funktionen
 
@@ -9,6 +9,7 @@ Dies ist eine einfache Web-Demo zur Darstellung der aktuellen Luftqualität in D
 - Echtzeitdaten über eine eigene Proxy-Schnittstelle zum Umweltbundesamt (UBA)
 - Rechte Seitenleiste mit Detailinformationen je Messstation
 - Steuerung der Anzeige über Checkbox für „Luftqualität“
+- Einbindung von Stadtteilgrenzen aus einer PostgreSQL/PostGIS-Datenbank (via Supabase)
 
 ## Verwendete Technologien
 
@@ -16,6 +17,13 @@ Dies ist eine einfache Web-Demo zur Darstellung der aktuellen Luftqualität in D
 - Leaflet.js für die Kartendarstellung
 - Netlify Serverless Function als API-Proxy
 - Echtzeitdaten vom Umweltbundesamt (UBA)
+- Supabase (PostgreSQL + PostGIS) für Geo-Datenhaltung
+- QGIS zur Geodatenvorbereitung
+
+## Datenquellen
+
+- Echtzeitdaten: Umweltbundesamt (Luftqualitäts-API)
+- Stadtteilgrenzen: Eigene Aufbereitung auf Basis von Geojson, transformiert nach EPSG:4326
 
 ## Projektstruktur
 
