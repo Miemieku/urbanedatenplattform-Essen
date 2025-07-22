@@ -28,17 +28,13 @@ document.addEventListener("DOMContentLoaded", function() {
         sidebar.classList.toggle("active");
     });
     
-     document.getElementById("stadtteile").addEventListener("change", async function () {
-        if (this.checked) {
-            if (!layerGroups["stadtteile"]) {
-                await loadStadtteileLayer();
-            } else {
-                map.addLayer(layerGroups["stadtteile"]);
-            }
-        } else {
-            if (layerGroups["stadtteile"]) {
-                map.removeLayer(layerGroups["stadtteile"]);
-            }
+    document.getElementById("stadtteile").addEventListener("change", function (e) {
+        const checked = e.target.checked;
+        const layer = layerGroups["stadtteile"];
+        if (checked && layer) {
+            map.addLayer(layer);
+        } else if (layer) {
+            map.removeLayer(layer);
         }
     });
 });
@@ -58,6 +54,7 @@ function initializeGeoJSONLayers() {
                 fetch("/.netlify/functions/supabaseProxy")
                 .then(response => response.json())
                 .then(data => {
+                    console.log("Supabase 返回数据：", data);
                     const features = data.map(entry => ({
                         type: "Feature",
                         geometry: entry.geometry,
