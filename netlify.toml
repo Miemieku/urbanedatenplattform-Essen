@@ -2,9 +2,5 @@
   publish = "public"        # 🚀 你的前端 HTML/JS 代码目录
   functions = "netlify/functions"   # 🚀 Netlify Functions 目录
 
-[build]
-  functions = "netlify/functions"
-  publish = "public"
-
 [dev]
   autoLaunch = true
