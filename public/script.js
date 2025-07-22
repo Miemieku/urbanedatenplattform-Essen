@@ -55,16 +55,7 @@ function initializeGeoJSONLayers() {
     geojsonFiles.forEach(file => {
         // 👇 来自 Supabase
         if (file.url === "supabase") {
-            const SUPABASE_URL = "https://qmjzzsmzvawnxyuxajbg.supabase.co";
-            const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqbXp6c216dmF3bnh5dXhhamJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI0OTY0NjcsImV4cCI6MjA2ODA3MjQ2N30.VHPh9C2NEQIpOT5xy8mP7wfJyhDXUEZaf2IiDI1c3L4";
-
-            fetch(`${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson`, {
-                headers: {
-                    apikey: API_KEY,
-                    Authorization: `Bearer ${API_KEY}`,
-                    Accept: "application/json"
-                }
-            })
+                fetch("/.netlify/functions/supabaseProxy")
                 .then(response => response.json())
                 .then(data => {
                     const features = data.map(entry => ({
