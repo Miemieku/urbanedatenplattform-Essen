@@ -1,4 +1,6 @@
 # Urbane Datenplattform Düsseldorf – Demo
+### Live-Demo
+https://urbane-datenplattform-duesseldorf.netlify.app
 
 Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und Datenbankintegration.
 
@@ -32,11 +34,6 @@ style.css // Layout und Infopanel
 airQuality.js // Hauptlogik zur Kartensteuerung
 components.json // Mapping von Schadstoff-IDs zu Namen/Einheiten
 netlify/functions/ubaProxy.js // Serverless Proxy für UBA-Daten
-
-
-## Live-Demo
-
-https://urbane-datenplattform-duesseldorf.netlify.app
 
 ## Lizenz
 
