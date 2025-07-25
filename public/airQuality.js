@@ -177,6 +177,7 @@ function addStationsToMap() {
             const pm25 = valueMap["PM2.5"] || 0;
             const o3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(no2, pm10, pm25, o3);
+            console.log(`🎨 Farbprüfung für ${stationId}:`, { no2, pm10, pm25, o3, color });
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
 
             // ✅ 使用 Leaflet CircleMarker
