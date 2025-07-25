@@ -174,7 +174,7 @@ function addStationsToMap() {
             //  从值中提取目标污染物（默认为 0）
             const NO2 = valueMap["NO2"] || 0;
             const PM10 = valueMap["PM10"] || 0;
-            const PM25 = valueMap["PM2"] || 0;
+            const PM2 = valueMap["PM2"] || 0;
             const O3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
