@@ -17,7 +17,7 @@ fetch("./components.json") // 确保路径正确
         // 遍历 JSON 数据，将污染物 ID 映射到名称和单位
         Object.values(data).forEach(entry => {
             const pollutantId = entry[0]; // 例如 "1"
-            const pollutantName = entry[2]; // 例如 "PM10"
+            const pollutantName = entry[1]; // 例如 "PM10"
             const pollutantUnit = entry[3]; // 例如 "µg/m³"
 
             components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
