@@ -17,11 +17,10 @@ fetch("./components.json") // 确保路径正确
         // 遍历 JSON 数据，将污染物 ID 映射到名称和单位
         Object.values(data).forEach(entry => {
             const pollutantId = entry[0]; // 例如 "1"
-            const pollutantName = entry[1]; // 例如 "PM2"
-            const Pollutantsymbol = entry[2]// 例如 "PM₂,₅"
+            const pollutantName = entry[2]; // 例如 "PM2"
             const pollutantUnit = entry[3]; // 例如 "µg/m³"
 
-            components[pollutantId] = { name: pollutantName, symbol:Pollutantsymbol, unit: pollutantUnit };
+            components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
         });
 
         console.log("Schadstoff-Komponenten gespeichert:", components);
@@ -127,7 +126,7 @@ function fetchAirQualityData(stationId) {
 function getWorstIndexColor(NO2, PM10, PM2, O3) {
   let level = 1; // 默认最优（sehr gut）
 
-  if (NO2 > 200 || PM10 > 100 || PM2 > 50 || O3 > 240) level = 5;
+  if (NO2 > 200 || PM10> 100 || PM2 > 50 || O3 > 240) level = 5;
   else if (NO2 > 100 || PM10 > 50 || PM2 > 25 || O3 > 180) level = 4;
   else if (NO2 > 40 || PM10 > 35 || PM2 > 20 || O3 > 120) level = 3;
   else if (NO2 > 20 || PM10 > 20 || PM2 > 10 || O3 > 60) level = 2;
@@ -202,7 +201,7 @@ function addStationsToMap() {
                 const pollutantId = entry[0];
                 const value = entry[1];
                 const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
-                popupContent += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
+                popupContent += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
             });
 
             // 点击显示右侧信息栏
