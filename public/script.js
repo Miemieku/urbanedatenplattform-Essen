@@ -69,16 +69,11 @@ function initializeGeoJSONLayers() {
                         style: {
                             color: file.color,
                             weight: 2,
-                            fillOpacity: 0
+                            fillOpacity: false
                         },
                         onEachFeature: function (feature, layer) {
                             if (feature.properties && feature.properties.name) {
                                 layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
-                                layer.bindTooltip(feature.properties.name, {
-                                    permanent: true,
-                                    direction: "center",
-                                    className: "stadtteil-label"
-                                });
                             }
                         }
                     });
