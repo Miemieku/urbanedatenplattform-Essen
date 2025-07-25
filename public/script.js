@@ -77,7 +77,7 @@ function initializeGeoJSONLayers() {
                             }
                         }
                     });
-
+                    layerGroups[file.name] = layer;
 
                 })
                 .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
