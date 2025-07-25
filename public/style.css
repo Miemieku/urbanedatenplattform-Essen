@@ -93,6 +93,20 @@ header {
     height: 100%;
 }
 
+
+/* Stadtteile 名称标签样式 */
+.leaflet-tooltip.stadtteil-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    pointer-events: none; /* 不影响鼠标操作 */
+}
+
+
 /* 让地图缩放控件（+ 和 - 按钮）固定在右下角 */
 .leaflet-control-zoom {
     position: absolute !important;

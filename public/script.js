@@ -1,4 +1,4 @@
-// 1️⃣ 创建地图，默认Düsseldorf
+//  创建地图，默认Düsseldorf
 var map;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function() {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-        // 📌 绑定搜索功能
+        //  绑定搜索功能
     setupSearch();
 
-    // ✅ 加载 `GeoJSON`，但初始时不添加到地图
+    //  加载 `GeoJSON`，但初始时不添加到地图
     initializeGeoJSONLayers();
 
-    // 🔹 侧边栏控制逻辑
+    //  侧边栏控制逻辑
     var sidebar = document.getElementById("sidebar-container");
     var menuToggle = document.getElementById("menu-toggle");
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// 2️⃣ 存储 GeoJSON 图层（但不默认添加到地图）
+// 存储 GeoJSON 图层（但不默认添加到地图）
 const layerGroups = {};
 
 function initializeGeoJSONLayers() {
@@ -49,7 +49,7 @@ function initializeGeoJSONLayers() {
     ];
 
     geojsonFiles.forEach(file => {
-        // 👇 来自 Supabase
+        //  来自 Supabase
         if (file.url === "supabase") {
                 fetch("/.netlify/functions/supabaseProxy")
                 .then(response => response.json())
@@ -74,16 +74,24 @@ function initializeGeoJSONLayers() {
                         onEachFeature: function (feature, layer) {
                             if (feature.properties && feature.properties.name) {
                                 layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
+                                layer.bindTooltip(feature.properties.name, {
+                                    permanent: true,
+                                    direction: "center",
+                                    className: "stadtteil-label"
+                                });
                             }
                         }
                     });
 
                     layerGroups[file.name] = layer;
+                    if (file.name === "stadtteile") {
+                        layer.addTo(map); // 默认添加
+                    }
                 })
                 .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
 
         } else {
-            // 👇 本地文件
+            //  本地文件
             fetch(file.url)
                 .then(response => response.json())
                 .then(data => {
@@ -109,19 +117,19 @@ function initializeGeoJSONLayers() {
         }
     });
 
-    // 3️⃣ 绑定左侧菜单栏复选框（如有）
+    //  绑定左侧菜单栏复选框（如有）
     setupLayerToggle();
 }
 
 
-// 4️⃣ 复选框控制数据可见性
+//  复选框控制数据可见性
 function setupLayerToggle() {
     document.querySelectorAll('#data-layer-list input').forEach(input => {
         input.addEventListener('change', function() {
             if (this.checked) {
-                map.addLayer(layerGroups[this.id]); // ✅ 添加图层到地图
+                map.addLayer(layerGroups[this.id]); // 添加图层到地图
             } else {
-                map.removeLayer(layerGroups[this.id]); // ✅ 从地图移除
+                map.removeLayer(layerGroups[this.id]); // 从地图移除
             }
         });
     });
