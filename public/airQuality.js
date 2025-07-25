@@ -7,7 +7,7 @@ let mapMarkers = {};
 fetch("./components.json") // 确保路径正确
     .then(response => response.json())
     .then(data => {
-        console.log("📌 Komponenten JSON Datei geladen:", data);
+        console.log("Komponenten JSON Datei geladen:", data);
 
         if (!data || !data[1]) {
             console.warn("⚠️ Keine gültigen Schadstoffdaten gefunden!");
@@ -23,13 +23,13 @@ fetch("./components.json") // 确保路径正确
             components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
         });
 
-        console.log("📍 Schadstoff-Komponenten gespeichert:", components);
+        console.log("Schadstoff-Komponenten gespeichert:", components);
     })
     .catch(error => {
-        console.error("❌ Fehler beim Laden der Schadstoff-Komponenten:", error);
+        console.error("❌Fehler beim Laden der Schadstoff-Komponenten:", error);
     });
 
-// 1️⃣ 获取Düsseldorf测量站坐标
+// 获取Düsseldorf测量站坐标
 function fetchStationCoordinates() {
     const apiUrl = `${API_BASE_URL}api=stationCoordinates`;
 
@@ -45,7 +45,7 @@ function fetchStationCoordinates() {
                 throw new Error('Ungültige Datenstruktur');
             }
 
-            console.log("📌 Alle Messstationen Daten:", data);
+            console.log("📌Alle Messstationen Daten:", data);
 
             // 🚀 **确保 `data.data` 是数组**
             let stations = Array.isArray(data.data) ? data.data : Object.values(data.data);
@@ -56,11 +56,11 @@ function fetchStationCoordinates() {
             );
             
             // 先检查是否有匹配的 Düsseldorf 站点
-            console.log("📌 过滤后的 Düsseldorf 站点:", filteredStations);
+            console.log("📌过滤后的 Düsseldorf 站点:", filteredStations);
             // `3` 是城市名称字段
 
             if (filteredStations.length === 0) {
-                console.warn("⚠️ Keine Messstationen für Düsseldorf gefunden!");
+                console.warn("⚠️Keine Messstationen für Düsseldorf gefunden!");
                 return;
             }
 
@@ -74,14 +74,14 @@ function fetchStationCoordinates() {
                 stationCoords[stationId] = { city, stationName, lat, lon };
             });
 
-            console.log("📍 Stationen in Düsseldorf gespeichert:", stationCoords);
+            console.log("Stationen in Düsseldorf gespeichert:", stationCoords);
         })
         .catch(error => {
             console.error('Fehler beim Abrufen der Messstationen:', error);
         });
 }
 
-// 2️⃣ 获取当前时间
+// 获取当前时间
 function getCurrentTime() {
     const now = new Date();
     const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
@@ -94,7 +94,7 @@ function getCurrentTime() {
     return { date, hour };
 }
 
-// 3️⃣ 获取空气质量数据
+// 获取空气质量数据
 function fetchAirQualityData(stationId) {
     const { date, hour } = getCurrentTime();
     const apiUrl = `${API_BASE_URL}api=airQuality&date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
@@ -103,20 +103,20 @@ function fetchAirQualityData(stationId) {
     return fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        console.log(`📌 API Antwort für ${stationId}:`, data);
+        console.log(`API Antwort für ${stationId}:`, data);
 
         if (!data || !data.data) {
-            console.warn(`⚠️ Keine Luftqualitätsdaten für ${stationId}`);
+            console.warn(`⚠️Keine Luftqualitätsdaten für ${stationId}`);
             return null;
         }
 
         const actualStationId = data.request?.station; // 确保 ID 正确
-        console.log(`✅ Station ID Mapping: ${stationId} → ${actualStationId}`);
+        console.log(`Station ID Mapping: ${stationId} → ${actualStationId}`);
 
         return { stationId: actualStationId, data: data.data[0] };
     })
         .catch(error => {
-            console.error(`❌ Fehler beim Laden der Luftqualität für ${stationId}:`, error);
+            console.error(`❌Fehler beim Laden der Luftqualität für ${stationId}:`, error);
             return null;
         });
 }
@@ -147,14 +147,14 @@ function addStationsToMap() {
     Object.keys(stationCoords).forEach(stationId => {
         fetchAirQualityData(stationId).then(result => {
             if (!result || !result.data) {
-                console.warn(`⚠️ Keine Luftqualitätsdaten ${stationId}`);
+                console.warn(`⚠️Keine Luftqualitätsdaten ${stationId}`);
                 return;
             }
 
             let actualStationId = result.stationId;
             let timestamps = Object.keys(result.data);
             if (timestamps.length === 0) {
-                console.warn(`⚠️ Keine Messwerte für ${actualStationId}`);
+                console.warn(`⚠️Keine Messwerte für ${actualStationId}`);
                 return;
             }
 
@@ -162,7 +162,7 @@ function addStationsToMap() {
             let actualTimestamp = result.data[latestTimestamp][0];
             let pollutantData = result.data[latestTimestamp].slice(3);
 
-            // 🧠 从污染物数据中提取数值
+            // 从污染物数据中提取数值
             let valueMap = {};
             pollutantData.forEach(entry => {
                 const pollutantId = entry[0];
@@ -171,16 +171,16 @@ function addStationsToMap() {
                 valueMap[name] = value;
             });
 
-            // ✅ 从值中提取目标污染物（默认为 0）
+            //  从值中提取目标污染物（默认为 0）
             const no2 = valueMap["NO2"] || 0;
             const pm10 = valueMap["PM10"] || 0;
             const pm25 = valueMap["PM2.5"] || 0;
             const o3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(no2, pm10, pm25, o3);
-            console.log(`🎨 Farbprüfung für ${stationId}:`, { no2, pm10, pm25, o3, color });
+            console.log(`Farbprüfung für ${stationId}:`, { no2, pm10, pm25, o3, color });
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
 
-            // ✅ 使用 Leaflet CircleMarker
+            //  使用 Leaflet CircleMarker
             const circle = L.circleMarker(latLng, {
                 radius: 10,
                 fillColor: color,
@@ -204,7 +204,7 @@ function addStationsToMap() {
                 popupContent += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
             });
 
-            // ✅ 点击显示右侧信息栏
+            // 点击显示右侧信息栏
             circle.on("click", () => {
                 showDataInPanel(
                     stationCoords[stationId].stationName,
