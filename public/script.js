@@ -69,7 +69,7 @@ function initializeGeoJSONLayers() {
                         style: {
                             color: file.color,
                             weight: 2,
-                            fillOpacity: 0.3
+                            fillOpacity: 0
                         },
                         onEachFeature: function (feature, layer) {
                             if (feature.properties && feature.properties.name) {
