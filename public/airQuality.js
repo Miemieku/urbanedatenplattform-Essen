@@ -176,15 +176,15 @@ function addStationsToMap() {
             const pm10 = valueMap["PM10"] || 0;
             const pm25 = valueMap["PM2.5"] || 0;
             const o3  = valueMap["O3"]  || 0;
-
-            const color = getWorstIndexColor(no2, pm10, pm25, o3);
-
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
+
+            console.log(`🎨 ${stationName}: ${getWorstIndexColor(no2, pm10, pm25, o3)} bei`, { no2, pm10, pm25, o3 });
+
 
             // ✅ 使用 Leaflet CircleMarker
             const circle = L.circleMarker(latLng, {
                 radius: 10,
-                fillColor: color,
+                fillColor: getWorstIndexColor(no2, pm10, pm25, o3),
                 fillOpacity: 0.8,
                 color: "#333",
                 weight: 1
