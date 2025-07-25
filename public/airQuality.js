@@ -179,9 +179,6 @@ function addStationsToMap() {
             const color = getWorstIndexColor(no2, pm10, pm25, o3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
 
-            console.log(`🎨 ${pollutantInfo.name}: ${getWorstIndexColor(no2, pm10, pm25, o3)} bei`, { no2, pm10, pm25, o3 });
-
-
             // ✅ 使用 Leaflet CircleMarker
             const circle = L.circleMarker(latLng, {
                 radius: 10,
