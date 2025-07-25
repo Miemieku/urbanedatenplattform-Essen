@@ -17,10 +17,11 @@ fetch("./components.json") // 确保路径正确
         // 遍历 JSON 数据，将污染物 ID 映射到名称和单位
         Object.values(data).forEach(entry => {
             const pollutantId = entry[0]; // 例如 "1"
-            const pollutantName = entry[1]; // 例如 "PM10"
+            const pollutantName = entry[1]; // 例如 "PM2"
+            const Pollutantsymbol = entry[2]// 例如 "PM₂,₅"
             const pollutantUnit = entry[3]; // 例如 "µg/m³"
 
-            components[pollutantId] = { name: pollutantName, unit: pollutantUnit };
+            components[pollutantId] = { name: pollutantName, symbol:Pollutantsymbol, unit: pollutantUnit };
         });
 
         console.log("Schadstoff-Komponenten gespeichert:", components);
@@ -200,8 +201,8 @@ function addStationsToMap() {
             pollutantData.forEach(entry => {
                 const pollutantId = entry[0];
                 const value = entry[1];
-                const pollutantInfo = components[pollutantId] || { name: `ID ${pollutantId}`, unit: "" };
-                popupContent += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
+                const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
+                popupContent += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
             });
 
             // 点击显示右侧信息栏
