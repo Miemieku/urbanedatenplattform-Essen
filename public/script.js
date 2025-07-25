@@ -67,7 +67,7 @@ function initializeGeoJSONLayers() {
 
                     let layer = L.geoJSON({ type: "FeatureCollection", features }, {
                         style: {
-                            color: file.color,
+                            color: "#3366cc",
                             weight: 2,
                             fillOpacity: 0
                         },
