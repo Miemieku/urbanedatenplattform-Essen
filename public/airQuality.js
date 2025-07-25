@@ -185,7 +185,7 @@ function addStationsToMap() {
             // ✅ 使用 Leaflet CircleMarker
             const circle = L.circleMarker(latLng, {
                 radius: 10,
-                fillColor: color
+                fillColor: color,
                 fillOpacity: 0.8,
                 color: "#333",
                 weight: 1
