@@ -123,13 +123,13 @@ function fetchAirQualityData(stationId) {
 
 
 //  获得颜色
-function getWorstIndexColor(NO2, PM10, PM25, O3) {
+function getWorstIndexColor(NO2, PM10, PM2, O3) {
   let level = 1; // 默认最优（sehr gut）
 
-  if (NO2 > 200 || PM10 > 100 || PM25 > 50 || O3 > 240) level = 5;
-  else if (NO2 > 100 || PM10 > 50 || PM25 > 25 || O3 > 180) level = 4;
-  else if (NO2 > 40 || PM10 > 35 || PM25 > 20 || O3 > 120) level = 3;
-  else if (NO2 > 20 || PM10 > 20 || PM25 > 10 || O3 > 60) level = 2;
+  if (NO2 > 200 || PM10 > 100 || PM2 > 50 || O3 > 240) level = 5;
+  else if (NO2 > 100 || PM10 > 50 || PM2 > 25 || O3 > 180) level = 4;
+  else if (NO2 > 40 || PM10 > 35 || PM2 > 20 || O3 > 120) level = 3;
+  else if (NO2 > 20 || PM10 > 20 || PM2 > 10 || O3 > 60) level = 2;
 
   const colorMap = {
     1: '#00cccc', // sehr gut
@@ -174,9 +174,9 @@ function addStationsToMap() {
             //  从值中提取目标污染物（默认为 0）
             const NO2 = valueMap["NO2"] || 0;
             const PM10 = valueMap["PM10"] || 0;
-            const PM25 = valueMap["PM2.5"] || 0;
+            const PM25 = valueMap["PM2"] || 0;
             const O3  = valueMap["O3"]  || 0;
-            const color = getWorstIndexColor(NO2, PM10, PM25, O3);
+            const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
             console.log("🧪 valueMap 检查", valueMap);
 
