@@ -168,8 +168,8 @@ function addStationsToMap() {
             pollutantData.forEach(entry => {
                 const pollutantId = entry[0];
                 const value = entry[1];
-                const name = components[pollutantId]?.symbol|| `ID ${pollutantId}`;
-                valueMap[name] = value;
+                const code = components[pollutantId]?.code|| `ID ${pollutantId}`;
+                valueMap[code] = value;
             });
 
             //  从值中提取目标污染物（默认为 0）
@@ -202,7 +202,7 @@ function addStationsToMap() {
                 const pollutantId = entry[0];
                 const value = entry[1];
                 const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
-                popupContent += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
+                popupContent += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
             });
 
             // 点击显示右侧信息栏
@@ -233,8 +233,8 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   pollutantData.forEach(entry => {
     const pollutantId = entry[0];
     const value = entry[1];
-    const pollutantInfo = components[pollutantId] || { name: `ID ${pollutantId}`, unit: "" };
-    html += `<p><b>${pollutantInfo.name}:</b> ${value} ${pollutantInfo.unit}</p>`;
+    const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
+    html += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
   });
 
   content.innerHTML = html;
