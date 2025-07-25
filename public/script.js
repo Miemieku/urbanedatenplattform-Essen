@@ -75,13 +75,15 @@ function initializeGeoJSONLayers() {
                             if (feature.properties && feature.properties.name) {
                                 layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
                             }
+                            layer.bindTooltip(feature.properties.name, {
+                                permanent: true,
+                                direction: "center",
+                                className: "stadtteil-label"
+                            });
                         }
                     });
 
-                    layerGroups[file.name] = layer;
-                    if (file.name === "stadtteile") {
-                        layer.addTo(map); // 默认添加
-                    }
+
                 })
                 .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
 
