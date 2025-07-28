@@ -197,13 +197,10 @@ function addStationsToMap() {
             });
 
             // Popup 内容（详细数据）
-            let popupContent = `<h3>${stationCoords[stationId].stationName}</h3><p><b>Messzeit:</b> ${actualTimestamp}</p>`;
-            pollutantData.forEach(entry => {
-                const pollutantId = entry[0];
-                const value = entry[1];
-                const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
-                popupContent += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
-            });
+            let popupContent = `
+            <h3>${stationCoords[stationId].stationName}</h3>
+            <p><b>Luftqualität:</b> ${qualityLabel}</p>
+            `;
 
             // 点击显示右侧信息栏
             circle.on("click", () => {
