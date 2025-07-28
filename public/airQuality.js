@@ -161,8 +161,8 @@ function getPollutantLevel(code, value) {
 }
 
 
-//  获得颜色
-function getWorstIndexColor(NO2, PM10, PM2, O3) {
+//  获得最差等级
+function getWorstIndexLevel(NO2, PM10, PM2, O3) {
   let level = 1; // 默认最优（sehr gut）
 
   if (NO2 > 200 || PM10> 100 || PM2 > 50 || O3 > 240) level = 5;
@@ -170,6 +170,13 @@ function getWorstIndexColor(NO2, PM10, PM2, O3) {
   else if (NO2 > 40 || PM10 > 35 || PM2 > 20 || O3 > 120) level = 3;
   else if (NO2 > 20 || PM10 > 20 || PM2 > 10 || O3 > 60) level = 2;
 
+  return level;
+}
+
+//  获得颜色
+function getWorstIndexColor(NO2, PM10, PM2, O3) {
+  const level = getWorstIndexLevel(NO2, PM10, PM2, O3);
+  
   const colorMap = {
     1: '#00cccc', // sehr gut
     2: '#00cc99', // gut
@@ -217,7 +224,7 @@ function addStationsToMap() {
             const O3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
-            const level = getWorstIndexColor(NO2, PM10, PM2, O3);
+            const level = getWorstIndexLevel(NO2, PM10, PM2, O3);
             const qualityTextMap = {
                 1: "Sehr gut",
                 2: "Gut",
@@ -292,8 +299,14 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
     }
   });
 
+  // 从值中提取目标污染物（默认为 0）
+  const NO2 = values["NO2"]?.value || 0;
+  const PM10 = values["PM10"]?.value || 0;
+  const PM2 = values["PM2"]?.value || 0;
+  const O3 = values["O3"]?.value || 0;
+
   // 计算 Luftqualität 总体等级
-  const level = getWorstIndexColor(NO2, PM10, PM2, O3);
+  const overallLevel = getWorstIndexLevel(NO2, PM10, PM2, O3);
 
   const qualityTextMap = {
     1: "Sehr gut",
@@ -302,7 +315,7 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
     4: "Schlecht",
     5: "Sehr schlecht"
   };
-  const qualityLabel = qualityTextMap[level];
+  const qualityLabel = qualityTextMap[overallLevel];
 
   // 颜色表
   const colorMap = {
@@ -321,7 +334,7 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
     4: "Bei empfindlichen Menschen können nachteilige gesundheitliche Wirkungen auftreten. Diese sollten körperlich anstrengende Tätigkeiten im Freien vermeiden. In Kombination mit weiteren Luftschadstoffen können auch weniger empfindliche Menschen auf die Luftbelastung reagieren.",
     5: "Negative gesundheitliche Auswirkungen können auftreten. Wer empfindlich ist oder vorgeschädigte Atemwege hat, sollte körperliche Anstrengungen im Freien vermeiden."
   };
-  const healthText = healthHints[level];
+  const healthText = healthHints[overallLevel];
 
   // 构建 HTML
   let html = `
