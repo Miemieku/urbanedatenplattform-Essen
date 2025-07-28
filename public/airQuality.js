@@ -372,9 +372,10 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
       <span style="display:inline-block;width:15px;height:15px;background:#990033;margin:0 10px;"></span>Sehr schlecht
     </div>
     <p style="margin-top:15px;font-size:0.85em;">
-     Quelle: Umweltbundesamt
-      Weiter Informationen: <a href="https://www.umweltbundesamt.de/berechnungsgrundlagen-luftqualitaetsindex" target="_blank">
-      Umweltbundesamt – Berechnungsgrundlagen Luftqualitätsindex</a>
+     Quelle: Umweltbundesamt 
+     <hr>
+      <a href="https://www.umweltbundesamt.de/berechnungsgrundlagen-luftqualitaetsindex" target="_blank">
+      Weiter Informationen</a>
     </p>
   `;
 
