@@ -338,44 +338,43 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
 
   // 构建 HTML
   let html = `
-    <h3>${stationName}</h3>
-    <p><strong>Luftqualität:</strong> 
+    <h3 style="color: #2c3e50; margin-bottom: 15px;">${stationName}</h3>
+    <p style="margin-bottom: 10px;"><strong style="color: #34495e;">Luftqualität:</strong> 
       <span style="font-size: 1.5em; font-weight: bold; color: ${
         colorMap[overallLevel]
       };">${qualityLabel}</span>
     </p>
-    <p><b>Messzeit:</b> ${formatTime(start)} ~ ${formatTime(end)}</p>
-    <hr>
-    <h4>Schadstoffkonzentrationen</h4>
+    <p style="color: #7f8c8d; margin-bottom: 15px;"><b style="color: #34495e;">Messzeit:</b> ${formatTime(start)} ~ ${formatTime(end)}</p>
+    <hr style="border-color: #ecf0f1;">
+    <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Schadstoffkonzentrationen</h4>
     <ul style="list-style:none; padding:0;">`;
 
   ["NO2", "PM10", "O3", "PM2"].forEach((code) => {
     if (values[code]) {
       const { value, unit, symbol, level } = values[code];
       const dot = `<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${colorMap[level]};margin-right:6px;"></span>`;
-      html += `<li>${dot} ${symbol}: ${
+      html += `<li style="margin-bottom: 8px; color: #34495e; font-size: 14px;">${dot} <strong style="color: #2c3e50;">${symbol}:</strong> ${
         value !== null ? value : "-"
-      } ${unit}</li>`;
+      } <span style="color: #7f8c8d; font-size: 12px;">${unit}</span></li>`;
     }
   });
 
   html += `</ul>
-    <h4>Gesundheitshinweise und Empfehlungen:</h4>
-    <p style="font-size:0.95em; color:#333;">${healthText}</p>
-    <hr>
-    <h4>Index-Farblegende</h4>
-    <div>
-      <span style="display:inline-block;width:15px;height:15px;background:#00cccc;margin-right:5px;"></span>Sehr gut
-      <span style="display:inline-block;width:15px;height:15px;background:#00cc99;margin:0 10px;"></span>Gut
-      <span style="display:inline-block;width:15px;height:15px;background:#ffff66;margin:0 10px;"></span>Mäßig
-      <span style="display:inline-block;width:15px;height:15px;background:#cc6666;margin:0 10px;"></span>Schlecht
-      <span style="display:inline-block;width:15px;height:15px;background:#990033;margin:0 10px;"></span>Sehr schlecht
+    <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Gesundheitshinweise und Empfehlungen:</h4>
+    <p style="font-size:0.95em; color:#34495e; line-height: 1.5; margin-bottom: 20px;">${healthText}</p>
+    <hr style="border-color: #ecf0f1;">
+    <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Index-Farblegende</h4>
+    <div style="margin-bottom: 20px;">
+      <span style="display:inline-block;width:15px;height:15px;background:#00cccc;margin-right:5px;"></span><span style="color: #34495e;">Sehr gut</span>
+      <span style="display:inline-block;width:15px;height:15px;background:#00cc99;margin:0 10px;"></span><span style="color: #34495e;">Gut</span>
+      <span style="display:inline-block;width:15px;height:15px;background:#ffff66;margin:0 10px;"></span><span style="color: #34495e;">Mäßig</span>
+      <span style="display:inline-block;width:15px;height:15px;background:#cc6666;margin:0 10px;"></span><span style="color: #34495e;">Schlecht</span>
+      <span style="display:inline-block;width:15px;height:15px;background:#990033;margin:0 10px;"></span><span style="color: #34495e;">Sehr schlecht</span>
     </div>
-    <p style="margin-top:15px;font-size:0.85em;">
-     Quelle: Umweltbundesamt 
-     <hr>
-      <a href="https://www.umweltbundesamt.de/berechnungsgrundlagen-luftqualitaetsindex" target="_blank">
-      Weiter Informationen</a>
+    <p style="margin-top:15px;font-size:0.85em; color: #7f8c8d;">
+      <strong style="color: #34495e;">Quelle:</strong> Umweltbundesamt<br>
+      <strong style="color: #34495e;">Weiter Informationen:</strong> <a href="https://www.umweltbundesamt.de/berechnungsgrundlagen-luftqualitaetsindex" target="_blank" style="color: #3498db; text-decoration: none;">
+      Umweltbundesamt – Berechnungsgrundlagen Luftqualitätsindex</a>
     </p>
   `;
 
