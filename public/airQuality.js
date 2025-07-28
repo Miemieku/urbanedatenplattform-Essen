@@ -264,26 +264,6 @@ function addStationsToMap() {
 }
 
 
-
-function showDataInPanel(stationName, timestamp, pollutantData) {
-  const wrapper = document.getElementById("info-panel");
-  const content = document.getElementById("air-quality-panel");
-
-  if (!wrapper || !content) return;
-
-  // 用你原来的 popupContent 逻辑生成右栏内容
-  let html = `<h3>${stationName}</h3><p><b>Messzeit:</b> ${timestamp}</p>`;
-  pollutantData.forEach(entry => {
-    const pollutantId = entry[0];
-    const value = entry[1];
-    const pollutantInfo = components[pollutantId] || { symbol: `ID ${pollutantId}`, unit: "" };
-    html += `<p><b>${pollutantInfo.symbol}:</b> ${value} ${pollutantInfo.unit}</p>`;
-  });
-
-  content.innerHTML = html;
-  wrapper.classList.add("visible");
-}
-
 function showDataInPanel(stationName, timestamp, pollutantData) {
   const wrapper = document.getElementById("info-panel");
   const content = document.getElementById("air-quality-panel");
