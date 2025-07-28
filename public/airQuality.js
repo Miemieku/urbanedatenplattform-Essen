@@ -179,6 +179,14 @@ function addStationsToMap() {
             const O3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
+            const qualityTextMap = {
+                1: "Sehr gut",
+                2: "Gut",
+                3: "Mäßig",
+                4: "Schlecht",
+                5: "Sehr schlecht"
+            };
+            const qualityLabel = qualityTextMap[level];
             console.log("🧪 valueMap 检查", valueMap);
 
             //  使用 Leaflet CircleMarker
