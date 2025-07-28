@@ -122,6 +122,44 @@ function fetchAirQualityData(stationId) {
         });
 }
 
+// 返回污染物值的等级（1=Sehr gut, 5=Sehr schlecht）
+function getPollutantLevel(code, value) {
+    if (value === null || value === undefined) return 1;
+
+    switch (code) {
+        case "NO2":
+            if (value > 200) return 5;
+            else if (value > 100) return 4;
+            else if (value > 40) return 3;
+            else if (value > 20) return 2;
+            else return 1;
+
+        case "PM10":
+            if (value > 100) return 5;
+            else if (value > 50) return 4;
+            else if (value > 35) return 3;
+            else if (value > 20) return 2;
+            else return 1;
+
+        case "PM2":  
+            if (value > 50) return 5;
+            else if (value > 25) return 4;
+            else if (value > 20) return 3;
+            else if (value > 10) return 2;
+            else return 1;
+
+        case "O3":
+            if (value > 240) return 5;
+            else if (value > 180) return 4;
+            else if (value > 120) return 3;
+            else if (value > 60) return 2;
+            else return 1;
+
+        default:
+            return 1; // 默认很好
+    }
+}
+
 
 //  获得颜色
 function getWorstIndexColor(NO2, PM10, PM2, O3) {
@@ -208,7 +246,6 @@ function addStationsToMap() {
             // Popup 内容（详细数据）
             let popupContent = `
             <h3>${stationCoords[stationId].stationName}</h3>
-            <p><b>Luftqualität:</b> ${qualityLabel}</p>
             `;
 
             // 点击显示右侧信息栏
@@ -247,6 +284,109 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   wrapper.classList.add("visible");
 }
 
+function showDataInPanel(stationName, timestamp, pollutantData) {
+  const wrapper = document.getElementById("info-panel");
+  const content = document.getElementById("air-quality-panel");
+
+  if (!wrapper || !content) return;
+
+  // 计算测量时间段（1小时区间）
+  const start = new Date(timestamp);
+  const end = new Date(start.getTime() + 60 * 60 * 1000);
+  const formatTime = (d) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
+      d.getDate()
+    ).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:00`;
+
+  // 生成污染物值映射
+  const values = {};
+  pollutantData.forEach(([id, value]) => {
+    const info = components[id];
+    if (info) {
+      values[info.code] = {
+        value,
+        unit: info.unit,
+        symbol: info.symbol,
+        level: getPollutantLevel(info.code, value)
+      };
+    }
+  });
+
+  // 计算 Luftqualität 总体等级
+  const level = getWorstIndexColor(NO2, PM10, PM2, O3);
+
+  const qualityTextMap = {
+    1: "Sehr gut",
+    2: "Gut",
+    3: "Mäßig",
+    4: "Schlecht",
+    5: "Sehr schlecht"
+  };
+  const qualityLabel = qualityTextMap[level];
+
+  // 颜色表
+  const colorMap = {
+    1: "#00cccc",
+    2: "#00cc99",
+    3: "#ffff66",
+    4: "#cc6666",
+    5: "#990033"
+  };
+
+  // 健康提示
+  const healthHints = {
+    1: "Beste Voraussetzungen, um sich ausgiebig im Freien aufzuhalten.",
+    2: "Genießen Sie Ihre Aktivitäten im Freien, gesundheitlich nachteilige Wirkungen sind nicht zu erwarten.",
+    3: "Kurzfristige nachteilige Auswirkungen auf die Gesundheit sind unwahrscheinlich. Allerdings können Effekte durch Luftschadstoffkombinationen und bei langfristiger Einwirkung des Einzelstoffes nicht ausgeschlossen werden. Zusätzliche Reize, z.B. ausgelöst durch Pollenflug, können die Wirkung der Luftschadstoffe verstärken, so dass Effekte bei empfindlichen Personengruppen (z.B. Asthmatikern) wahrscheinlicher werden.",
+    4: "Bei empfindlichen Menschen können nachteilige gesundheitliche Wirkungen auftreten. Diese sollten körperlich anstrengende Tätigkeiten im Freien vermeiden. In Kombination mit weiteren Luftschadstoffen können auch weniger empfindliche Menschen auf die Luftbelastung reagieren.",
+    5: "Negative gesundheitliche Auswirkungen können auftreten. Wer empfindlich ist oder vorgeschädigte Atemwege hat, sollte körperliche Anstrengungen im Freien vermeiden."
+  };
+  const healthText = healthHints[level];
+
+  // 构建 HTML
+  let html = `
+    <h3>${stationName}</h3>
+    <p><strong>Luftqualität:</strong> 
+      <span style="font-size: 1.5em; font-weight: bold; color: ${
+        colorMap[overallLevel]
+      };">${qualityLabel}</span>
+    </p>
+    <p><b>Messzeit:</b> ${formatTime(start)} ~ ${formatTime(end)}</p>
+    <hr>
+    <h4>Schadstoffkonzentrationen</h4>
+    <ul style="list-style:none; padding:0;">`;
+
+  ["NO2", "PM10", "O3", "PM2"].forEach((code) => {
+    if (values[code]) {
+      const { value, unit, symbol, level } = values[code];
+      const dot = `<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${colorMap[level]};margin-right:6px;"></span>`;
+      html += `<li>${dot} ${symbol}: ${
+        value !== null ? value : "-"
+      } ${unit}</li>`;
+    }
+  });
+
+  html += `</ul>
+    <h4>Gesundheitshinweise und Empfehlungen:</h4>
+    <p style="font-size:0.95em; color:#333;">${healthText}</p>
+    <hr>
+    <h4>Index-Farblegende</h4>
+    <div>
+      <span style="display:inline-block;width:15px;height:15px;background:#00cccc;margin-right:5px;"></span>Sehr gut
+      <span style="display:inline-block;width:15px;height:15px;background:#00cc99;margin:0 10px;"></span>Gut
+      <span style="display:inline-block;width:15px;height:15px;background:#ffff66;margin:0 10px;"></span>Mäßig
+      <span style="display:inline-block;width:15px;height:15px;background:#cc6666;margin:0 10px;"></span>Schlecht
+      <span style="display:inline-block;width:15px;height:15px;background:#990033;margin:0 10px;"></span>Sehr schlecht
+    </div>
+    <p style="margin-top:15px;font-size:0.85em;">
+      Quelle: <a href="https://www.umweltbundesamt.de/berechnungsgrundlagen-luftqualitaetsindex" target="_blank">
+      Umweltbundesamt – Berechnungsgrundlagen Luftqualitätsindex</a>
+    </p>
+  `;
+
+  content.innerHTML = html;
+  wrapper.classList.add("visible");
+}
 
 
 
