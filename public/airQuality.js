@@ -179,6 +179,7 @@ function addStationsToMap() {
             const O3  = valueMap["O3"]  || 0;
             const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
+            const level = getWorstIndexColor(NO2, PM10, PM2, O3);
             const qualityTextMap = {
                 1: "Sehr gut",
                 2: "Gut",
