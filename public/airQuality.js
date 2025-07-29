@@ -285,6 +285,16 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
       d.getDate()
     ).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:00`;
 
+  function formatTimeDE(date) {
+    return date.toLocaleString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    }).replace(",", "");
+  }
+
   // 生成污染物值映射
   const values = {};
   pollutantData.forEach(([id, value]) => {
@@ -337,6 +347,16 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   const healthText = healthHints[overallLevel];
 
   // 构建 HTML
+  const messzeitHtml = `
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+      <div>
+        <b style="color: #34495e;">Messzeit:</b>
+        ${formatTimeDE(end)}
+      </div>
+      <button class="btn-history" id="btn-history" style="margin-left: 10px;">Vergangene 24 Stunden</button>
+    </div>
+  `;
+
   let html = `
     <h3 style="color: #2c3e50; margin-bottom: 15px;">${stationName}</h3>
     <p style="margin-bottom: 10px;"><strong style="color: #34495e;">Luftqualität:</strong> 
@@ -344,7 +364,7 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
         colorMap[overallLevel]
       };">${qualityLabel}</span>
     </p>
-    <p style="color: #7f8c8d; margin-bottom: 15px;"><b style="color: #34495e;">Messzeit:</b> ${formatTime(start)} ~ ${formatTime(end)}</p>
+    ${messzeitHtml}
     <hr style="border-color: #ecf0f1;">
     <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Schadstoffkonzentrationen</h4>
     <ul style="list-style:none; padding:0;">`;
@@ -360,9 +380,8 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   });
 
   html += `</ul>
-    <button class="btn-history" id="btn-history">Vergangene 24 Stunden</button>
-    <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Gesundheitshinweise und Empfehlungen:</h4>
-    <p style="font-size:0.95em; color:#34495e; line-height: 1.5; margin-bottom: 20px;">${healthText}</p>
+  <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Gesundheitshinweise und Empfehlungen:</h4>
+  <p style="font-size:0.95em; color:#34495e; line-height: 1.5; margin-bottom: 20px;">${healthText}</p>
     <hr style="border-color: #ecf0f1;">
     <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Index-Farblegende</h4>
     <div style="margin-bottom: 20px;">
