@@ -46,25 +46,27 @@ async function fetchAirQuality(stationId) {
   const response = await fetch(apiUrl);
   const data = await response.json();
 
-  if (!data || !data.data) {
-    console.warn(`⚠️ Keine Luftqualitätsdaten für ${stationId}`);
-    return null;
-  }
+  if (!data || !data.data) return null;
 
   const entry = Object.values(data.data)[0];
-  const latestKey = Object.keys(entry).pop();
+  const timestamps = Object.keys(entry).sort((a, b) => new Date(a) - new Date(b));
+  const latestKey = timestamps[timestamps.length - 1];
   const latestValues = entry[latestKey].slice(3);
 
   const pollutants = {};
   latestValues.forEach(([id, val]) => {
-    if (id == 5) pollutants.no2 = val;
-    if (id == 1) pollutants.pm10 = val;
-    if (id == 9) pollutants.pm25 = val;
-    if (id == 3) pollutants.o3 = val;
+    const pollutant = components[id];
+    if (!pollutant) return;
+
+    if (pollutant.code === "NO2") pollutants.no2 = val;
+    if (pollutant.code === "PM10") pollutants.pm10 = val;
+    if (pollutant.code === "PM20") pollutants.pm25 = val; // PM2.5
+    if (pollutant.code === "O3") pollutants.o3 = val;
   });
 
   return { timestamp: latestKey, ...pollutants };
 }
+
 
 // 插入数据到 Supabase
 async function insertIntoSupabase(station, data) {
