@@ -9,14 +9,14 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-    <!-- 🔹 顶部导航栏 -->
+    <!-- 顶部导航栏 -->
     <header>
         <!-- 左侧菜单按钮 -->
         <button id="menu-toggle">☰</button>
         <h1 id="site-title">Urbane Datenplattform Düsseldorf </h1>
     </header>
 
-    <!-- 🔹 左侧边栏（数据类型选择框） -->
+    <!-- 左侧边栏（数据类型选择框） -->
     <aside id="sidebar-container">
         <div id="sidebar">
             <h2>Daten Layer</h2>
@@ -28,28 +28,41 @@
         </div>
     </aside>
     
-    <!-- 🔹 右侧信息面板 -->
+    <!--右侧信息面板 -->
 <aside id="info-panel">
   <button class="close-button" onclick="document.getElementById('info-panel').classList.remove('visible')">×</button>
-  <h2 style="color: #2c3e50; margin-bottom: 15px;">Messwerte</h2>
   <div id="air-quality-panel"></div>
 </aside>
 
 
 
 
-<!-- 🔹 搜索框 -->
+<!-- 搜索框 -->
 <div id="search-container">
     <input type="text" id="search-box" placeholder="Adresse eingeben..." />
     <button id="search-button">Suchen</button>
 </div>
 
-    <!-- 🔹 右侧地图 -->
+    <!-- 侧地图 -->
     <section id="map-container">
         <div id="map"></div>
     </section>
 
     <script src="script.js"></script>  
-    <script src="airQuality.js"></script> <!-- ✅ 添加这个 -->
+    <script src="airQuality.js"></script>
+    
+    <!-- 弹窗结构，放在 body 末尾 -->   
+    <div id="history-modal" style="display:none;">
+        <div class="modal-content">
+        <span id="close-modal" style="cursor:pointer;">&times;</span>
+        <h2>Verlauf der letzten 24 Stunden</h2>
+        <div>
+            <canvas id="chart-pm10"></canvas>
+            <canvas id="chart-no2"></canvas>
+            <canvas id="chart-pm25"></canvas>
+            <canvas id="chart-o3"></canvas>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
