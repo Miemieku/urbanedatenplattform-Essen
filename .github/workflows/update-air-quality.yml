@@ -19,7 +19,7 @@ jobs:
       - run: npm install
 
       - name: Fetch Düsseldorf Air Quality
-        run: node scripts/fetch_uba_to_supabase.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: node scripts/fetch_uba_to_supabase.js
