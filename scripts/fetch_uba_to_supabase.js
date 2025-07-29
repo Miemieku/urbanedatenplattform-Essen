@@ -31,6 +31,7 @@ async function getDusseldorfStations() {
       lon: parseFloat(st[7])
     }));
 }
+const res = await fetch(`${SUPABASE_URL}/rest/v1/luftqualitaet`, {...})
 
 // 获取单个站点的最新数据
 async function fetchAirQuality(stationId) {
