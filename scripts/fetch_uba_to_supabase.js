@@ -70,7 +70,7 @@ async function fetchAirQuality(stationId) {
 
     if (pollutantInfo.code === "NO2") pollutants.no2 = val;
     if (pollutantInfo.code === "PM10") pollutants.pm10 = val;
-    if (pollutantInfo.code === "PM20") pollutants.pm25 = val;
+    if (pollutantInfo.code === "PM20") pollutants.pm20 = val;
     if (pollutantInfo.code === "O3") pollutants.o3 = val;
   });
 
@@ -95,7 +95,7 @@ async function insertIntoSupabase(station, data) {
       timestamp: data.timestamp,
       no2: data.no2 ?? null,
       pm10: data.pm10 ?? null,
-      pm25: data.pm25 ?? null,
+      pm20: data.pm20 ?? null,
       o3: data.o3 ?? null,
       created_at: new Date().toISOString()
     })
