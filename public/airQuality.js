@@ -260,7 +260,8 @@ function addStationsToMap() {
                 showDataInPanel(
                     stationCoords[stationId].stationName,
                     actualTimestamp,
-                    pollutantData
+                    pollutantData,
+                    stationId
                 );
             });
 
@@ -271,7 +272,7 @@ function addStationsToMap() {
 }
 
 
-function showDataInPanel(stationName, timestamp, pollutantData) {
+function showDataInPanel(stationName, timestamp, pollutantData, stationId) {
   const wrapper = document.getElementById("info-panel");
   const content = document.getElementById("air-quality-panel");
 
