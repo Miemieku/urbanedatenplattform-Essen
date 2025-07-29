@@ -10,16 +10,25 @@ const AIR_API = "https://www.umweltbundesamt.de/api/air_data/v2/airquality/json"
 async function getDusseldorfStations() {
   const res = await fetch(STATION_API);
   const json = await res.json();
-  const stations = json.data || [];
-  
+
+  let stations = [];
+  if (Array.isArray(json.data)) {
+    stations = json.data;
+  } else if (json.data && typeof json.data === "object") {
+    stations = Object.values(json.data);
+  } else {
+    console.error("❌ UBA API 返回格式错误:", json);
+    return [];
+  }
+
   return stations
     .filter(st => st[3] === "Düsseldorf") // 城市字段 = Düsseldorf
     .map(st => ({
       id: st[1],       // stationId
       name: st[2],     // stationName
       city: st[3],
-      lat: st[8],
-      lon: st[7]
+      lat: parseFloat(st[8]),
+      lon: parseFloat(st[7])
     }));
 }
 
@@ -37,7 +46,10 @@ async function fetchAirQuality(stationId) {
   const response = await fetch(apiUrl);
   const data = await response.json();
 
-  if (!data || !data.data) return null;
+  if (!data || !data.data) {
+    console.warn(`⚠️ Keine Luftqualitätsdaten für ${stationId}`);
+    return null;
+  }
 
   const entry = Object.values(data.data)[0];
   const latestKey = Object.keys(entry).pop();
@@ -90,7 +102,9 @@ async function main() {
 
   for (const st of stations) {
     const data = await fetchAirQuality(st.id);
-    await insertIntoSupabase(st, data);
+    if (data) {
+      await insertIntoSupabase(st, data);
+    }
   }
 }
 
