@@ -406,9 +406,74 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   if (btnHistory) {
     btnHistory.onclick = function() {
       document.getElementById("history-modal").style.display = "block";
-      // TODO: 加载并渲染24小时曲线
+      // 这里调用曲线渲染函数
+      loadAndRenderHistoryChart(stationId); // 你需要把当前站点ID传进来
     };
   }
+
+  // 关闭按钮事件建议只绑定一次（在 DOMContentLoaded 里）：
+  document.addEventListener("DOMContentLoaded", function () {
+    const closeModal = document.getElementById("close-modal");
+    if (closeModal) {
+      closeModal.onclick = function() {
+        document.getElementById("history-modal").style.display = "none";
+      };
+    }
+  });
+}
+
+async function loadAndRenderHistoryChart(stationId) {
+  const url = `/.netlify/functions/supabaseProxy?stationId=${stationId}`;
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (!data || data.length === 0) {
+    alert("Keine Daten in den letzten 24 Stunden verfügbar.");
+    return;
+  }
+
+  const labels = data.map(row => new Date(row.timestamp).toLocaleTimeString("de-DE", {hour:"2-digit",minute:"2-digit"}));
+  const pm10 = data.map(row => row.pm10);
+  const no2 = data.map(row => row.no2);
+  const pm25 = data.map(row => row.pm25);
+  const o3 = data.map(row => row.o3);
+
+  renderLineChart("chart-pm10", labels, pm10, "Feinstaub PM10", "#00e6e6");
+  renderLineChart("chart-no2", labels, no2, "Stickstoffdioxid (NO₂)", "#00bfff");
+  renderLineChart("chart-pm25", labels, pm25, "Feinstaub PM2,5", "#00ff99");
+  renderLineChart("chart-o3", labels, o3, "Ozon (O₃)", "#00ffcc");
+}
+
+function renderLineChart(canvasId, labels, data, label, color) {
+  const ctx = document.getElementById(canvasId).getContext("2d");
+  // 销毁旧图表（防止多次渲染重叠）
+  if (window[canvasId + "_chart"]) {
+    window[canvasId + "_chart"].destroy();
+  }
+  window[canvasId + "_chart"] = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: label,
+        data: data,
+        borderColor: color,
+        backgroundColor: color + "33",
+        fill: true,
+        tension: 0.2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: { title: { display: true, text: "µg/m³" } },
+        x: { title: { display: true, text: "Uhrzeit" } }
+      }
+    }
+  });
 }
 
 
