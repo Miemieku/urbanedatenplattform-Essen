@@ -93,11 +93,11 @@ async function insertIntoSupabase(station, data) {
       station_id: station.id,
       station_name: station.name,
       timestamp: data.timestamp,
-      fetched_at: new Date().toISOString(),
-      no2: data.no2,
-      pm10: data.pm10,
-      pm25: data.pm25,
-      o3: data.o3
+      no2: data.no2 ?? null,
+      pm10: data.pm10 ?? null,
+      pm25: data.pm25 ?? null,
+      o3: data.o3 ?? null,
+      created_at: new Date().toISOString()
     })
   });
 
