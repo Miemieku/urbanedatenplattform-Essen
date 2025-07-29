@@ -360,6 +360,7 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
   });
 
   html += `</ul>
+    <button class="btn-history" id="btn-history">Vergangene 24 Stunden</button>
     <h4 style="color: #2c3e50; margin: 20px 0 15px 0;">Gesundheitshinweise und Empfehlungen:</h4>
     <p style="font-size:0.95em; color:#34495e; line-height: 1.5; margin-bottom: 20px;">${healthText}</p>
     <hr style="border-color: #ecf0f1;">
@@ -380,6 +381,15 @@ function showDataInPanel(stationName, timestamp, pollutantData) {
 
   content.innerHTML = html;
   wrapper.classList.add("visible");
+
+  // 绑定按钮事件
+  const btnHistory = document.getElementById("btn-history");
+  if (btnHistory) {
+    btnHistory.onclick = function() {
+      document.getElementById("history-modal").style.display = "block";
+      // TODO: 加载并渲染24小时曲线
+    };
+  }
 }
 
 

@@ -1,0 +1,25 @@
+name: Update Düsseldorf Luftqualität
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # 每30分钟
+  workflow_dispatch:          # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: npm install
+
+      - name: Fetch Düsseldorf Air Quality
+        run: node scripts/fetch_uba_to_supabase.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
