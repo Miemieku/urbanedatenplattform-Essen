@@ -406,7 +406,7 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId) {
   const btnHistory = document.getElementById("btn-history");
   if (btnHistory) {
     btnHistory.onclick = function() {
-      document.getElementById("history-modal").style.display = "block";
+      document.getElementById("history-modal").classList.add("active");
       // 这里调用曲线渲染函数
       loadAndRenderHistoryChart(stationId); // 你需要把当前站点ID传进来
     };
@@ -417,7 +417,7 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId) {
     const closeModal = document.getElementById("close-modal");
     if (closeModal) {
       closeModal.onclick = function() {
-        document.getElementById("history-modal").style.display = "none";
+        document.getElementById("history-modal").classList.remove("active");
       };
     }
   });

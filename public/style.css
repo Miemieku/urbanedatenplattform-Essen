@@ -174,27 +174,40 @@ header {
   }
   
 #history-modal {
-  display: none;
+  display: block; /* 用JS控制显示/隐藏 */
   position: fixed;
+  top: 50px; /* 不遮挡导航栏 */
+  right: 0;
+  height: calc(100vh - 50px);
+  width: 600px;
+  max-width: 90vw;
   z-index: 3000;
-  left: 0; top: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
-  /* 居中内容 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: transparent;
+  pointer-events: none; /* 只让内容可点 */
 }
 
 #history-modal .modal-content {
+  height: 100%;
+  width: 100%;
   background: #fff;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.18);
+  position: absolute;
+  right: 0;
+  top: 0;
   padding: 24px 24px 16px 24px;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 90vw;
-  max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  position: relative;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  pointer-events: auto;
+}
+
+#history-modal.active {
+  pointer-events: auto;
+}
+
+#history-modal.active .modal-content {
+  transform: translateX(0);
 }
 
 #close-modal {
@@ -206,6 +219,7 @@ header {
   cursor: pointer;
   background: none;
   border: none;
+  z-index: 10;
 }
 
 #history-modal canvas {
