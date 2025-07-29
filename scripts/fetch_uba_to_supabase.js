@@ -43,38 +43,49 @@ async function getDusseldorfStations() {
     }));
 }
 
-// 🌫 获取某测站的空气质量数据
-async function fetchAirQuality(stationId) {
+// 获取当前查询时间（和前端 airQuality.js 保持一致）
+function getCurrentTime() {
   const now = new Date();
-  const hour = now.getHours() === 0 ? 23 : now.getHours() - 1;
-  const date = now.getHours() === 0
-    ? new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString().split("T")[0]
-    : now.toISOString().split("T")[0];
+  let date = now.toISOString().split("T")[0];
+  let hour = now.getHours() - 2; // 🚀 比当前时间早2小时
 
+  if (hour < 0) {
+    hour = 23;
+    date = new Date(now.setDate(now.getDate() - 1)).toISOString().split("T")[0];
+  }
+  return { date, hour };
+}
+
+// 获取单个站点的最新数据
+async function fetchAirQuality(stationId) {
+  const { date, hour } = getCurrentTime();
   const apiUrl = `${AIR_API}?date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
+  console.log(`📡 Fetching data for station ${stationId}: ${apiUrl}`);
+
   const response = await fetch(apiUrl);
   const data = await response.json();
 
   if (!data || !data.data) return null;
 
   const entry = Object.values(data.data)[0];
-  const timestamps = Object.keys(entry).sort((a, b) => new Date(a) - new Date(b));
-  const latestKey = timestamps[timestamps.length - 1];
-  const actualTimestamp = entry[latestKey][0];
-  const pollutantData = entry[latestKey].slice(3);
+  const latestKey = Object.keys(entry).pop();
+
+  console.log (`📊 Latest data for ${stationId}:`, latestKey);
+  const latestValues = entry[latestKey].slice(3);
 
   const pollutants = {};
-  pollutantData.forEach(([id, val]) => {
-    const pollutantInfo = components[id];
-    if (!pollutantInfo) return;
-
-    if (pollutantInfo.code === "NO2") pollutants.no2 = val;
-    if (pollutantInfo.code === "PM10") pollutants.pm10 = val;
-    if (pollutantInfo.code === "PM20") pollutants.pm25 = val;
-    if (pollutantInfo.code === "O3") pollutants.o3 = val;
+  latestValues.forEach(([id, val]) => {
+    if (id == 5) pollutants.no2 = val;
+    if (id == 1) pollutants.pm10 = val;
+    if (id == 9) pollutants.pm20 = val;
+    if (id == 3) pollutants.o3 = val;
   });
 
-  return { timestamp: actualTimestamp, ...pollutants };
+  // ✅ timestamp 用 API 的时间 +1 小时（测量结束时间）
+  const startTime = new Date(latestKey);
+  const endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
+
+  return { timestamp: endTime.toISOString(), ...pollutants };
 }
 
 // ⬇ 写入 Supabase
@@ -95,7 +106,7 @@ async function insertIntoSupabase(station, data) {
       timestamp: data.timestamp,
       no2: data.no2 ?? null,
       pm10: data.pm10 ?? null,
-      pm25: data.pm25 ?? null,
+      pm20: data.pm20 ?? null,
       o3: data.o3 ?? null,
       created_at: new Date().toISOString()
     })
