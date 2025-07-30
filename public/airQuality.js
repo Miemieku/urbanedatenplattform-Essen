@@ -414,17 +414,16 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
     };
   }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // 打开按钮的事件监听器
-  document.getElementById("btn-history").onclick = function() {
-    document.querySelector("#history-modal").classList.toggle("active");
-  };
- 
-  // 关闭按钮的事件监听器
-  document.getElementById("close-modal").onclick = function() {
-    document.querySelector("#history-modal").classList.remove("active");
-  };
-});
+
+  // 关闭按钮事件建议只绑定一次（在 DOMContentLoaded 里）：
+  document.addEventListener("DOMContentLoaded", function () {
+    const closeModal = document.getElementById("close-modal");
+    if (closeModal) {
+      closeModal.onclick = function() {
+        document.getElementById("history-modal").classList.remove("active");
+      };
+    }
+  });
 
 }
 
