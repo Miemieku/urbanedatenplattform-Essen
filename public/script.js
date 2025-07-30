@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
         center: [51.2277, 6.7735], // Essen 的坐标
         zoom: 12,
         zoomControl: false
-        initializeGeoJSONLayers();
     });
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
