@@ -175,19 +175,18 @@ header {
   
 #history-modal {
   position: absolute;
-  top: 50px; /* 留出顶部信息栏高度 */
-  right: 300px; /* 右侧栏的左侧位置 */
-  height: calc(100vh - 50px); /* 避让顶部导航栏 */
+  top: 50px; /* 离开导航栏 */
+  right: -600px; /* 默认隐藏在视窗右侧 */
+  height: calc(100vh - 50px); /* 避让导航栏高度 */
   width: 600px;
   z-index: 2500;
   background: transparent;
   overflow-y: auto;
-  transform: translateX(100%); /* 初始隐藏 */
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 滑动动画 */
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 移动动画 */
 }
  
 #history-modal.active {
-  transform: translateX(0); /* 显示时滑入 */
+  right: 300px; /* 显示时移动到与侧边栏对齐 */
 }
  
 #history-modal .modal-content {
