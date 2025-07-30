@@ -98,14 +98,25 @@ function initializeGeoJSONLayers() {
 }
 
 
-//  复选框控制数据可见性
+// 复选框控制数据可见性
 function setupLayerToggle() {
-    document.querySelectorAll('#data-layer-list input').forEach(input => {
+    const checkboxes = document.querySelectorAll('#data-layer-list input');
+    checkboxes.forEach(input => {
         input.addEventListener('change', function() {
-            if (this.checked) {
-                map.addLayer(layerGroups[this.id]); // 添加图层到地图
+            const layer = layerGroups[this.id];
+            console.log(`处理复选框变更: ${this.id}, 勾选状态: ${this.checked}`);
+            console.log('对应的图层对象:', layer);
+ 
+            if (layer) {
+                if (this.checked) {
+                    map.addLayer(layer); // 添加图层到地图
+                    console.log(`图层 ${this.id} 已添加到地图`);
+                } else {
+                    map.removeLayer(layer); // 从地图移除
+                    console.log(`图层 ${this.id} 已从地图移除`);
+                }
             } else {
-                map.removeLayer(layerGroups[this.id]); // 从地图移除
+                console.error(`未找到对应的图层: ${this.id}`);
             }
         });
     });

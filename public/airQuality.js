@@ -422,7 +422,7 @@ async function loadAndRenderHistoryChart(stationId) {
   console.log("加载并渲染历史图表，站点ID:", stationId);
   const res = await fetch(url);
   const data = await res.json();
- console.log("获取到的数据:", data);
+  console.log("获取到的数据:", data);
   if (!data || data.length === 0) {
     alert("Keine Daten in den letzten 24 Stunden verfügbar.");
     return;
