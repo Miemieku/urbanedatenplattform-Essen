@@ -43,43 +43,57 @@ document.addEventListener("DOMContentLoaded", function() {
 const layerGroups = {};
 
 function initializeGeoJSONLayers() {
-    const promises = [
-        fetch("/.netlify/functions/supabaseProxy")
-            .then(response => response.json())
-            .then(data => {
-                console.log("Supabase 返回数据：", data);
-
-                const features = data.map(entry => ({
-                    type: "Feature",
-                    geometry: entry.geometry,
-                    properties: {
-                        name: entry.name,
-                        nummer: entry.nummer,
-                        id: entry.id
-                    }
-                }));
-
-                let layer = L.geoJSON({ type: "FeatureCollection", features }, {
-                    style: {
-                        color: "#3366cc",
-                        weight: 2,
-                        fillOpacity: 0
-                    },
-                    onEachFeature: function (feature, layer) {
-                        if (feature.properties && feature.properties.name) {
-                            layer.bindPopup(`<b>Stadtteil:</b> ${feature.properties.name}`);
-                        }
-                    }
-                });
-
-                layerGroups["stadtteile"] = layer;
-            })
-            .catch(error => console.error("❌ Fehler beim Laden von Supabase (stadtteile):", error))
+    const geojsonFiles = [
+        { url: "supabase?type=stadtteile", color: "green", name: "stadtteile" },
+        // 如果有其他本地文件也可以继续放在这里
     ];
 
-    // 返回一个Promise，所有数据加载完毕后resolve
-    return Promise.all(promises);
-    //  绑定左侧菜单栏复选框（如有）
+    geojsonFiles.forEach(file => {
+        if (file.url.startsWith("supabase")) {
+            fetch(`/.netlify/functions/supabaseProxy?${file.url.split("?")[1]}`)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP Fehler: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("📍 Supabase 返回数据 (stadtteile):", data);
+
+                    if (!Array.isArray(data) || data.length === 0) {
+                        console.warn("⚠️ Supabase 返回了空数组 (stadtteile).");
+                        return;
+                    }
+
+                    const features = data.map(entry => ({
+                        type: "Feature",
+                        geometry: entry.geometry,
+                        properties: {
+                            name: entry.name,
+                            nummer: entry.nummer,
+                            id: entry.id
+                        }
+                    }));
+
+                    const layer = L.geoJSON({ type: "FeatureCollection", features }, {
+                        style: {
+                            color: "#3366cc",
+                            weight: 2,
+                            fillOpacity: 0
+                        },
+                        onEachFeature: function (feature, layer) {
+                            if (feature.properties && feature.properties.name) {
+                                layer.bindPopup(`<b>Stadtteil:</b> ${feature.properties.name}`);
+                            }
+                        }
+                    });
+
+                    layerGroups[file.name] = layer;
+                    console.log(`✅ Layer ${file.name} 已创建`);
+                })
+                .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
+        }
+    });
+
+    // 等数据加载完成后再绑定复选框
     setupLayerToggle();
 }
 

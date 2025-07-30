@@ -4,11 +4,29 @@ export async function handler(event, context) {
   const SUPABASE_URL = process.env.SUPABASE_URL;
 
   // 解析参数
-  const params = event.queryStringParameters;
+  const params = event.queryStringParameters || {};
+  const type = params.type || "stadtteile"; // 默认查询 Stadtteile
   const stationId = params.stationId;
 
-  // 查询 Supabase
-  const url = `${SUPABASE_URL}/rest/v1/luftqualitaet_24h?station_id=eq.${stationId}&order=timestamp.asc`;
+  let url;
+
+  if (type === "luftqualitaet") {
+    if (!stationId) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "stationId 参数缺失" })
+      };
+    }
+    url = `${SUPABASE_URL}/rest/v1/luftqualitaet_24h?station_id=eq.${stationId}&order=timestamp.asc`;
+  } else if (type === "stadtteile") {
+    url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson?select=*`;
+  } else {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "未知 type 参数" })
+    };
+  }
+
   const response = await fetch(url, {
     headers: {
       apikey: API_KEY,
@@ -16,6 +34,7 @@ export async function handler(event, context) {
       Accept: "application/json"
     }
   });
+
   const data = await response.json();
 
   return {
