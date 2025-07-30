@@ -1,5 +1,4 @@
 // 📦 依赖
-const fetch = require("node-fetch");
 const fs = require("fs");
 
 // 🔐 环境变量（在 GitHub Actions 中注入）
