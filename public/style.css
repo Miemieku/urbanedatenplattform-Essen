@@ -175,18 +175,19 @@ header {
   
 #history-modal {
   position: absolute;
-  top: 0;
-  right: -600px; /* 初始隐藏在视窗右侧 */
-  height: 100%;
+  top: 50px; /* 留出顶部信息栏高度 */
+  right: 300px; /* 右侧栏的左侧位置 */
+  height: calc(100vh - 50px); /* 避让顶部导航栏 */
   width: 600px;
   z-index: 2500;
   background: transparent;
   overflow-y: auto;
-  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 滑入滑出动画 */
+  transform: translateX(100%); /* 初始隐藏 */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 滑动动画 */
 }
  
 #history-modal.active {
-  right: 300px; /* 显示时的位置，与 `#info-panel` 对齐 */
+  transform: translateX(0); /* 显示时滑入 */
 }
  
 #history-modal .modal-content {
