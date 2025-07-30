@@ -174,7 +174,7 @@ header {
   }
   
 #history-modal {
-  display: block; /* 用JS控制显示/隐藏 */
+  display: none; /* 用JS控制显示/隐藏 */
   position: fixed;
   top: 50px; /* 不遮挡导航栏 */
   right: 0;
@@ -203,11 +203,17 @@ header {
 }
 
 #history-modal.active {
+  display: block; /* 显示模态框 */
   pointer-events: auto;
 }
 
+#history-modal .modal-content {
+  transform: translateX(100%); /* 显示内容 */
+  transition: ;transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
 #history-modal.active .modal-content {
-  transform: translateX(0);
+  transform: translateX(0); /* 显示内容 */
 }
 
 #close-modal {
