@@ -419,6 +419,7 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
 
 async function loadAndRenderHistoryChart(stationId) {
   const url = `/.netlify/functions/supabaseProxy?stationId=${stationId}`;
+  console.log("加载并渲染历史图表，站点ID:", stationId);
   const res = await fetch(url);
   const data = await res.json();
 
