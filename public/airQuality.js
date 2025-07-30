@@ -262,8 +262,8 @@ function addStationsToMap() {
                     actualTimestamp,
                     pollutantData,
                     stationId,
-                    dateto,
-                    timeto
+                    result.enddate,
+                    result.endtime
                 );
             });
 
