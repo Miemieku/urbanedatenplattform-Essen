@@ -9,18 +9,6 @@ const SUPABASE_KEY = process.env.SUPABASE_KEY;
 const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/functions/ubaProxy?";
 const STATION_API = "https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de";
 
-// 获取当前时间
-function getCurrentTime() {
-    const now = new Date();
-    const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
-    let hour = now.getHours() - 2; // 🚀 取上2个小时的数据
-
-    if (hour < 0) {
-        hour = 23; // 取前一天的 23:00 数据
-        date = new Date(now.setDate(now.getDate() - 1)).toISOString().split("T")[0]; // 取前一天的日期
-    }
-    return { date, hour };
-}
 
 // 🧠 加载 components 映射（与前端一致）
 const components = {};
@@ -54,6 +42,19 @@ async function getDusseldorfStations() {
       lat: parseFloat(st[8]),
       lon: parseFloat(st[7])
     }));
+}
+
+// 获取当前时间
+function getCurrentTime() {
+    const now = new Date();
+    const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
+    let hour = now.getHours() - 2; // 🚀 取上2个小时的数据
+
+    if (hour < 0) {
+        hour = 23; // 取前一天的 23:00 数据
+        date = new Date(now.setDate(now.getDate() - 1)).toISOString().split("T")[0]; // 取前一天的日期
+    }
+    return { date, hour };
 }
 
 // 🌫 获取某测站的空气质量数据
