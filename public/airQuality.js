@@ -100,24 +100,23 @@ function fetchAirQualityData(stationId) {
     const { date, hour } = getCurrentTime();
     const apiUrl = `${API_BASE_URL}api=airQuality&date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
 
-    console.log(`📡 API Anfrage für ${stationId}: ${apiUrl}`);
     return fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
         console.log(`API Antwort für ${stationId}:`, data);
 
         if (!data || !data.data) {
-            console.warn(`⚠️Keine Luftqualitätsdaten für ${stationId}`);
             return null;
         }
 
         const actualStationId = data.request?.station; // 确保 ID 正确
+        const request = data.request;
         console.log(`Station ID Mapping: ${stationId} → ${actualStationId}`);
 
-        return { stationId: actualStationId, data: data.data[0] };
+        return { stationId: actualStationId, data: data.data[0],request: request};
     })
         .catch(error => {
-            console.error(`❌Fehler beim Laden der Luftqualität für ${stationId}:`, error);
+            console.error(`Fehler beim Laden der Luftqualität für ${stationId}:`, error);
             return null;
         });
 }
@@ -262,6 +261,7 @@ function addStationsToMap() {
                     actualTimestamp,
                     pollutantData,
                     stationId
+                    request
                 );
             });
 
@@ -279,8 +279,8 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId) {
   if (!wrapper || !content) return;
 
   // 计算测量时间段（1小时区间）
-  const start = new Date(timestamp);
-  const end = new Date(start.getTime() + 60 * 60 * 1000);
+  const dateString = `${request.date_to} ${request.time_to}`;
+  const end = new Date(dateString);
   const formatTime = (d) =>
     `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
       d.getDate()
