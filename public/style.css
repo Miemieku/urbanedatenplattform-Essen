@@ -174,16 +174,14 @@ header {
   }
   
 #history-modal {
-  display: none; /* 用JS控制显示/隐藏 */
   position: fixed;
   top: 50px; /* 不遮挡导航栏 */
-  right: 0;
+  right: 300px;
   height: calc(100vh - 50px);
   width: 600px;
-  max-width: 90vw;
-  z-index: 3000;
+  max-width: calc(100vw - 300px);
+  z-index: 2500;
   background: transparent;
-  pointer-events: none; /* 只让内容可点 */
 }
 
 #history-modal .modal-content {
@@ -210,6 +208,8 @@ header {
 #history-modal .modal-content {
   transform: translateX(100%); /* 显示内容 */
   transition: ;transform 0.35s cubic-bezier(.4,0,.2,1);
+  height: 100%;
+  overflow-y: auto;
 }
 
 #history-modal.active .modal-content {
@@ -238,3 +238,13 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
   
+#history-modal .charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+canvas {
+  width: 100% !important;
+  height: 200px !important;
+}

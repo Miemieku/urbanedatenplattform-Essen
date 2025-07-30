@@ -449,10 +449,11 @@ async function loadAndRenderHistoryChart(stationId) {
 
 function renderLineChart(canvasId, labels, data, label, color) {
   const ctx = document.getElementById(canvasId).getContext("2d");
-  // 销毁旧图表（防止多次渲染重叠）
+
   if (window[canvasId + "_chart"]) {
     window[canvasId + "_chart"].destroy();
   }
+
   window[canvasId + "_chart"] = new Chart(ctx, {
     type: "line",
     data: {
@@ -463,7 +464,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
         borderColor: color,
         backgroundColor: color + "33",
         fill: true,
-        tension: 0.2
+        tension: 0.3
       }]
     },
     options: {
@@ -472,8 +473,14 @@ function renderLineChart(canvasId, labels, data, label, color) {
         legend: { display: false }
       },
       scales: {
-        y: { title: { display: true, text: "µg/m³" } },
-        x: { title: { display: true, text: "Uhrzeit" } }
+        x: {
+          grid: { display: false },
+          ticks: { maxRotation: 0 }
+        },
+        y: {
+          grid: { display: false },
+          beginAtZero: true
+        }
       }
     }
   });
