@@ -43,72 +43,42 @@ document.addEventListener("DOMContentLoaded", function() {
 const layerGroups = {};
 
 function initializeGeoJSONLayers() {
-    const geojsonFiles = [
-        { url: "supabase", color: "green", name: "stadtteile" },
-        // 如果有其他本地文件也可以继续放在这里
+    const promises = [
+        fetch("/.netlify/functions/supabaseProxy")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Supabase 返回数据：", data);
+
+                const features = data.map(entry => ({
+                    type: "Feature",
+                    geometry: entry.geometry,
+                    properties: {
+                        name: entry.name,
+                        nummer: entry.nummer,
+                        id: entry.id
+                    }
+                }));
+
+                let layer = L.geoJSON({ type: "FeatureCollection", features }, {
+                    style: {
+                        color: "#3366cc",
+                        weight: 2,
+                        fillOpacity: 0
+                    },
+                    onEachFeature: function (feature, layer) {
+                        if (feature.properties && feature.properties.name) {
+                            layer.bindPopup(`<b>Stadtteil:</b> ${feature.properties.name}`);
+                        }
+                    }
+                });
+
+                layerGroups["stadtteile"] = layer;
+            })
+            .catch(error => console.error("❌ Fehler beim Laden von Supabase (stadtteile):", error))
     ];
 
-    geojsonFiles.forEach(file => {
-        //  来自 Supabase
-        if (file.url === "supabase") {
-                fetch("/.netlify/functions/supabaseProxy")
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Supabase 返回数据：", data);
-                    const features = data.map(entry => ({
-                        type: "Feature",
-                        geometry: entry.geometry,
-                        properties: {
-                            name: entry.name,
-                            nummer: entry.nummer,
-                            id: entry.id
-                        }
-                    }));
-
-                    let layer = L.geoJSON({ type: "FeatureCollection", features }, {
-                        style: {
-                            color: "#3366cc",
-                            weight: 2,
-                            fillOpacity: 0
-                        },
-                        onEachFeature: function (feature, layer) {
-                            if (feature.properties && feature.properties.name) {
-                                layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
-                            }
-                        }
-                    });
-                    layerGroups[file.name] = layer;
-
-                })
-                .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
-
-        } else {
-            //  本地文件
-            fetch(file.url)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(`Geladene Daten von ${file.name}:`, data);
-
-                    let layer = L.geoJSON(data, {
-                        style: function (feature) {
-                            return { color: file.color, weight: 2, fillOpacity: 0.3 };
-                        },
-                        pointToLayer: function (feature, latlng) {
-                            return L.circleMarker(latlng, { radius: 6, color: file.color });
-                        },
-                        onEachFeature: function (feature, layer) {
-                            if (feature.properties && feature.properties.name) {
-                                layer.bindPopup(`<b>${file.name}:</b> ${feature.properties.name}`);
-                            }
-                        }
-                    });
-
-                    layerGroups[file.name] = layer;
-                })
-                .catch(error => console.error(`❌ Fehler beim Laden von ${file.name}:`, error));
-        }
-    });
-
+    // 返回一个Promise，所有数据加载完毕后resolve
+    return Promise.all(promises);
     //  绑定左侧菜单栏复选框（如有）
     setupLayerToggle();
 }
