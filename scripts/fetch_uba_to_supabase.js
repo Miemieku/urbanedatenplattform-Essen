@@ -67,7 +67,7 @@ async function fetchAirQuality(stationId) {
   pollutantData.forEach(([id, val]) => {
     const pollutantInfo = components[id];
     if (!pollutantInfo) return;
-    console.log(`Pollutant Code: ${pollutantInfo.code}`);
+  console.log(`ID: ${id}, Pollutant Info:`, pollutantInfo);
     if (pollutantInfo.code === "NO2") pollutants.no2 = val;
     if (pollutantInfo.code === "PM10") pollutants.pm10 = val;
     if (pollutantInfo.code === "PM2") pollutants.pm2 = val;
