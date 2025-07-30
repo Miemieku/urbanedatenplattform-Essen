@@ -415,17 +415,6 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
     };
   }
 
-
-  // 关闭按钮事件建议只绑定一次（在 DOMContentLoaded 里）：
-  document.addEventListener("DOMContentLoaded", function () {
-    const closeModal = document.getElementById("close-modal");
-    if (closeModal) {
-      closeModal.onclick = function() {
-        document.getElementById("history-modal").classList.remove("active");
-      };
-    }
-  });
-
 }
 
 async function loadAndRenderHistoryChart(stationId) {
@@ -505,3 +494,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// 关闭按钮事件建议只绑定一次（在 DOMContentLoaded 里）：
+document.addEventListener("DOMContentLoaded", function () {
+  const closeModal = document.getElementById("close-modal");
+  if (closeModal) {
+    closeModal.onclick = function() {
+      document.getElementById("history-modal").classList.remove("active");
+    };
+  }
+});
