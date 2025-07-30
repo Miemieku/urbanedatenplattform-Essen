@@ -175,19 +175,20 @@ header {
   
 #history-modal {
   position: absolute;
-  top: 0; /* 与 info-panel 对齐 */
-  right:300px; /* 初始隐藏 */
+  top: 0;
+  right: -600px; /* 初始隐藏在视窗右侧 */
   height: 100%;
   width: 600px;
   z-index: 2500;
   background: transparent;
   overflow-y: auto;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 滑入滑出动画 */
 }
-
-#history-modal.active.modal-content{
-  transform: translateX(0); /* 显示时滑入 */
+ 
+#history-modal.active {
+  right: 300px; /* 显示时的位置，与 `#info-panel` 对齐 */
 }
-
+ 
 #history-modal .modal-content {
   height: 100%;
   width: 100%;
@@ -195,20 +196,6 @@ header {
   border-radius: 10px 0 0 10px;
   box-shadow: -4px 0 24px rgba(0,0,0,0.18);
   padding: 24px;
-  transform: translateX(100%); /* 初始隐藏 */
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#close-modal {
-  position: absolute;
-  right: 18px;
-  top: 12px;
-  font-size: 2em;
-  color: #888;
-  cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 10;
 }
 
 #history-modal .charts-grid {
