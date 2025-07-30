@@ -1,22 +1,26 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Berlin   # 👈 在这里设置时区
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
 
-    - name: Set timezone
-      run: echo "TZ='Europe/Berlin'" >> $GITHUB_ENV
+      - name: Log Local Time
+        run: node -e "console.log('本地时区时间:', new Date().toString())"
 
-    - name: Log Local Time
-      run: node -e "console.log('本地时区时间:', new Date().toLocaleString())"
+      - name: Run fetch script
+        run: node scripts/fetch_uba_to_supabase.js

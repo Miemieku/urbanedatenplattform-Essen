@@ -85,8 +85,6 @@ function fetchStationCoordinates() {
 // 获取当前时间
 function getCurrentTime() {
     const now = new Date();
-    console.log("当前时间:", now.toISOString());
-    console.log("时区偏移:", now.getTimezoneOffset());
     const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
     let hour = now.getHours() - 2; // 🚀 取上2个小时的数据
 
