@@ -404,29 +404,30 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
   content.innerHTML = html;
   wrapper.classList.add("visible");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const btnHistory = document.getElementById("btn-history");
-  const closeModal = document.getElementById("close-modal");
- 
-  if (btnHistory) {
-    btnHistory.onclick = function() {
-      const historyModal = document.getElementById("history-modal");
-      if (historyModal) {
-        historyModal.classList.add("active");
-        loadAndRenderHistoryChart(stationId); // 确保 stationId 已定义
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnHistory = document.getElementById("btn-history");
+      const closeModal = document.getElementById("close-modal");
+
+      if (btnHistory) {
+        btnHistory.onclick = function() {
+          const historyModal = document.getElementById("history-modal");
+          if (historyModal) {
+            historyModal.classList.add("active");
+            loadAndRenderHistoryChart(stationId); // 确保 stationId 已定义
+          }
+        };
       }
-    };
-  }
- 
-  if (closeModal) {
-    closeModal.onclick = function() {
-      const historyModal = document.getElementById("history-modal");
-      if (historyModal) {
-        historyModal.classList.remove("active");
+
+      if (closeModal) {
+        closeModal.onclick = function() {
+          const historyModal = document.getElementById("history-modal");
+          if (historyModal) {
+            historyModal.classList.remove("active");
+          }
+        };
       }
-    };
-  }
-});
+    });
+
 }
 
 async function loadAndRenderHistoryChart(stationId) {
