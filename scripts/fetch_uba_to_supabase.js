@@ -56,7 +56,8 @@ async function fetchAirQuality(stationId) {
   const data = await response.json();
 
   if (!data || !data.data) return null;
-
+   console.log("完整的 API 数据:", data);
+   
   const entry = Object.values(data.data)[0];
   const timestamps = Object.keys(entry).sort((a, b) => new Date(a) - new Date(b));
   const latestKey = timestamps[timestamps.length - 1];
