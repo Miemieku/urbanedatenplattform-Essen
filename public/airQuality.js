@@ -404,27 +404,29 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
   content.innerHTML = html;
   wrapper.classList.add("visible");
 
-  // 绑定按钮事件
+document.addEventListener("DOMContentLoaded", function () {
   const btnHistory = document.getElementById("btn-history");
+  const closeModal = document.getElementById("close-modal");
+ 
   if (btnHistory) {
     btnHistory.onclick = function() {
-      document.getElementById("history-modal").classList.add("active");
-      // 这里调用曲线渲染函数
-      loadAndRenderHistoryChart(stationId); // 你需要把当前站点ID传进来
+      const historyModal = document.getElementById("history-modal");
+      if (historyModal) {
+        historyModal.classList.add("active");
+        loadAndRenderHistoryChart(stationId); // 确保 stationId 已定义
+      }
     };
   }
-
-
-  // 关闭按钮事件建议只绑定一次（在 DOMContentLoaded 里）：
-  document.addEventListener("DOMContentLoaded", function () {
-    const closeModal = document.getElementById("close-modal");
-    if (closeModal) {
-      closeModal.onclick = function() {
-        document.getElementById("history-modal").classList.remove("active");
-      };
-    }
-  });
-
+ 
+  if (closeModal) {
+    closeModal.onclick = function() {
+      const historyModal = document.getElementById("history-modal");
+      if (historyModal) {
+        historyModal.classList.remove("active");
+      }
+    };
+  }
+});
 }
 
 async function loadAndRenderHistoryChart(stationId) {
