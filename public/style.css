@@ -179,7 +179,7 @@ header {
   right: -600px; /* 默认隐藏在视窗右侧 */
   height: calc(100vh - 50px); /* 避让导航栏高度 */
   width: 600px;
-  z-index: 1500;
+  z-index: 1300;
   background: transparent;
   overflow-y: auto;
   transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* 移动动画 */
