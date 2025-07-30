@@ -176,18 +176,16 @@ header {
 #history-modal {
   position: absolute;
   top: 0; /* 与 info-panel 对齐 */
-  left: -100%; /* 初始隐藏 */
+  right:300px; /* 初始隐藏 */
   height: 100%;
   width: 600px;
-  max-width: calc(100vw - 300px); /* 不覆盖 info-panel */
   z-index: 2500;
   background: transparent;
   overflow-y: auto;
-  transition: left 0.35s cubic-bezier(.4,0,.2,1);
 }
 
-#history-modal.active {
-  left: 0; /* 滑出 */
+#history-modal.active.modal-content{
+  transform: translateX(0); /* 显示时滑入 */
 }
 
 #history-modal .modal-content {
@@ -197,7 +195,8 @@ header {
   border-radius: 10px 0 0 10px;
   box-shadow: -4px 0 24px rgba(0,0,0,0.18);
   padding: 24px;
-  overflow-y: auto;
+  transform: translateX(100%); /* 初始隐藏 */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #close-modal {
