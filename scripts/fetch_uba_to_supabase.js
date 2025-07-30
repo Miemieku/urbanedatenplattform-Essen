@@ -6,8 +6,8 @@ const fs = require("fs");
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
-const STATION_API = "https://www.umweltbundesamt.de/api/air_data/v2/stations/json?use=airquality&lang=de";
-const AIR_API = "https://www.umweltbundesamt.de/api/air_data/v2/airquality/json";
+const STATION_API = "https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de";
+const AIR_API = "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json";
 
 // 🧠 加载 components 映射（与前端一致）
 const components = {};
