@@ -110,10 +110,11 @@ function fetchAirQualityData(stationId) {
         }
 
         const actualStationId = data.request?.station; // 确保 ID 正确
-        const request = data.request;
+        const timeto = data.request?.time_to;
+        const dateto = data.request?.date_to;
         console.log(`Station ID Mapping: ${stationId} → ${actualStationId}`);
 
-        return { stationId: actualStationId, data: data.data[0],request: request};
+        return { stationId: actualStationId, data: data.data[0],endtime: timeto, enddate: dateto };
     })
         .catch(error => {
             console.error(`Fehler beim Laden der Luftqualität für ${stationId}:`, error);
@@ -260,8 +261,9 @@ function addStationsToMap() {
                     stationCoords[stationId].stationName,
                     actualTimestamp,
                     pollutantData,
-                    stationId
-                    request
+                    stationId,
+                    enddate,
+                    endtime
                 );
             });
 
@@ -272,14 +274,14 @@ function addStationsToMap() {
 }
 
 
-function showDataInPanel(stationName, timestamp, pollutantData, stationId) {
+function showDataInPanel(stationName, timestamp, pollutantData, stationId, enddate, endtime) {
   const wrapper = document.getElementById("info-panel");
   const content = document.getElementById("air-quality-panel");
 
   if (!wrapper || !content) return;
 
   // 计算测量时间段（1小时区间）
-  const dateString = `${request.date_to} ${request.time_to}`;
+  const dateString = `${enddate} ${endtime}`;
   const end = new Date(dateString);
   const formatTime = (d) =>
     `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
