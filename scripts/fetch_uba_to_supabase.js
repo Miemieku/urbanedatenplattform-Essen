@@ -6,8 +6,9 @@ const fs = require("fs");
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
+const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/functions/ubaProxy?";
 const STATION_API = "https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de";
-const AIR_API = "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json";
+
 
 // 🧠 加载 components 映射（与前端一致）
 const components = {};
@@ -51,7 +52,7 @@ async function fetchAirQuality(stationId) {
     ? new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString().split("T")[0]
     : now.toISOString().split("T")[0];
 
-  const apiUrl = `${AIR_API}?date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
+  const apiUrl = `${API_BASE_URL}api=airQuality&date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
   const response = await fetch(apiUrl);
   const data = await response.json();
 
