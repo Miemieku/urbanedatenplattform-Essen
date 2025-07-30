@@ -43,19 +43,25 @@ async function getDusseldorfStations() {
     }));
 }
 
-// 获取当前时间
 function getCurrentTime() {
-    const now = new Date();
-    const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
-    let hour = now.getHours() - 2; // 🚀 取上2个小时的数据
+  // 强制使用 Europe/Berlin 时区
+  const berlinNow = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Europe/Berlin" })
+  );
 
-    if (hour < 0) {
-        hour = 23; // 取前一天的 23:00 数据
-        date = new Date(now.setDate(now.getDate() - 1)).toISOString().split("T")[0]; // 取前一天的日期
-    }
-    return { date, hour };
+  let date = berlinNow.toISOString().split("T")[0];
+  let hour = berlinNow.getHours() - 2; // 🚩 提前2小时，确保 UBA 数据已更新
+
+  if (hour < 0) {
+    hour = 23;
+    const yesterday = new Date(berlinNow);
+    yesterday.setDate(berlinNow.getDate() - 1);
+    date = yesterday.toISOString().split("T")[0];
+  }
+
+  console.log(`⏰ Europe/Berlin Local Time → date=${date}, hour=${hour}`);
+  return { date, hour };
 }
-
 // 🌫 获取某测站的空气质量数据
 async function fetchAirQuality(stationId) {
   const { date, hour } = getCurrentTime();
