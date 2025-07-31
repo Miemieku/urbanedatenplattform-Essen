@@ -504,6 +504,15 @@ async function loadAndRenderHistoryChart(stationId) {
 function renderLineChart(canvasId, labels, data, label, color) {
   const ctx = document.getElementById(canvasId).getContext("2d");
 
+  // 提高Canvas分辨率，减少模糊
+  const canvas = ctx.canvas;
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+
   if (window[canvasId + "_chart"]) {
     window[canvasId + "_chart"].destroy();
   }
@@ -518,39 +527,106 @@ function renderLineChart(canvasId, labels, data, label, color) {
         borderColor: color,
         backgroundColor: color + "33",
         fill: true,
-        tension: 0.3
+        tension: 0.3,
+        pointRadius: 3, // 增加点的大小
+        pointHoverRadius: 6, // 悬停时点的大小
+        pointBackgroundColor: color,
+        pointBorderColor: "#fff",
+        pointBorderWidth: 2,
+        pointHoverBackgroundColor: color,
+        pointHoverBorderColor: "#fff",
+        pointHoverBorderWidth: 3
       }]
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      devicePixelRatio: dpr, // 使用设备像素比
+      interaction: {
+        mode: 'nearest', // 最近点交互模式
+        intersect: false, // 不需要精确相交
+        axis: 'x' // 基于X轴查找最近点
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: false,
+        animationDuration: 200 // 减少动画时间，提高响应性
+      },
       plugins: {
         legend: { display: false},
         title: {
           display: true,
-          text:label,
-          color: "2c3e50",
+          text: label,
+          color: "#2c3e50", // 修复颜色格式
           font: {
-            size:14,
-            weight:"bold"
+            size: 14,
+            weight: "bold"
           },
-          padding: {bottom:10}
+          padding: { bottom: 15, top: 10 }
+        },
+        tooltip: {
+          enabled: true,
+          mode: 'nearest',
+          intersect: false,
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          borderColor: color,
+          borderWidth: 1,
+          cornerRadius: 6,
+          displayColors: false,
+          callbacks: {
+            title: function(context) {
+              return `Zeit: ${context[0].label}`;
+            },
+            label: function(context) {
+              return `${label}: ${context.parsed.y} µg/m³`;
+            }
+          }
         }
       },
-
+      layout: {
+        padding: {
+          top: 10,
+          bottom: 10,
+          left: 15,
+          right: 15
+        }
+      },
       scales: {
         x: {
-          grid: { display: false },
-          ticks: { maxTicksLimit: 6 }
+          grid: { 
+            display: false 
+          },
+          ticks: { 
+            maxTicksLimit: 6,
+            padding: 5
+          }
         },
         y: {
-          grid: { display: false },
-          ticks: {maxTicksLimit: 4 }
+          grid: { 
+            display: true,
+            color: 'rgba(0,0,0,0.1)',
+            lineWidth: 1
+          },
+          ticks: { 
+            maxTicksLimit: 4,
+            padding: 5
+          }
+        }
+      },
+      elements: {
+        line: {
+          borderWidth: 2
+        },
+        point: {
+          radius: 3,
+          hoverRadius: 6
         }
       }
     }
   });
 }
-
 
 
 // 6️⃣ 监听 `Luftqualität` 复选框
