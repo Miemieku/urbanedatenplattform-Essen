@@ -518,100 +518,33 @@ function renderLineChart(canvasId, labels, data, label, color) {
         borderColor: color,
         backgroundColor: color + "33",
         fill: true,
-        tension: 0.3,
-        pointRadius: 4, // 增加点的大小
-        pointHoverRadius: 8, // 悬停时点的大小
-        pointBackgroundColor: color,
-        pointBorderColor: "#fff",
-        pointBorderWidth: 2,
-        pointHoverBackgroundColor: color,
-        pointHoverBorderColor: "#fff",
-        pointHoverBorderWidth: 3
+        tension: 0.3
       }]
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
-      interaction: {
-        mode: 'index', // 改为index模式，更容易触发
-        intersect: false
-      },
-      hover: {
-        mode: 'index',
-        intersect: false,
-        animationDuration: 100 // 减少动画时间
-      },
       plugins: {
         legend: { display: false},
         title: {
           display: true,
-          text: label,
-          color: "#2c3e50",
+          text:label,
+          color: "2c3e50",
           font: {
-            size: 14,
-            weight: "bold"
+            size:14,
+            weight:"bold"
           },
-          padding: { bottom: 15, top: 10 }
-        },
-        tooltip: {
-          enabled: true,
-          mode: 'index',
-          intersect: false,
-          backgroundColor: 'rgba(0,0,0,0.8)',
-          titleColor: '#fff',
-          bodyColor: '#fff',
-          borderColor: color,
-          borderWidth: 1,
-          cornerRadius: 6,
-          displayColors: false,
-          callbacks: {
-            title: function(context) {
-              return `Zeit: ${context[0].label}`;
-            },
-            label: function(context) {
-              const unit = label.includes('PM') || label.includes('NO') || label.includes('O') ? 'µg/m³' : '';
-              return `${label}: ${context.parsed.y} ${unit}`;
-            }
-          }
+          padding: {bottom:10}
         }
       },
-      layout: {
-        padding: {
-          top: 10,
-          bottom: 10,
-          left: 15,
-          right: 15
-        }
-      },
+
       scales: {
         x: {
-          grid: { 
-            display: false 
-          },
-          ticks: { 
-            maxTicksLimit: 6,
-            padding: 5
-          }
+          grid: { display: false },
+          ticks: { maxTicksLimit: 6 }
         },
         y: {
-          grid: { 
-            display: true,
-            color: 'rgba(0,0,0,0.1)',
-            lineWidth: 1
-          },
-          ticks: { 
-            maxTicksLimit: 4,
-            padding: 5
-          }
-        }
-      },
-      elements: {
-        line: {
-          borderWidth: 2
-        },
-        point: {
-          radius: 4,
-          hoverRadius: 8
+          grid: { display: false },
+          ticks: {maxTicksLimit: 4 }
         }
       }
     }
