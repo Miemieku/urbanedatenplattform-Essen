@@ -152,7 +152,7 @@ header {
 }
 #info-panel .close-button {
     position: absolute;
-    top: 50px;         /* 往下移一点 */
+    top: 15px;         /* 往下移一点 */
     right: 15px;       /* 右边留白 */
     z-index: 2000;
     background: none;  /* 去除背景 */
@@ -199,16 +199,17 @@ header {
   padding: 24px;
 }
 
-#history-modal .charts-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#history-modal .charts-column {
+  display: flex;
+  grid-template-columns: column;
   gap: 20px;
   padding: 20px;
+  width: 100%;
 }
 
 #history-modal canvas {
   width: 100% !important;
-  height: 180px !important;
+  height: 200px !important;
   background: #f8f8f8;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
