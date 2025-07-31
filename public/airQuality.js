@@ -98,6 +98,7 @@ function getCurrentTime() {
 // 获取空气质量数据
 function fetchAirQualityData(stationId) {
     const { date, hour } = getCurrentTime();
+    const startHour = Math.max(0, hour-4)
     const apiUrl = `${API_BASE_URL}api=airQuality&date_from=${date}&date_to=${date}&time_from=${hour}&time_to=${hour}&station=${stationId}`;
 
     return fetch(apiUrl)
@@ -109,12 +110,28 @@ function fetchAirQualityData(stationId) {
             return null;
         }
 
-        const actualStationId = data.request?.station; // 确保 ID 正确
-        const timeto = data.request?.time_to;
-        const dateto = data.request?.date_to;
-        console.log(`Station ID Mapping: ${stationId} → ${actualStationId}`);
+    const actualStationId = data.request?.station;
+              const records = Object.values(data.data)[0];
+              const timestamps = Object.keys(records);
 
-        return { stationId: actualStationId, data: data.data[0],endtime: timeto, enddate: dateto };
+              if (timestamps.length === 0) {
+                  return null;
+              }
+        // get latest available timestamp
+    const latestTimestamp = timestamps[timestamps.length - 1];
+    const actualTimestamp = records[latestTimestamp][0];
+    const data = records[latestTimestamp].slice(3);
+
+    // derive enddate and endtime from latest timestamp
+    const latestDateObj = new Date(latestTimestamp);
+    const dateto = latestDateObj.toISOString().split("T")[0];
+    const timeto = latestDateObj.getHours();
+
+        return { 
+          stationId: actualStationId, 
+          data: data.data[0],
+          endtime: timeto, 
+          enddate: dateto };
     })
         .catch(error => {
             console.error(`Fehler beim Laden der Luftqualität für ${stationId}:`, error);
