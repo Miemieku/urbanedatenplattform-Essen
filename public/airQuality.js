@@ -465,7 +465,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
       plugins: {
         legend: { display: false},
         title: {
-          dispay: true,
+          display: true,
           text:label,
           color: "2c3e50",
           font: {
@@ -483,7 +483,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
         },
         y: {
           grid: { display: false },
-          ticks: {maxTicksLimit: 5 }
+          ticks: {maxTicksLimit: 4 }
         }
       }
     }
