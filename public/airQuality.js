@@ -504,15 +504,6 @@ async function loadAndRenderHistoryChart(stationId) {
 function renderLineChart(canvasId, labels, data, label, color) {
   const ctx = document.getElementById(canvasId).getContext("2d");
 
-  // 提高Canvas分辨率，减少模糊
-  const canvas = ctx.canvas;
-  const rect = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
-  
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-  ctx.scale(dpr, dpr);
-
   if (window[canvasId + "_chart"]) {
     window[canvasId + "_chart"].destroy();
   }
@@ -528,8 +519,8 @@ function renderLineChart(canvasId, labels, data, label, color) {
         backgroundColor: color + "33",
         fill: true,
         tension: 0.3,
-        pointRadius: 3, // 增加点的大小
-        pointHoverRadius: 6, // 悬停时点的大小
+        pointRadius: 4, // 增加点的大小
+        pointHoverRadius: 8, // 悬停时点的大小
         pointBackgroundColor: color,
         pointBorderColor: "#fff",
         pointBorderWidth: 2,
@@ -541,23 +532,21 @@ function renderLineChart(canvasId, labels, data, label, color) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      devicePixelRatio: dpr, // 使用设备像素比
       interaction: {
-        mode: 'nearest', // 最近点交互模式
-        intersect: false, // 不需要精确相交
-        axis: 'x' // 基于X轴查找最近点
+        mode: 'index', // 改为index模式，更容易触发
+        intersect: false
       },
       hover: {
-        mode: 'nearest',
+        mode: 'index',
         intersect: false,
-        animationDuration: 200 // 减少动画时间，提高响应性
+        animationDuration: 100 // 减少动画时间
       },
       plugins: {
         legend: { display: false},
         title: {
           display: true,
           text: label,
-          color: "#2c3e50", // 修复颜色格式
+          color: "#2c3e50",
           font: {
             size: 14,
             weight: "bold"
@@ -566,7 +555,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
         },
         tooltip: {
           enabled: true,
-          mode: 'nearest',
+          mode: 'index',
           intersect: false,
           backgroundColor: 'rgba(0,0,0,0.8)',
           titleColor: '#fff',
@@ -580,7 +569,8 @@ function renderLineChart(canvasId, labels, data, label, color) {
               return `Zeit: ${context[0].label}`;
             },
             label: function(context) {
-              return `${label}: ${context.parsed.y} µg/m³`;
+              const unit = label.includes('PM') || label.includes('NO') || label.includes('O') ? 'µg/m³' : '';
+              return `${label}: ${context.parsed.y} ${unit}`;
             }
           }
         }
@@ -620,8 +610,8 @@ function renderLineChart(canvasId, labels, data, label, color) {
           borderWidth: 2
         },
         point: {
-          radius: 3,
-          hoverRadius: 6
+          radius: 4,
+          hoverRadius: 8
         }
       }
     }
