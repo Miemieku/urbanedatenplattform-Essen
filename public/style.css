@@ -220,4 +220,6 @@ header {
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     margin: 0 auto;
     padding: 10px; /* 为图表添加内边距 */
+    image-rendering: -webkit-optimize-contrast; /* 提高清晰度 */
+    image-rendering: crisp-edges; /* 提高清晰度 */
   }

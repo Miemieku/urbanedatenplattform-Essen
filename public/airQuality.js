@@ -533,8 +533,11 @@ function renderLineChart(canvasId, labels, data, label, color) {
         fill: true,
         tension: 0.3,
         borderWidth: 2,
-        pointRadius: 3,
-        pointHoverRadius: 5
+        pointRadius: 4,
+        pointHoverRadius: 8,
+        pointHoverBorderWidth: 3,
+        pointHoverBackgroundColor: color,
+        pointHoverBorderColor: '#fff'
       }]
     },
     options: {
@@ -554,7 +557,8 @@ function renderLineChart(canvasId, labels, data, label, color) {
         }
       },
       interaction: {
-        mode: 'index',
+        mode: 'nearest',
+        axis: 'x',
         intersect: false
       },
       scales: {
@@ -576,6 +580,11 @@ function renderLineChart(canvasId, labels, data, label, color) {
             }
           }
         }
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: false,
+        axis: 'x'
       }
     }
   });
