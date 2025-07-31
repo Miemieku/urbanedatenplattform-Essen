@@ -463,16 +463,16 @@ function renderLineChart(canvasId, labels, data, label, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false }
+        legend: { display: false, position:"top" }
       },
       scales: {
         x: {
           grid: { display: false },
-          ticks: { maxRotation: 0 }
+          ticks: { maxTicksLimit: 6 }
         },
         y: {
           grid: { display: false },
-          beginAtZero: true
+          ticks: { stepSize:10, maxTicksLimit: 5 }
         }
       }
     }
