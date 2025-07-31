@@ -1,31 +1,42 @@
 # Urbane Datenplattform Düsseldorf – Demo
+
 ### Live-Demo
 https://urbane-datenplattform-duesseldorf.netlify.app
 
-Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und Datenbankintegration.
+Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und **Datenbankintegration**.
+
+## Datenbank-Architektur & Automatisierung
+
+### PostgreSQL/PostGIS-Datenbank (Supabase)
+- **Haupttabelle**: `luftqualitaet` - Speichert alle Luftqualitätsmessungen
+- **Datenbank-View**: `latest_luftqualitaet` - Optimierte Abfrage für neueste Daten pro Messstation
+- **Automatische Datenaktualisierung**: Alle 30 Minuten via GitHub Actions
 
 ## Funktionen
 
-- Darstellung von Luftqualitätsdaten (NO₂, PM₁₀, PM₂.₅, O₃) auf einer interaktiven Karte
+- **Datenbankgestützte Luftqualitätsvisualisierung** (NO₂, PM₁₀, PM₂.₅, O₃) auf interaktiver Karte
 - Farbliche Kennzeichnung der Messstationen gemäß UBA-Kategorien
-- Echtzeitdaten über eine eigene Proxy-Schnittstelle zum Umweltbundesamt (UBA)
+- **Echtzeitdaten aus PostgreSQL-Datenbank** (automatisch alle 30 Minuten aktualisiert)
 - Rechte Seitenleiste mit Detailinformationen je Messstation
-- Steuerung der Anzeige über Checkbox für „Luftqualität“
-- Einbindung von Stadtteilgrenzen aus einer PostgreSQL/PostGIS-Datenbank (via Supabase)
+- **24-Stunden-Historie** mit interaktiven Charts für jede Messstation
+- Steuerung der Anzeige über Checkbox für „Luftqualität"
+- Einbindung von Stadtteilgrenzen aus PostgreSQL/PostGIS-Datenbank
+
 
 ## Verwendete Technologien
 
 - HTML, CSS, JavaScript
 - Leaflet.js für die Kartendarstellung
-- Netlify Serverless Function als API-Proxy
-- Echtzeitdaten vom Umweltbundesamt (UBA)
-- Supabase (PostgreSQL + PostGIS) für Geo-Datenhaltung
+- **Chart.js** für Datenvisualisierung
+- Netlify Serverless Functions als API-Proxy
+- **Supabase** (PostgreSQL + PostGIS) für Geo-Datenhaltung und Luftqualitätsdaten
+- **GitHub Actions** für automatisierte Datenaktualisierung
 - QGIS zur Geodatenvorbereitung
 
 ## Datenquellen
 
-- Echtzeitdaten: Umweltbundesamt (Luftqualitäts-API)
-- Stadtteilgrenzen: Eigene Aufbereitung auf Basis von Geojson, transformiert nach EPSG:4326
+- **Luftqualitätsdaten**: Umweltbundesamt (UBA) → Supabase-Datenbank
+- **Stadtteilgrenzen**: Eigene Aufbereitung auf Basis von Geojson, transformiert nach EPSG:4326
 
 ## Projektstruktur
 
