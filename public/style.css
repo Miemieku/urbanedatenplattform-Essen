@@ -201,17 +201,17 @@ header {
 
 #history-modal .charts-vertical {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 10px;
-  width: 100%;
+  grid-template-rows: repeat(4, minmax(180px, 1fr));
+  gap: 15px;
   height: calc(100vh - 120px);
   padding: 10px;
   box-sizing: border-box;
 }
 
 #history-modal canvas {
- height: 100%!important;
+ height: auto !important;
   width: 100% !important;
+  aspect-ratio: 16/9;
   background: #f8f8f8;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
