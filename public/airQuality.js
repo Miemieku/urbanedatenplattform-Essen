@@ -483,7 +483,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
         },
         y: {
           grid: { display: false },
-          ticks: { stepSize:10, maxTicksLimit: 5 }
+          ticks: {maxTicksLimit: 5 }
         }
       }
     }
