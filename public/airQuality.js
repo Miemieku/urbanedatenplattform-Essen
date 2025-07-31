@@ -285,10 +285,19 @@ function addStationsToMap() {
 
             // 构造与原格式兼容的污染物数据，用于详情面板
             const pollutantData = [];
-            if (stationData.no2 !== null) pollutantData.push(["1", stationData.no2]);
-            if (stationData.pm10 !== null) pollutantData.push(["2", stationData.pm10]);
-            if (stationData.o3 !== null) pollutantData.push(["3", stationData.o3]);
-            if (stationData.pm2 !== null) pollutantData.push(["4", stationData.pm2]);
+
+            // 动态从components对象中获取正确的ID
+            Object.entries(components).forEach(([id, info]) => {
+                if (info.code === "NO2" && stationData.no2 !== null) {
+                    pollutantData.push([id, stationData.no2]);
+                } else if (info.code === "PM10" && stationData.pm10 !== null) {
+                    pollutantData.push([id, stationData.pm10]);
+                } else if (info.code === "O3" && stationData.o3 !== null) {
+                    pollutantData.push([id, stationData.o3]);
+                } else if (info.code === "PM2" && stationData.pm2 !== null) {
+                    pollutantData.push([id, stationData.pm2]);
+                }
+            });
 
             const dateObj = new Date(stationData.timestamp);
             const enddate = dateObj.toISOString().split("T")[0];
