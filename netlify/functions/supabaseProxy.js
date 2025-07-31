@@ -18,6 +18,15 @@ export async function handler(event, context) {
       };
     }
     url = `${SUPABASE_URL}/rest/v1/luftqualitaet_24h?station_id=eq.${stationId}&order=timestamp.asc`;
+  } else if (type === "latest_luftqualitaet") {
+    // 获取最新数据 - 使用你创建的视图
+    if (stationId) {
+      // 获取特定站点的最新数据
+      url = `${SUPABASE_URL}/rest/v1/latest_luftqualitaet?station_id=eq.${stationId}`;
+    } else {
+      // 获取所有站点的最新数据
+      url = `${SUPABASE_URL}/rest/v1/latest_luftqualitaet?select=*`;
+    }
   } else if (type === "stadtteile") {
     url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson?select=*`;
   } else {

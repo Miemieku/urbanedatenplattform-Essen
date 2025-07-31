@@ -137,6 +137,28 @@ function fetchAirQualityData(stationId) {
         });
 }
 
+// 获取数据库中的最新空气质量数据
+function fetchLatestAirQualityData() {
+    const dbUrl = `/.netlify/functions/supabaseProxy?type=latest_luftqualitaet`;
+    
+    return fetch(dbUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(" 数据库最新数据:", data);
+        
+        if (!data || !Array.isArray(data) || data.length === 0) {
+            console.warn("⚠️ 数据库中没有找到最新数据");
+            return null;
+        }
+        
+        return data;
+    })
+    .catch(error => {
+        console.error("❌ 获取数据库最新数据失败:", error);
+        return null;
+    });
+}
+
 // 返回污染物值的等级（1=Sehr gut, 5=Sehr schlecht）
 function getPollutantLevel(code, value) {
     if (value === null || value === undefined) return 1;
@@ -203,54 +225,50 @@ function getWorstIndexColor(NO2, PM10, PM2, O3) {
   return colorMap[level];
 }
 
-//  在地图上添加测量站点
+//  在地图上添加测量站点 - 使用数据库最新数据
 function addStationsToMap() {
-    Object.keys(stationCoords).forEach(stationId => {
-        fetchAirQualityData(stationId).then(result => {
-            if (!result || !result.data) {
-                console.warn(`⚠️Keine Luftqualitätsdaten ${stationId}`);
+    console.log("🔄 正在从数据库加载最新空气质量数据...");
+    
+    fetchLatestAirQualityData().then(latestData => {
+        if (!latestData) {
+            console.error("❌ 无法获取数据库最新数据");
+            return;
+        }
+        
+        console.log(`✅ 成功获取 ${latestData.length} 个站点的最新数据`);
+        
+        // 为每个有坐标的站点添加标记
+        Object.keys(stationCoords).forEach(stationId => {
+            // 找到对应站点的最新数据
+            const stationData = latestData.find(data => data.station_id === stationId);
+            
+            if (!stationData) {
+                console.warn(`⚠️ 站点 ${stationId} 没有找到最新数据`);
                 return;
             }
-
-            let actualStationId = result.stationId;
-            let timestamps = Object.keys(result.data);
-            if (timestamps.length === 0) {
-                console.warn(`⚠️Keine Messwerte für ${actualStationId}`);
-                return;
-            }
-
-            let latestTimestamp = timestamps[timestamps.length - 1];
-            let actualTimestamp = result.data[latestTimestamp][0];
-            let pollutantData = result.data[latestTimestamp].slice(3);
-
-            // 从污染物数据中提取数值
-            let valueMap = {};
-            pollutantData.forEach(entry => {
-                const pollutantId = entry[0];
-                const value = entry[1];
-                const code = components[pollutantId]?.code|| `ID ${pollutantId}`;
-                valueMap[code] = value;
-            });
-
-            //  从值中提取目标污染物（默认为 0）
-            const NO2 = valueMap["NO2"] || 0;
-            const PM10 = valueMap["PM10"] || 0;
-            const PM2 = valueMap["PM2"] || 0;
-            const O3  = valueMap["O3"]  || 0;
+            
+            // 直接从数据库数据中提取污染物值
+            const NO2 = stationData.no2 || 0;
+            const PM10 = stationData.pm10 || 0;
+            const PM2 = stationData.pm2 || 0;
+            const O3 = stationData.o3 || 0;
+            
             const color = getWorstIndexColor(NO2, PM10, PM2, O3);
             const latLng = [stationCoords[stationId].lat, stationCoords[stationId].lon];
             const level = getWorstIndexLevel(NO2, PM10, PM2, O3);
+            
             const qualityTextMap = {
                 1: "Sehr gut",
-                2: "Gut",
+                2: "Gut", 
                 3: "Mäßig",
                 4: "Schlecht",
                 5: "Sehr schlecht"
             };
             const qualityLabel = qualityTextMap[level];
-            console.log("🧪 valueMap 检查", valueMap);
+            
+            console.log(` 站点 ${stationId} 数据:`, {NO2, PM10, PM2, O3, level, color});
 
-            //  使用 Leaflet CircleMarker
+            // 使用 Leaflet CircleMarker
             const circle = L.circleMarker(latLng, {
                 radius: 10,
                 fillColor: color,
@@ -260,30 +278,36 @@ function addStationsToMap() {
             });
 
             // Tooltip（站点名）
-            circle.bindTooltip(stationCoords[stationId].stationName || actualStationId, {
+            circle.bindTooltip(stationCoords[stationId].stationName || stationId, {
                 permanent: false,
                 sticky: true
             });
 
-            // Popup 内容（详细数据）
-            let popupContent = `
-            <h3>${stationCoords[stationId].stationName}</h3>
-            `;
+            // 构造与原格式兼容的污染物数据，用于详情面板
+            const pollutantData = [];
+            if (stationData.no2 !== null) pollutantData.push(["1", stationData.no2]);
+            if (stationData.pm10 !== null) pollutantData.push(["2", stationData.pm10]);
+            if (stationData.o3 !== null) pollutantData.push(["3", stationData.o3]);
+            if (stationData.pm2 !== null) pollutantData.push(["4", stationData.pm2]);
+
+            const dateObj = new Date(stationData.timestamp);
+            const enddate = dateObj.toISOString().split("T")[0];
+            const endtime = dateObj.getHours();
 
             // 点击显示右侧信息栏
             circle.on("click", () => {
                 showDataInPanel(
                     stationCoords[stationId].stationName,
-                    actualTimestamp,
+                    stationData.timestamp,
                     pollutantData,
                     stationId,
-                    result.enddate,
-                    result.endtime
+                    enddate,
+                    endtime
                 );
             });
 
             circle.addTo(map);
-            mapMarkers[actualStationId] = circle;
+            mapMarkers[stationId] = circle;
         });
     });
 }
