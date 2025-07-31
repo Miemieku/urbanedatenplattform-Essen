@@ -197,6 +197,7 @@ header {
   border-radius: 10px 0 0 10px;
   box-shadow: -4px 0 24px rgba(0,0,0,0.18);
   padding: 24px;
+  box-sizing: border-box;
 }
 
 #history-modal .charts-vertical {
@@ -207,7 +208,7 @@ header {
   height: calc(100vh - 120px);
   padding: 20px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 #history-modal canvas {
