@@ -319,9 +319,23 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
 
   if (!wrapper || !content) return;
 
-  // 计算测量时间段（1小时区间）
-  const dateString = `${enddate} ${endtime}`;
-  const end = new Date(dateString);
+  // 处理时间 - 支持数据库的ISO时间格式
+  let end;
+  if (timestamp && timestamp.includes('T')) {
+    // 数据库中的ISO时间格式
+    end = new Date(timestamp);
+  } else {
+    // 原来的格式（enddate + endtime）
+    const dateString = `${enddate} ${endtime}`;
+    end = new Date(dateString);
+  }
+
+  // 验证时间是否有效
+  if (isNaN(end.getTime())) {
+    console.error("❌ 无效的时间格式:", { timestamp, enddate, endtime });
+    end = new Date(); // 使用当前时间作为后备
+  }
+
   const formatTime = (d) =>
     `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
       d.getDate()
@@ -443,7 +457,6 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
   content.innerHTML = html;
   wrapper.classList.add("visible");
 
-
   // 绑定按钮事件
   const btnHistory = document.getElementById("btn-history");
   if (btnHistory) {
@@ -453,7 +466,6 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
       loadAndRenderHistoryChart(stationId); // 你需要把当前站点ID传进来
     };
   }
-
 }
 
 async function loadAndRenderHistoryChart(stationId) {
