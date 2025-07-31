@@ -418,7 +418,7 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
 }
 
 async function loadAndRenderHistoryChart(stationId) {
-  const url = `/.netlify/functions/supabaseProxy?stationId=${stationId}`;
+  const url = `/.netlify/functions/supabaseProxy?type=luftqualitaet&stationId=${stationId}`;
   console.log("加载并渲染历史图表，站点ID:", stationId);
   const res = await fetch(url);
   const data = await res.json();
@@ -431,12 +431,12 @@ async function loadAndRenderHistoryChart(stationId) {
   const labels = data.map(row => new Date(row.timestamp).toLocaleTimeString("de-DE", {hour:"2-digit",minute:"2-digit"}));
   const pm10 = data.map(row => row.pm10);
   const no2 = data.map(row => row.no2);
-  const pm25 = data.map(row => row.pm25);
+  const pm2 = data.map(row => row.pm2);
   const o3 = data.map(row => row.o3);
 
   renderLineChart("chart-pm10", labels, pm10, "Feinstaub PM10", "#00e6e6");
   renderLineChart("chart-no2", labels, no2, "Stickstoffdioxid (NO₂)", "#00bfff");
-  renderLineChart("chart-pm25", labels, pm25, "Feinstaub PM2,5", "#00ff99");
+  renderLineChart("chart-pm2", labels, pm2, "Feinstaub PM2,5", "#00ff99");
   renderLineChart("chart-o3", labels, o3, "Ozon (O₃)", "#00ffcc");
 }
 
