@@ -10,7 +10,16 @@ Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Pl
 ### PostgreSQL/PostGIS-Datenbank (Supabase)
 - **Haupttabelle**: `luftqualitaet` - Speichert alle Luftqualitätsmessungen
 - **Datenbank-View**: `latest_luftqualitaet` - Optimierte Abfrage für neueste Daten pro Messstation
+- **Datenbank-View**: `luftqualitaet_24h` - 24-Stunden-Historie für Chart-Visualisierung
 - **Automatische Datenaktualisierung**: Alle 30 Minuten via GitHub Actions
+
+### Automatisierter Datenfluss
+1. **Datenimport**: GitHub Actions führt alle 30 Minuten `fetch_uba_to_supabase.js` aus
+2. **Datenspeicherung**: Luftqualitätsdaten werden automatisch in PostgreSQL-Tabelle gespeichert
+3. **Datenabfrage**: 
+   - Frontend nutzt `latest_luftqualitaet` View für Kartenanzeige
+   - Frontend nutzt `luftqualitaet_24h` View für Chart-Visualisierung
+4. **Echtzeit-Anzeige**: Daten werden über Supabase-Proxy an Frontend geliefert
 
 ## Funktionen
 
@@ -37,14 +46,6 @@ Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Pl
 
 - **Luftqualitätsdaten**: Umweltbundesamt (UBA) → Supabase-Datenbank
 - **Stadtteilgrenzen**: Eigene Aufbereitung auf Basis von Geojson, transformiert nach EPSG:4326
-
-## Projektstruktur
-
-index.html // Hauptseite
-style.css // Layout und Infopanel
-airQuality.js // Hauptlogik zur Kartensteuerung
-components.json // Mapping von Schadstoff-IDs zu Namen/Einheiten
-netlify/functions/ubaProxy.js // Serverless Proxy für UBA-Daten
 
 ## Lizenz
 
