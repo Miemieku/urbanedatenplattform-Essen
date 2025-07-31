@@ -319,10 +319,10 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
 
   if (!wrapper || !content) return;
 
-  // 处理时间 - 支持数据库的ISO时间格式
+  // 处理时间 - 直接使用数据库中的测量时间
   let end;
   if (timestamp && timestamp.includes('T')) {
-    // 数据库中的ISO时间格式
+    // 数据库中的ISO时间格式 - 直接使用，不进行时区转换
     end = new Date(timestamp);
   } else {
     // 原来的格式（enddate + endtime）
@@ -342,6 +342,7 @@ function showDataInPanel(stationName, timestamp, pollutantData, stationId, endda
     ).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:00`;
 
   function formatTimeDE(date) {
+    // 直接使用数据库中的时间，不进行时区转换
     return date.toLocaleString("de-DE", {
       day: "2-digit",
       month: "2-digit",
