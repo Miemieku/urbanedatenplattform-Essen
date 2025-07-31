@@ -207,6 +207,7 @@ header {
   height: calc(100vh - 120px);
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #history-modal canvas {
