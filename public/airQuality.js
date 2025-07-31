@@ -463,7 +463,7 @@ function renderLineChart(canvasId, labels, data, label, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false}
+        legend: { display: false},
         title: {
           dispay: true,
           text:label,
