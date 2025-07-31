@@ -119,8 +119,6 @@ function fetchAirQualityData(stationId) {
               }
         // get latest available timestamp
     const latestTimestamp = timestamps[timestamps.length - 1];
-    const actualTimestamp = records[latestTimestamp][0];
-    const data = records[latestTimestamp].slice(3);
 
     // derive enddate and endtime from latest timestamp
     const latestDateObj = new Date(latestTimestamp);
