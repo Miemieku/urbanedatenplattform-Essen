@@ -212,14 +212,12 @@ header {
   }
   
   #history-modal canvas {
-    height: 16vh !important;
-    width: 95% !important;
+    height: 16vh !important; /* 减小高度，为间隔留出更多空间 */
+    width: 95% !important; /* 增加宽度，减少左侧空白 */
     max-width: 650px;
     background: #f8f8f8;
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     margin: 0 auto;
-    padding: 10px;
-    /* 移除可能导致模糊的属性，保持清晰 */
-    image-rendering: auto;
+    padding: 10px; /* 为图表添加内边距 */
   }
