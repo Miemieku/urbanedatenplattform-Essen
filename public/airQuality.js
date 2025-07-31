@@ -502,7 +502,20 @@ async function loadAndRenderHistoryChart(stationId) {
 }
 
 function renderLineChart(canvasId, labels, data, label, color) {
-  const ctx = document.getElementById(canvasId).getContext("2d");
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext("2d");
+
+  // 设置Canvas的高DPI支持，提高清晰度
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  
+  // 设置Canvas样式尺寸
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = rect.height + 'px';
 
   if (window[canvasId + "_chart"]) {
     window[canvasId + "_chart"].destroy();
@@ -518,33 +531,50 @@ function renderLineChart(canvasId, labels, data, label, color) {
         borderColor: color,
         backgroundColor: color + "33",
         fill: true,
-        tension: 0.3
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 5
       }]
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false},
         title: {
           display: true,
-          text:label,
-          color: "2c3e50",
+          text: label,
+          color: "#2c3e50",
           font: {
-            size:14,
-            weight:"bold"
+            size: 14,
+            weight: "bold"
           },
-          padding: {bottom:10}
+          padding: {bottom: 10}
         }
       },
-
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
       scales: {
         x: {
           grid: { display: false },
-          ticks: { maxTicksLimit: 6 }
+          ticks: { 
+            maxTicksLimit: 6,
+            font: {
+              size: 11
+            }
+          }
         },
         y: {
           grid: { display: false },
-          ticks: {maxTicksLimit: 4 }
+          ticks: {
+            maxTicksLimit: 4,
+            font: {
+              size: 11
+            }
+          }
         }
       }
     }
