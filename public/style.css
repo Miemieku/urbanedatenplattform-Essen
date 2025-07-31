@@ -201,7 +201,7 @@ header {
 
 #history-modal .charts-vertical {
   display: grid;
-grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 10px;
   width: 100%;
   height: calc(100vh - 120px);
