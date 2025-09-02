@@ -3,7 +3,7 @@ var map;
 
 document.addEventListener("DOMContentLoaded", function() {
     map = L.map('map', {
-        center: [51.2277, 6.7735], // Essen 的坐标
+        center: [51.4566, 7.0123], // Essen 的坐标
         zoom: 12,
         zoomControl: false
     });

@@ -1,8 +1,6 @@
-const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/functions/ubaProxy?";
-let stationCoords = {}; // 存储Düsseldorf测量站点
-let components = {}; // 存储污染物 ID → 名称
-let mapMarkers = {};
 
+<<<<<<< HEAD
+=======
 // 获取污染物 ID → 名称
 fetch("./components.json") // 确保路径正确
     .then(response => response.json())
@@ -51,13 +49,13 @@ function fetchStationCoordinates() {
             // 🚀 **确保 `data.data` 是数组**
             let stations = Array.isArray(data.data) ? data.data : Object.values(data.data);
 
-            // 过滤出 Düsseldorf
+            // 过滤出 Essen
             let filteredStations = stations.filter(entry => 
-                entry[3] === "Düsseldorf" && entry[6] === null
+                entry[3] === "Essen" && entry[6] === null
             );
             
-            // 先检查是否有匹配的 Düsseldorf 站点
-            console.log("📌过滤后的 Düsseldorf 站点:", filteredStations);
+            // 先检查是否有匹配的 Essen 站点
+            console.log("📌过滤后的 Essen 站点:", filteredStations);
             // `3` 是城市名称字段
 
             if (filteredStations.length === 0) {
@@ -575,3 +573,5 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 });
+
+>>>>>>> 23e072552e6204277fc7e1d015b6adfc6d2991db
