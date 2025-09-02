@@ -33,7 +33,7 @@ async function getDusseldorfStations() {
   }
 
   return stations
-    .filter(st => st[3] === "Düsseldorf")
+    .filter(st => st[3] === "Essen")
     .map(st => ({
       id: st[1],
       name: st[2],
