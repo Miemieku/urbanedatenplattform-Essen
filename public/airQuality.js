@@ -1,4 +1,9 @@
 
+const API_BASE_URL = "https://datenplattform-essen.netlify.app/.netlify/functions/ubaProxy?";
+let stationCoords = {}; // 存储Düsseldorf测量站点
+let components = {}; // 存储污染物 ID → 名称
+let mapMarkers = {};
+
 // 获取污染物 ID → 名称
 fetch("./components.json") // 确保路径正确
     .then(response => response.json())
