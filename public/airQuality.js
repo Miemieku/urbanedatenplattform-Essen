@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-=======
 // 获取污染物 ID → 名称
 fetch("./components.json") // 确保路径正确
     .then(response => response.json())
@@ -574,4 +572,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
->>>>>>> 23e072552e6204277fc7e1d015b6adfc6d2991db
