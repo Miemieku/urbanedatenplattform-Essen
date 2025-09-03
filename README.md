@@ -1,7 +1,7 @@
-# Urbane Datenplattform Düsseldorf – Demo
+# Urbane Datenplattform Essen – Demo
 
 ### Live-Demo
-https://urbane-datenplattform-duesseldorf.netlify.app
+https://urbane-datenplattform-essen.netlify.app/
 
 Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und **Datenbankintegration**.
 
