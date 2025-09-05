@@ -48,29 +48,34 @@
   </style>
 </head>
 <body>
+<!-- 在 <head> 中添加 Font Awesome CDN： -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <!-- 顶部导航栏 -->
 <header style="display: flex; align-items: center; background-color: #2f3b47; color: white; padding: 10px; height: 50px;">
-    <!-- 左侧菜单按钮（可选） -->
-    <button id="menu-toggle" style="margin-right: 10px;">☰</button>
-    <h1 id="site-title" style="margin: 0;">Urbane Datenplattform Essen</h1>
+    <!-- 左侧菜单按钮 -->
+    <button id="menu-toggle" style="margin-right: 10px; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">☰</button>
+
+    <!-- 标题 -->
+    <h1 id="site-title" style="margin: 0; font-size: 20px;">Urbane Datenplattform Essen</h1>
 
     <!-- 右上图标区域 -->
     <div style="margin-left:auto; display:flex; align-items:center; gap:20px; padding-right:20px;">
-        <!-- 地图图标：跳转地图页 -->
-        <a href="index.html" title="Karte">
-            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Map" style="width:20px;height:20px;">
+        
+        <!-- 地图图标 -->
+        <a href="index.html" title="Zur Karte" style="color: white; font-size: 18px;">
+            <i class="fas fa-map"></i>
         </a>
 
-        <!-- Dashboard图标：跳转dashboard页 -->
-        <a href="dashboard.html" title="Dashboard">
-            <img src="https://cdn-icons-png.flaticon.com/512/61/61112.png" alt="Dashboard" style="width:20px;height:20px;">
+        <!-- Dashboard图标 -->
+        <a href="essen-dashboard.html" title="Zum Dashboard" style="color: white; font-size: 18px;">
+            <i class="fas fa-th-large"></i>
         </a>
 
-        <!-- 语言 -->
+        <!-- 语言显示 -->
         <span style="color:white; font-weight:bold;">DE</span>
     </div>
 </header>
-
 
   <div class="dashboard">
     <div class="widget">
