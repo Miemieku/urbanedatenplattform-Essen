@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Essen Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      background: #2980b9;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      padding: 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+    .card h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      margin: 4px 0;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<header style="display: flex; align-items: center; background-color: #2f3b47; color: white; padding: 10px; height: 50px;">
+    <!-- 左侧菜单按钮（可选） -->
+    <button id="menu-toggle" style="margin-right: 10px;">☰</button>
+    <h1 id="site-title" style="margin: 0;">Urbane Datenplattform Essen</h1>
+
+    <!-- 右上图标区域 -->
+    <div style="margin-left:auto; display:flex; align-items:center; gap:20px; padding-right:20px;">
+        <!-- 地图图标：跳转地图页 -->
+        <a href="essen-map.html" title="Karte">
+            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Map" style="width:20px;height:20px;">
+        </a>
+
+        <!-- Dashboard图标：跳转dashboard页 -->
+        <a href="essen-dashboard.html" title="Dashboard">
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61112.png" alt="Dashboard" style="width:20px;height:20px;">
+        </a>
+
+        <!-- 语言 -->
+        <span style="color:white; font-weight:bold;">DE</span>
+    </div>
+</header>
+
+
+  <div class="grid">
+    <div class="card">
+      <h2>Wetter</h2>
+      <p>Temperatur: <span id="temp">--</span>°C</p>
+      <p>Luftfeuchtigkeit: <span id="humidity">--</span>%</p>
+      <p>Standort: Essen</p>
+    </div>
+
+    <div class="card">
+      <h2>Besucheraufkommen</h2>
+      <canvas id="visitsChart" height="150"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Luftqualitätsindex</h2>
+      <p>Index: <strong style="color:green;">Sehr Gut</strong></p>
+      <p>Quelle: Umweltbundesamt</p>
+    </div>
+
+    <div class="card">
+      <h2>Verkehrsaufkommen</h2>
+      <canvas id="trafficChart" height="150"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Bürgerbeteiligung</h2>
+      <p>Welche Daten interessieren Sie?</p>
+      <button>Idee einreichen</button>
+    </div>
+  </div>
+
+  <script>
+    // Beispiel: Füge später echte API-Daten hier ein
+    document.getElementById("temp").innerText = "18";
+    document.getElementById("humidity").innerText = "76";
+
+    // Dummy Charts
+    const visitsCtx = document.getElementById('visitsChart');
+    new Chart(visitsCtx, {
+      type: 'line',
+      data: {
+        labels: ['6 Uhr','8','10','12','14','16','18'],
+        datasets: [{
+          label: 'Besucher',
+          data: [100, 200, 350, 400, 300, 250, 150],
+          borderColor: '#3498db',
+          fill: false
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+
+    const trafficCtx = document.getElementById('trafficChart');
+    new Chart(trafficCtx, {
+      type: 'bar',
+      data: {
+        labels: ['7 Uhr','9','11','13','15','17'],
+        datasets: [{
+          label: 'Fahrzeuge',
+          data: [120, 180, 300, 250, 220, 200],
+          backgroundColor: '#e67e22'
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  </script>
+</body>
+</html>
