@@ -1,4 +1,4 @@
-name: Update Düsseldorf Luftqualität
+name: Update Essen Luftqualität
 
 on:
   schedule:
@@ -18,7 +18,7 @@ jobs:
 
       - run: npm install
 
-      - name: Fetch Düsseldorf Air Quality
+      - name: Fetch Essen Air Quality
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
