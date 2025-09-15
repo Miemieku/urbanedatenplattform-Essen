@@ -220,33 +220,3 @@ header {
     image-rendering: crisp-edges; /* 提高清晰度 */
   }
   
-    {
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-    body {
-      margin: 0;
-      background-color: #f0f2f5;
-    }
-    .dashboard {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .widget {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .widget h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #2c3e50;
-    }
-    .small-text {
-      font-size: 14px;
-      color: #666;
-    }

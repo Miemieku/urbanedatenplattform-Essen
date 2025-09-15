@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Urbane Datenplattform</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="dashboard.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="dashboard.js"></script>
 </head>
 <body>
 
@@ -47,15 +50,31 @@
       <p class="small-text">Viel Verkehr (Freitag)</p>
     </div>
 
-    <div class="widget">
-      <h3>Temperaturkarte</h3>
-      <p class="small-text">24°C Max / 9°C Min</p>
+  <div class="weather-card-container">
+    <!-- 温度卡 -->
+    <div class="card temperature-card">
+      <h3>Temperatur</h3>
+      <div class="card-main">
+        <span class="temp-value" id="temp-now">--°C</span>
+        <div class="temp-range">
+          <span id="temp-min">Min: --°C</span> |
+          <span id="temp-max">Max: --°C</span>
+        </div>
+      </div>
     </div>
 
-    <div class="widget">
+    <!-- 天气卡 -->
+    <div class="card weather-card">
       <h3>Wetter</h3>
-      <p class="small-text">Gefühlte Temperatur: 18°C, Luftfeuchte: 75%</p>
+      <div class="weather-detail"><strong>Gefühlt:</strong> <span id="apparent-temp">--°C</span></div>
+      <div class="weather-detail"><strong>Luftfeuchtigkeit:</strong> <span id="humidity">--%</span></div>
+      <div class="weather-detail"><strong>Wind:</strong> <span id="wind">-- m/s</span> <span id="wind-dir">↻</span></div>
+      <div class="weather-detail"><strong>Niederschlag:</strong> <span id="rain">-- mm</span></div>
+      <div class="weather-detail"><strong>UV-Index:</strong> <span id="uv">--</span></div>
+      <div class="weather-detail"><strong>Bewölkung:</strong> <span id="cloud">--%</span></div>
     </div>
+  </div>
+
 
     <div class="widget">
       <h3>Luftqualitätsindex</h3>
