@@ -28,7 +28,7 @@ export async function handler(event, context) {
       url = `${SUPABASE_URL}/rest/v1/latest_luftqualitaet?select=*`;
     }
   } else if (type === "stadtteile") {
-    url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson?select=*`;
+    url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson_view?select=*`;
   } else {
     return {
       statusCode: 400,
