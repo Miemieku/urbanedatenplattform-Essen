@@ -5,7 +5,7 @@ export async function handler(event, context) {
 
   // 解析参数
   const params = event.queryStringParameters || {};
-  const type = params.type || "stadtteile"; // 默认查询 Stadtteile
+  const type = params.type || "stadteilgrenzen"; // 默认查询 Stadtteile
   const stationId = params.stationId;
 
   let url;
@@ -27,7 +27,7 @@ export async function handler(event, context) {
       // 获取所有站点的最新数据
       url = `${SUPABASE_URL}/rest/v1/latest_luftqualitaet?select=*`;
     }
-  } else if (type === "stadtteile") {
+  } else if (type === "stadteilgrenzen") {
     url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson_view?select=*`;
   } else {
     return {
