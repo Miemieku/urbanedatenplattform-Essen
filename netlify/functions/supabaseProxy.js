@@ -27,7 +27,7 @@ export async function handler(event, context) {
       // 获取所有站点的最新数据
       url = `${SUPABASE_URL}/rest/v1/latest_luftqualitaet?select=*`;
     }
-  } else if (type === "stadteile") {
+  } else if (type === "stadtteile") {
     url = `${SUPABASE_URL}/rest/v1/stadtteilgrenzen_geojson?select=*`;
   } else {
     return {
