@@ -1,74 +1,132 @@
-    *{
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-    body {
-      margin: 0;
-      background-color: #f0f2f5;
-    }
-    .dashboard {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .widget {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .widget h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #2c3e50;
-    }
-    .small-text {
-      font-size: 14px;
-      color: #666;
-    }
-    
-    .weather-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px;
+body {
+  margin: 0;
+  background-color: #f0f2f5;
+  font-family: 'Roboto', sans-serif;
 }
 
-.card {
-  background-color: #ffffff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 300px;
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
-.card h3 {
+.widget {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.widget h3 {
   margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #2c3e50;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.temperature-card .temp-value {
-  font-size: 48px;
-  color: #e67e22;
+/* Temperatur 卡片 */
+.temperature-card {
+  grid-column: span 2;
+  text-align: center;
+  background: linear-gradient(135deg, #fbc531, #e67e22);
+  color: white;
+}
+
+.temperature-card .value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.weather-card-grid {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.weather-card-grid h3 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
-.temp-range {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #666;
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 一排 3 个 */
+  gap: 15px;
 }
 
-.weather-detail {
-  font-size: 14px;
-  margin: 6px 0;
-  color: #34495e;
+.weather-box {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#wind-dir {
-  display: inline-block;
-  transform: rotate(0deg);
+.weather-box .icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.weather-box .value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.weather-box .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+
+/* Luftqualität 卡片 */
+.air-card {
+  background: linear-gradient(135deg, #55efc4, #00b894);
+  color: white;
+}
+
+/* 让 Nextbike 卡片更宽 */
+.wide-card {
+  grid-column: span 1;   /* 占据两列 */
+  font-size: 1.2rem;
+  padding: 20px 25px;
+}
+
+/* 保证文字能自动换行，不超出卡片 */
+.wide-card .stat-row .value {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;   /* ✅ 改成左对齐，长名字更自然 */
+}
+/* 总览数字大号居中 */
+.nb-kpi {
+  font-weight: bold;
+  text-align: center;    /* ✅ 居中 */
+  margin: 15px 0;
+}
+
+.bike-card .muted {
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: -10px;
 }

@@ -27,3 +27,29 @@ async function fetchWeather() {
 }
 
 fetchWeather();
+
+fetch("https://api.nextbike.net/maps/nextbike-live.json?city=133")
+  .then(r => r.json())
+  .then(data => {
+    const city = data.countries[0].cities.find(c => c.uid === 133);
+    // 顶部 KPI
+    document.getElementById("nb-available").textContent = city.available_bikes;
+    document.getElementById("nb-total").textContent = city.set_point_bikes;
+
+    const places = city.places || [];
+
+    // 空位最多 Top1
+    const topFree = [...places].sort((a,b)=> (b.free_racks||0) - (a.free_racks||0))[0];
+    const freeText = topFree ? `${topFree.name} (${topFree.free_racks||0})` : "n/a";
+    const freeEl = document.getElementById("nb-top-free");
+    freeEl.textContent = freeText;
+    freeEl.title = freeText;   // tooltip 展示完整名称
+
+    // 车辆最少 Top1
+    const topLow = [...places].sort((a,b)=> (a.bikes||0) - (b.bikes||0))[0];
+    const lowText = topLow ? `${topLow.name} (${topLow.bikes||0})` : "n/a";
+    const lowEl = document.getElementById("nb-top-low");
+    lowEl.textContent = lowText;
+    lowEl.title = lowText;     // tooltip
+  })
+  .catch(err => console.error("Nextbike API Fehler:", err));

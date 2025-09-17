@@ -38,49 +38,77 @@
     </div>
 </header>
 
-  <div class="dashboard">
+ <div class="dashboard">
 
-    <div class="widget">
-      <h3>E-Ladesäulen</h3>
-      <p class="small-text">508 Gesamt / 383 Verfügbar</p>
-    </div>
-
-    <div class="widget">
-      <h3>Verkehrsaufkommen</h3>
-      <p class="small-text">Viel Verkehr (Freitag)</p>
-    </div>
-
-  <div class="weather-card-container">
-    <!-- 温度卡 -->
-    <div class="card temperature-card">
-      <h3>Temperatur</h3>
-      <div class="card-main">
-        <span class="temp-value" id="temp-now">--°C</span>
-        <div class="temp-range">
-          <span id="temp-min">Min: --°C</span> |
-          <span id="temp-max">Max: --°C</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 天气卡 -->
-    <div class="card weather-card">
-      <h3>Wetter</h3>
-      <div class="weather-detail"><strong>Gefühlt:</strong> <span id="apparent-temp">--°C</span></div>
-      <div class="weather-detail"><strong>Luftfeuchtigkeit:</strong> <span id="humidity">--%</span></div>
-      <div class="weather-detail"><strong>Wind:</strong> <span id="wind">-- m/s</span> <span id="wind-dir">↻</span></div>
-      <div class="weather-detail"><strong>Niederschlag:</strong> <span id="rain">-- mm</span></div>
-      <div class="weather-detail"><strong>UV-Index:</strong> <span id="uv">--</span></div>
-      <div class="weather-detail"><strong>Bewölkung:</strong> <span id="cloud">--%</span></div>
-    </div>
+<div class="widget bike-card wide-card">
+  <h3>🚲 Fahrräder Essen </h3>
+  <div class="nb-kpi">
+    <span id="nb-available">--</span> von <span id="nb-total">--</span> 
+    </p> verfügbar
   </div>
 
+</div>
 
-    <div class="widget">
-      <h3>Luftqualitätsindex</h3>
-      <p class="small-text">Sehr gut</p>
+
+<div class="widget bike-card">
+  <h3>📊 Nextbike Stationen</h3>
+  <p class="stat-line"><strong>Freie Plätze (Top 1):</strong> <span id="nb-top-free">--</span></p>
+  <p class="stat-line"><strong>Wenig Bikes (Top 1):</strong> <span id="nb-top-low">--</span></p>
+</div>
+
+  <div class="widget temperature-card">
+    <h3><i class="icon-sun">☀️</i> Temperatur</h3>
+    <div class="value">15.1°C</div>
+    <p>12.1°C | 15.2°C</p>
+  </div>
+
+<div class="card weather-card-grid">
+  <h3>🌦️ Wetter</h3>
+  <div class="weather-grid">
+    <div class="weather-box">
+      <div class="icon">🌡️</div>
+      <div class="value" id="apparent-temp">--°C</div>
+      <div class="label">Gefühlt</div>
     </div>
+    <div class="weather-box">
+      <div class="icon">💧</div>
+      <div class="value" id="humidity">--%</div>
+      <div class="label">Luftfeuchtigkeit</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">🌬️</div>
+      <div class="value">
+        <span id="wind">-- m/s</span>
+        <span id="wind-dir">↻</span>
+      </div>
+      <div class="label">Wind</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">🌧️</div>
+      <div class="value" id="rain">-- mm</div>
+      <div class="label">Niederschlag</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">☀️</div>
+      <div class="value" id="uv">--</div>
+      <div class="label">UV-Index</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">☁️</div>
+      <div class="value" id="cloud">--%</div>
+      <div class="label">Bewölkung</div>
+    </div>
+  </div>
+</div>
 
+
+
+  <div class="widget air-card">
+    <h3><i class="icon-leaf">🍃</i> Luftqualitätsindex</h3>
+    <p>Sehr gut</p>
+  </div>
+
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
