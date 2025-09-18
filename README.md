@@ -4,7 +4,7 @@
 👉 [https://urbane-datenplattform-essen.netlify.app/](https://urbane-datenplattform-essen.netlify.app/)
 
 Dieses Projekt zeigt die grundlegende Funktionalität einer **Urban Data Platform (UDP)** zur Visualisierung und Analyse städtischer Geodaten.  
-Es wurde im Rahmen meiner Bewerbung auf **zwei Stellen bei der Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **Geodatenmanagement, Sensorintegration und digitale Stadtmodelle**.
+Es wurde im Rahmen meiner Bewerbung bei der **Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **Geodatenmanagement, Sensorintegration und digitale Stadtmodelle**.
 
 ---
 
@@ -65,28 +65,27 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 
 urbane-datenplattform-essen/
 ├── public/
-│ ├── index.html # Dashboard (Startseite)
-│ ├── map.html # Kartenansicht
-│ ├── dashboard.js # Dashboard-Logik
-│ ├── airQuality.js # Luftqualitätslogik
-│ ├── dashboard.css # Dashboard-Styles
-│ ├── style.css # Globales Styling
-│ ├── script.js # Gemeinsame Funktionen
-│ └── components.json # Schadstoff-Mapping
+│   ├── index.html
+│   ├── map.html
+│   ├── dashboard.js
+│   ├── airQuality.js
+│   ├── dashboard.css
+│   ├── style.css
+│   ├── script.js
+│   └── components.json
 ├── netlify/functions/
-│ ├── supabaseProxy.js # Proxy für DB-Abfragen
-│ └── ubaProxy.js # Proxy für UBA-API
+│   ├── supabaseProxy.js
+│   └── ubaProxy.js
 ├── scripts/
-│ └── fetch_uba_to_supabase.js # Automatischer Datenimport
+│   └── fetch_uba_to_supabase.js
 ├── .github/workflows/
-│ └── update-air-quality.yml # Scheduler alle 30 Minuten
-├── database_setup.md # Setup-Anleitung PostGIS
-├── netlify.toml # Netlify-Konfiguration
-├── package.json # Abhängigkeiten
+│   └── update-air-quality.yml
+├── database_setup.md
+├── netlify.toml
+├── package.json
+├── package-lock.json
 └── README.md
 
-
----
 
 ## Datenquellen
 
