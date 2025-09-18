@@ -43,3 +43,85 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=51.45&longitude=7.01&curr
   })
   .catch(err => console.error("Wetter API Fehler:", err));
 
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("station-select");
+  const qualityEl = document.getElementById("station-quality");
+  const openBtn = document.getElementById("open-map-btn");
+
+  // 默认站点 ID（Essen-Steele）
+  const DEFAULT_STATION_ID = "DENW043";
+
+  // 填充下拉框
+  fetchStationCoordinates().then(() => {
+    Object.entries(stationCoords).forEach(([id, info]) => {
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = info.stationName;
+      select.appendChild(opt);
+    });
+
+    // 设置默认选中 → Essen-Steele
+    select.value = DEFAULT_STATION_ID;
+    loadAirQuality(DEFAULT_STATION_ID);
+  });
+
+  // 选择站点时更新空气质量
+  select.addEventListener("change", function () {
+    if (this.value) {
+      loadAirQuality(this.value);
+    } else {
+      qualityEl.textContent = "Bitte Station wählen...";
+    }
+  });
+
+  // 打开地图
+  openBtn.addEventListener("click", () => {
+    const stationId = select.value;
+    if (stationId) {
+      window.location.href = `map.html?station=${stationId}`;
+    }
+  });
+
+  // 公共函数：加载空气质量
+  async function loadAirQuality(stationId) {
+    const latestData = await fetchLatestAirQualityData();
+    if (!latestData) return;
+
+    const stationData = latestData.find((d) => d.station_id === stationId);
+    if (!stationData) {
+      qualityEl.textContent = "Keine Daten verfügbar.";
+      return;
+    }
+
+    const level = getWorstIndexLevel(
+      stationData.no2,
+      stationData.pm10,
+      stationData.pm2,
+      stationData.o3
+    );
+
+    const qualityTextMap = {
+      1: "Sehr gut",
+      2: "Gut",
+      3: "Mäßig",
+      4: "Schlecht",
+      5: "Sehr schlecht",
+    };
+    const colorMap = {
+      1: "#00cccc",
+      2: "#00cc99",
+      3: "#ffff66",
+      4: "#cc6666",
+      5: "#990033",
+    };
+
+    qualityEl.innerHTML = `
+      <span style="display:inline-block;width:12px;height:12px;
+             border-radius:50%;background:${colorMap[level]};
+             margin-right:6px;"></span>
+      <span style="color:${colorMap[level]}; font-weight:bold;">
+        ${qualityTextMap[level]}
+      </span>
+    `;
+  }
+});
