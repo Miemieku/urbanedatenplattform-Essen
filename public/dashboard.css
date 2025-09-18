@@ -101,7 +101,8 @@ body {
 
 /* Luftqualitätsindex Card */
 .widget.air-card {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #00cec9);
+  color: white;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 15px 20px;
