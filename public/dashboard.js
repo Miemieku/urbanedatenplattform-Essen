@@ -136,29 +136,29 @@ document.addEventListener("DOMContentLoaded", async () => {
       4: "#cc6666",
       5: "#990033",
     };
-    
-    qualityEl.innerHTML = `
-      <div style="
-        display:inline-block;
-        background: rgba(255,255,255,0.7);   /* 半透明灰白底 */
-        padding: 4px 8px;
-        border-radius: 6px;
-        font-weight: bold;
-        color:${colorMap[level]};
-        margin-top: 6px;">
-        ${qualityTextMap[level]}
-      </div>
-    `;
 
-
-    // 污染物细节
+    // 构建污染物细节 + 质量等级小块
     detailsEl.innerHTML = `
-      <ul>
-      <li><strong>NO₂:</strong> ${stationData.no2 ?? "-"} µg/m³</li>
-      <li><strong>PM₁₀:</strong> ${stationData.pm10 ?? "-"} µg/m³</li>
-      <li><strong>PM₂.₅:</strong> ${stationData.pm2 ?? "-"} µg/m³</li>
-      <li><strong>O₃:</strong> ${stationData.o3 ?? "-"} µg/m³</li>
-    </ul>
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+        <ul style="flex:1; margin:0; padding:0; list-style:none;">
+          <li><strong>NO₂:</strong> ${stationData.no2 ?? "-"} µg/m³</li>
+          <li><strong>PM₁₀:</strong> ${stationData.pm10 ?? "-"} µg/m³</li>
+          <li><strong>PM₂.₅:</strong> ${stationData.pm2 ?? "-"} µg/m³</li>
+          <li><strong>O₃:</strong> ${stationData.o3 ?? "-"} µg/m³</li>
+        </ul>
+        <div style="
+          background:#fff;
+          padding:6px 10px;
+          border-radius:6px;
+          font-weight:bold;
+          color:${colorMap[level]};
+          min-width:70px;
+          text-align:center;
+          ">
+          ${qualityTextMap[level]}
+        </div>
+      </div>
+
     `;
   }
 });
