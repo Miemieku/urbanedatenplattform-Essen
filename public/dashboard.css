@@ -98,7 +98,6 @@ body {
 }
 
 
-/* Luftqualität 卡片 */
 /* Luftqualitätsindex Card */
 .widget.air-card {
   background-color: #ffffff;
@@ -110,42 +109,29 @@ body {
 }
 
 .widget.air-card h3 {
-  margin-top: 0;
+  margin: 0 0 15px 0;
   font-size: 16px;
   color: #2c3e50;
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.widget.air-card label {
-  display: block;
+#pollutant-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#pollutant-details li {
+  margin: 4px 0;
   font-size: 14px;
-  margin-bottom: 5px;
   color: #34495e;
 }
 
-.widget.air-card select {
-  width: 100%;
-  padding: 6px 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
-  color: #2c3e50;
-}
-
-#station-quality {
-  font-size: 15px;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
 #open-map-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  width: 100%;
   margin-top: 15px;
   padding: 8px 12px;
   font-size: 14px;

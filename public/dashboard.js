@@ -27,71 +27,63 @@ fetch("https://api.nextbike.net/maps/nextbike-live.json?city=133")
   .catch(err => console.error("Nextbike API Fehler:", err));
 
 
-// Wetter API 调用
-fetch("https://api.open-meteo.com/v1/forecast?latitude=51.45&longitude=7.01&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_direction_10m,precipitation,uv_index,cloud_cover")
-  .then(r => r.json())
-  .then(data => {
-    const weather = data.current;
-
-    document.getElementById('apparent-temp').textContent = `${weather.apparent_temperature}°C`;
-    document.getElementById('humidity').textContent = `${weather.relative_humidity_2m}%`;
-    document.getElementById('wind').textContent = `${weather.wind_speed_10m} m/s`;
-    document.getElementById('wind-dir').style.transform = `rotate(${weather.wind_direction_10m}deg)`;
-    document.getElementById('rain').textContent = `${weather.precipitation} mm`;
-    document.getElementById('uv').textContent = weather.uv_index;
-    document.getElementById('cloud').textContent = `${weather.cloud_cover}%`;
-  })
-  .catch(err => console.error("Wetter API Fehler:", err));
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const select = document.getElementById("station-select");
   const qualityEl = document.getElementById("station-quality");
-  const openBtn = document.getElementById("open-map-btn");
+  const detailsEl = document.getElementById("pollutant-details");
+  const openMapBtn = document.getElementById("open-map-btn");
 
   // 默认站点 ID（Essen-Steele）
   const DEFAULT_STATION_ID = "DENW043";
 
-  // 填充下拉框
-  fetchStationCoordinates().then(() => {
-    Object.entries(stationCoords).forEach(([id, info]) => {
+  // 获取数据库数据 + Station 坐标
+  const latestData = await fetchLatestAirQualityData();
+  await fetchStationCoordinates();
+
+  if (!latestData) return;
+
+  // 下拉只显示有数据的站点
+  latestData.forEach(d => {
+    const info = stationCoords[d.station_id];
+    if (info) {
       const opt = document.createElement("option");
-      opt.value = id;
+      opt.value = d.station_id;
       opt.textContent = info.stationName;
       select.appendChild(opt);
-    });
-
-    // 设置默认选中 → Essen-Steele
-    select.value = DEFAULT_STATION_ID;
-    loadAirQuality(DEFAULT_STATION_ID);
-  });
-
-  // 选择站点时更新空气质量
-  select.addEventListener("change", function () {
-    if (this.value) {
-      loadAirQuality(this.value);
-    } else {
-      qualityEl.textContent = "Bitte Station wählen...";
     }
   });
 
-  // 打开地图
-  openBtn.addEventListener("click", () => {
+  // 默认选 Steele
+  if (stationCoords[DEFAULT_STATION_ID]) {
+    select.value = DEFAULT_STATION_ID;
+    loadAirQuality(DEFAULT_STATION_ID);
+  } else if (select.options.length > 1) {
+    select.selectedIndex = 1;
+    loadAirQuality(select.value);
+  }
+
+  // 切换测站
+  select.addEventListener("change", () => {
+    if (select.value) {
+      loadAirQuality(select.value);
+    } else {
+      qualityEl.textContent = "Bitte Station wählen...";
+      detailsEl.innerHTML = "";
+    }
+  });
+
+  // 按钮 → 跳转 map 页面
+  openMapBtn.addEventListener("click", () => {
     const stationId = select.value;
     if (stationId) {
       window.location.href = `map.html?station=${stationId}`;
     }
   });
 
-  // 公共函数：加载空气质量
-  async function loadAirQuality(stationId) {
-    const latestData = await fetchLatestAirQualityData();
-    if (!latestData) return;
-
-    const stationData = latestData.find((d) => d.station_id === stationId);
-    if (!stationData) {
-      qualityEl.textContent = "Keine Daten verfügbar.";
-      return;
-    }
+  // 加载空气质量数据
+  function loadAirQuality(stationId) {
+    const stationData = latestData.find(d => d.station_id === stationId);
+    if (!stationData) return;
 
     const level = getWorstIndexLevel(
       stationData.no2,
@@ -115,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       5: "#990033",
     };
 
+    // 总体 Luftqualität
     qualityEl.innerHTML = `
       <span style="display:inline-block;width:12px;height:12px;
              border-radius:50%;background:${colorMap[level]};
@@ -122,6 +115,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <span style="color:${colorMap[level]}; font-weight:bold;">
         ${qualityTextMap[level]}
       </span>
+    `;
+
+    // 污染物细节
+    detailsEl.innerHTML = `
+      <ul>
+        <li>NO₂: ${stationData.no2 ?? "-"} µg/m³</li>
+        <li>PM₁₀: ${stationData.pm10 ?? "-"} µg/m³</li>
+        <li>PM₂.₅: ${stationData.pm2 ?? "-"} µg/m³</li>
+        <li>O₃: ${stationData.o3 ?? "-"} µg/m³</li>
+      </ul>
     `;
   }
 });
