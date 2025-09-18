@@ -4,7 +4,7 @@
 👉 [https://urbane-datenplattform-essen.netlify.app/](https://urbane-datenplattform-essen.netlify.app/)
 
 Dieses Projekt zeigt die grundlegende Funktionalität einer **Urban Data Platform (UDP)** zur Visualisierung und Analyse städtischer Geodaten.  
-Es wurde im Rahmen meiner Bewerbung bei der **Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **Geodatenmanagement, Sensorintegration und digitale Stadtmodelle**.
+Es wurde im Rahmen meiner Bewerbung bei der **Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **GIS, Webentwicklung und Datenbankintegration**.
 
 ---
 
@@ -67,15 +67,6 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 - **Geodaten**: QGIS-Aufbereitung (EPSG:4647 → EPSG:4326)  
 - **Wetter**: Open-Meteo API  
 - **Bike-Sharing**: Nextbike API  
-
----
-
-## Bezug zur Bewerbung
-
-Dieses Demo adressiert die Anforderungen beider ausgeschriebener Stellen:  
-
-- **Geodatenmanagement** → Fokus auf PostgreSQL/PostGIS, QGIS-Datenaufbereitung, Datenqualität, Automatisierung  
-- **Sensorik & Digitaler Zwilling** → Integration externer Sensordaten (UBA, Wetter, Nextbike), Dashboard mit Echtzeitdaten, Grundlage für Smart-City-/Digital-Twin-Anwendungen  
 
 ---
 
