@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (show === "airquality") {
     // 打开右侧 Info-Panel
-    const wrapper = document.getElementById("info-panel");
+    const wrapper = document.getElementById("sidebar-container");
     if (wrapper) {
       wrapper.classList.add("visible");
     }
