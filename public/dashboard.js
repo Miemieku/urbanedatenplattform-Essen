@@ -59,15 +59,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 当选择一个 Station 时，加载最新空气质量
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("station-select");
+  const qualityEl = document.getElementById("station-quality");
+  const openBtn = document.getElementById("open-map-btn");
+
+  // 填充 Station 列表
+  fetchStationCoordinates().then(() => {
+    Object.entries(stationCoords).forEach(([id, info]) => {
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = info.stationName;
+      select.appendChild(opt);
+    });
+  });
+
+  // 选择时显示空气质量
   select.addEventListener("change", async function () {
     const stationId = this.value;
+    if (!stationId) {
+      qualityEl.textContent = "Bitte Station wählen...";
+      return;
+    }
+
     const latestData = await fetchLatestAirQualityData();
     if (!latestData) return;
 
     const stationData = latestData.find((d) => d.station_id === stationId);
-    const qualityEl = document.getElementById("station-quality");
-
     if (!stationData) {
       qualityEl.textContent = "Keine Daten verfügbar.";
       return;
@@ -95,15 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
       5: "#990033",
     };
 
-    qualityEl.innerHTML = `
-      <span style="color:${colorMap[level]}; font-weight:bold;">
-        ${qualityTextMap[level]}
-      </span>
-    `;
+    qualityEl.innerHTML = `<span style="color:${colorMap[level]};">${qualityTextMap[level]}</span>`;
   });
 
-  // 打开 map.html 并传递 stationId
-  document.getElementById("open-map-btn").addEventListener("click", () => {
+  // 跳转到 map.html 并带 station 参数
+  openBtn.addEventListener("click", () => {
     const stationId = select.value;
     if (stationId) {
       window.location.href = `map.html?station=${stationId}`;
