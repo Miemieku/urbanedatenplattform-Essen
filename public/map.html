@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Essen Map</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<header>
+    <!-- 左侧菜单按钮 -->
+    <button id="menu-toggle">☰</button>
+
+    <!-- 标题 -->
+    <h1 id="site-title" style="margin: 0; font-size: 20px;">Urbane Datenplattform Essen</h1>
+
+    <!-- 右上图标区域 -->
+    <div style="margin-left:auto; display:flex; align-items:center; gap:20px; padding-right:20px;">
+        
+        <!-- 地图图标 -->
+        <a href="index.html" title="Zur Karte" style="color: white; font-size: 18px;">
+            <i class="fas fa-map"></i>
+        </a>
+
+        <!-- Dashboard图标 -->
+        <a href="dashboard.html" title="Zum Dashboard" style="color: #00ff88; font-size: 18px;">
+            <i class="fas fa-th-large"></i>
+        </a>
+    </div>
+</header>
+
+
+    <!-- 左侧边栏（数据类型选择框） -->
+    <aside id="sidebar-container">
+        <div id="sidebar">
+            <h2>Daten Layer</h2>
+    <ul id="data-layer-list">
+        <li><input type="checkbox" id="stadtteile"> Stadtteile</li>
+        <li><input type="checkbox" id="air-quality"> Luftqualität</li>
+    </ul>
+
+        </div>
+    </aside>
+    
+    <!--右侧信息面板 -->
+<aside id="info-panel">
+  <button class="close-button" onclick="document.getElementById('info-panel').classList.remove('visible')">×</button>
+  <div id="air-quality-panel"></div>
+</aside>
+
+
+
+
+<!-- 搜索框 -->
+<div id="search-container">
+    <input type="text" id="search-box" placeholder="Adresse eingeben..." />
+    <button id="search-button">Suchen</button>
+</div>
+
+    <!-- 侧地图 -->
+    <section id="map-container">
+        <div id="map"></div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>  
+    <script src="airQuality.js"></script>
+    
+    <!-- 弹窗结构，放在 body 末尾 -->   
+    <div id="history-modal">
+        <div class="modal-content">
+        <span id="close-modal" style="cursor:pointer;">&times;</span>
+        <div class="charts-vertical">
+            <canvas id="chart-pm10"></canvas>
+            <canvas id="chart-no2"></canvas>
+            <canvas id="chart-pm2"></canvas>
+            <canvas id="chart-o3"></canvas>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

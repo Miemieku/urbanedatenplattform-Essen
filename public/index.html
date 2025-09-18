@@ -1,15 +1,19 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Essen Map</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urbane Datenplattform</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="dashboard.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="dashboard.js"></script>
 </head>
 <body>
+
 
 <!-- 顶部导航栏 -->
 <header>
@@ -34,54 +38,100 @@
     </div>
 </header>
 
+ <div class="dashboard">
 
-    <!-- 左侧边栏（数据类型选择框） -->
-    <aside id="sidebar-container">
-        <div id="sidebar">
-            <h2>Daten Layer</h2>
-    <ul id="data-layer-list">
-        <li><input type="checkbox" id="stadtteile"> Stadtteile</li>
-        <li><input type="checkbox" id="air-quality"> Luftqualität</li>
-    </ul>
+<div class="widget bike-card wide-card">
+  <h3>🚲 Fahrräder Essen </h3>
+  <div class="nb-kpi">
+    <span id="nb-available">--</span> von <span id="nb-total">--</span> 
+    </p> verfügbar
+  </div>
 
-        </div>
-    </aside>
-    
-    <!--右侧信息面板 -->
-<aside id="info-panel">
-  <button class="close-button" onclick="document.getElementById('info-panel').classList.remove('visible')">×</button>
-  <div id="air-quality-panel"></div>
-</aside>
-
-
-
-
-<!-- 搜索框 -->
-<div id="search-container">
-    <input type="text" id="search-box" placeholder="Adresse eingeben..." />
-    <button id="search-button">Suchen</button>
 </div>
 
-    <!-- 侧地图 -->
-    <section id="map-container">
-        <div id="map"></div>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>  
-    <script src="airQuality.js"></script>
-    
-    <!-- 弹窗结构，放在 body 末尾 -->   
-    <div id="history-modal">
-        <div class="modal-content">
-        <span id="close-modal" style="cursor:pointer;">&times;</span>
-        <div class="charts-vertical">
-            <canvas id="chart-pm10"></canvas>
-            <canvas id="chart-no2"></canvas>
-            <canvas id="chart-pm2"></canvas>
-            <canvas id="chart-o3"></canvas>
-        </div>
-        </div>
+<div class="widget bike-card">
+  <h3>📊 Nextbike Stationen</h3>
+  <p class="stat-line"><strong>Freie Plätze (Top 1):</strong> <span id="nb-top-free">--</span></p>
+  <p class="stat-line"><strong>Wenig Bikes (Top 1):</strong> <span id="nb-top-low">--</span></p>
+</div>
+
+  <div class="widget temperature-card">
+    <h3><i class="icon-sun">☀️</i> Temperatur</h3>
+    <div class="value">15.1°C</div>
+    <p>12.1°C | 15.2°C</p>
+  </div>
+
+<div class="card weather-card-grid">
+  <h3>🌦️ Wetter</h3>
+  <div class="weather-grid">
+    <div class="weather-box">
+      <div class="icon">🌡️</div>
+      <div class="value" id="apparent-temp">--°C</div>
+      <div class="label">Gefühlt</div>
     </div>
+    <div class="weather-box">
+      <div class="icon">💧</div>
+      <div class="value" id="humidity">--%</div>
+      <div class="label">Luftfeuchtigkeit</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">🌬️</div>
+      <div class="value">
+        <span id="wind">-- m/s</span>
+        <span id="wind-dir">↻</span>
+      </div>
+      <div class="label">Wind</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">🌧️</div>
+      <div class="value" id="rain">-- mm</div>
+      <div class="label">Niederschlag</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">☀️</div>
+      <div class="value" id="uv">--</div>
+      <div class="label">UV-Index</div>
+    </div>
+    <div class="weather-box">
+      <div class="icon">☁️</div>
+      <div class="value" id="cloud">--%</div>
+      <div class="label">Bewölkung</div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="widget air-card">
+    <h3><i class="icon-leaf">🍃</i> Luftqualitätsindex</h3>
+    <p>Sehr gut</p>
+  </div>
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['06', '08', '10', '12', '14'],
+        datasets: [{
+          label: 'Besucher',
+          data: [200, 450, 700, 600, 400],
+          borderColor: 'rgba(52, 152, 219,1.0)',
+          backgroundColor: 'rgba(52, 152, 219,0.2)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
