@@ -1,3 +1,54 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  const lat = 51.45; // Essen
+  const lon = 7.01;
+
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=apparent_temperature,relative_humidity_2m,precipitation,cloudcover,uv_index,windspeed_10m,winddirection_10m`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const current = data.current_weather;
+    const hourly = data.hourly;
+
+    // Gefühlt (apparent temperature)
+    document.getElementById("apparent-temp").textContent =
+      (hourly.apparent_temperature[0] ?? "--") + "°C";
+
+    // Luftfeuchtigkeit
+    document.getElementById("humidity").textContent =
+      (hourly.relative_humidity_2m[0] ?? "--") + "%";
+
+    // Wind
+    document.getElementById("wind").textContent =
+      (current.windspeed ?? "--") + " m/s";
+
+    // Windrichtung
+    const dir = current.winddirection ?? 0;
+    const arrows = ["↑","↗","→","↘","↓","↙","←","↖"];
+    const arrow = arrows[Math.round(dir/45) % 8];
+    document.getElementById("wind-dir").textContent = arrow;
+
+    // Niederschlag
+    document.getElementById("rain").textContent =
+      (hourly.precipitation[0] ?? "--") + " mm";
+
+    // UV-Index
+    document.getElementById("uv").textContent =
+      hourly.uv_index[0] ?? "--";
+
+    // Bewölkung
+    document.getElementById("cloud").textContent =
+      (hourly.cloudcover[0] ?? "--") + "%";
+
+  } catch (err) {
+    console.error("❌ Fehler beim Laden der Wetterdaten:", err);
+    ["apparent-temp","humidity","wind","wind-dir","rain","uv","cloud"].forEach(id => {
+      document.getElementById(id).textContent = "--";
+    });
+  }
+});
+
+
 // Nextbike API 调用
 fetch("https://api.nextbike.net/maps/nextbike-live.json?city=133")
   .then(r => r.json())
