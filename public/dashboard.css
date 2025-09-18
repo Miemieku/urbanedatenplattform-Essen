@@ -49,6 +49,7 @@ body {
   margin: 10px 0;
 }
 
+/* Weather 卡片 */
 .weather-card-grid {
   grid-column: span 2;
   background: linear-gradient(135deg, #74b9ff, #0984e3);
@@ -98,12 +99,70 @@ body {
 
 
 /* Luftqualität 卡片 */
-.air-card {
-  background: linear-gradient(135deg, #55efc4, #00b894);
-  color: white;
+/* Luftqualitätsindex Card */
+.widget.air-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* 让 Nextbike 卡片更宽 */
+.widget.air-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.widget.air-card label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.widget.air-card select {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #2c3e50;
+}
+
+#station-quality {
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#open-map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#open-map-btn:hover {
+  background-color: #2980b9;
+}
+
+
+/* Nextbike 卡片*/
 .wide-card {
   grid-column: span 1;   /* 占据两列 */
   font-size: 1.2rem;

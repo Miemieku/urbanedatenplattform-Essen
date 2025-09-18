@@ -42,3 +42,71 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=51.45&longitude=7.01&curr
     document.getElementById('cloud').textContent = `${weather.cloud_cover}%`;
   })
   .catch(err => console.error("Wetter API Fehler:", err));
+
+// === Station Auswahl & Luftqualität Card ===
+
+// 加载所有 Station 到下拉框
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("station-select");
+
+  // ⚠️ 依赖 map.js 里的 fetchStationCoordinates / stationCoords
+  fetchStationCoordinates().then(() => {
+    Object.entries(stationCoords).forEach(([id, info]) => {
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = info.stationName;
+      select.appendChild(opt);
+    });
+  });
+
+  // 当选择一个 Station 时，加载最新空气质量
+  select.addEventListener("change", async function () {
+    const stationId = this.value;
+    const latestData = await fetchLatestAirQualityData();
+    if (!latestData) return;
+
+    const stationData = latestData.find((d) => d.station_id === stationId);
+    const qualityEl = document.getElementById("station-quality");
+
+    if (!stationData) {
+      qualityEl.textContent = "Keine Daten verfügbar.";
+      return;
+    }
+
+    const level = getWorstIndexLevel(
+      stationData.no2,
+      stationData.pm10,
+      stationData.pm2,
+      stationData.o3
+    );
+
+    const qualityTextMap = {
+      1: "Sehr gut",
+      2: "Gut",
+      3: "Mäßig",
+      4: "Schlecht",
+      5: "Sehr schlecht",
+    };
+    const colorMap = {
+      1: "#00cccc",
+      2: "#00cc99",
+      3: "#ffff66",
+      4: "#cc6666",
+      5: "#990033",
+    };
+
+    qualityEl.innerHTML = `
+      <span style="color:${colorMap[level]}; font-weight:bold;">
+        ${qualityTextMap[level]}
+      </span>
+    `;
+  });
+
+  // 打开 map.html 并传递 stationId
+  document.getElementById("open-map-btn").addEventListener("click", () => {
+    const stationId = select.value;
+    if (stationId) {
+      window.location.href = `map.html?station=${stationId}`;
+    }
+  });
+});
