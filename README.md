@@ -1,74 +1,111 @@
 # Urbane Datenplattform Essen – Demo
 
-### Live-Demo
-https://urbane-datenplattform-essen.netlify.app/
+### Live-Demo  
+👉 [https://urbane-datenplattform-essen.netlify.app/](https://urbane-datenplattform-essen.netlify.app/)
 
-Dieses Projekt demonstriert die grundlegende Funktionalität einer Urban Data Platform (UDP) zur Visualisierung und Analyse städtischer Geodaten. Die Anwendung wurde im Kontext einer Bewerbung bei der Stadt Düsseldorf erstellt und dient als technisches Demo zur Präsentation meiner Fähigkeiten in den Bereichen GIS, Webentwicklung und **Datenbankintegration**.
+Dieses Projekt zeigt die grundlegende Funktionalität einer **Urban Data Platform (UDP)** zur Visualisierung und Analyse städtischer Geodaten.  
+Es wurde im Rahmen meiner Bewerbung auf **zwei Stellen bei der Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **Geodatenmanagement, Sensorintegration und digitale Stadtmodelle**.
 
-## Datenbank-Architektur & Automatisierung
+---
 
-### PostgreSQL/PostGIS-Datenbank (Supabase)
-- **Haupttabelle**: `luftqualitaet` - Speichert alle Luftqualitätsmessungen
-- **Datenbank-View**: `latest_luftqualitaet` - Optimierte Abfrage für neueste Daten pro Messstation
-- **Datenbank-View**: `luftqualitaet_24h` - 24-Stunden-Historie für Chart-Visualisierung
-- **Geodaten-Tabelle**: `stadtteilgrenzen_geojson` - Stadtteilgrenzen (QGIS-aufbereitet)
-- **Automatische Datenaktualisierung**: Alle 30 Minuten via GitHub Actions
+## Dashboard (index.html)
 
-### Automatisierter Datenfluss
-1. **Luftqualitätsdaten**:
-   - **Datenimport**: GitHub Actions führt alle 30 Minuten `fetch_uba_to_supabase.js` aus
-   - **Datenspeicherung**: Luftqualitätsdaten werden automatisch in PostgreSQL-Tabelle gespeichert
-   - **Datenabfrage**: 
-     - Frontend nutzt `latest_luftqualitaet` View für Kartenanzeige
-     - Frontend nutzt `luftqualitaet_24h` View für Chart-Visualisierung
+Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 
-2. **Geodaten-Verarbeitung**:
-   - **QGIS-Aufbereitung**: Stadtteilgrenzen werden in QGIS von EPSG:4647 nach EPSG:4326 transformiert
-   - **Datenbankimport**: Aufbereitete Geodaten werden in PostgreSQL/PostGIS-Tabelle gespeichert
-   - **Frontend-Anzeige**: Geodaten werden über Supabase-Proxy an Leaflet.js-Karte geliefert
+- **🌡️ Temperatur** – aktuelle Werte inkl. Min-/Max des Tages  
+- **🌦️ Wetter** – gefühlte Temperatur, Luftfeuchtigkeit, Wind, Niederschlag, UV-Index, Bewölkung  
+- **🚲 Fahrräder Essen (KPI)** – verfügbare Räder gesamt  
+- **📊 Nextbike Stationen** – Station mit meisten freien Plätzen / wenigsten Rädern  
+- **🍃 Luftqualität** – aktuelle Werte (NO₂, PM₁₀, PM₂.₅, O₃) + Kategorie (Sehr gut … Sehr schlecht)  
+  - per Button „Auf Karte anzeigen“ Wechsel zur Kartenansicht mit aktivierter Luftqualitäts-Ebene  
 
+---
+
+## Kartenansicht (map.html)
+
+- Interaktive Leaflet-Karte mit **Luftqualitätsstationen** und **Stadtteilgrenzen**  
+- Steuerung über linke Sidebar („Daten Layer“)  
+- Rechte Sidebar: Detailwerte, 24h-Historie (Chart.js), Gesundheitshinweise  
+
+---
+
+## Datenbank & Automatisierung
+
+- **Supabase (PostgreSQL/PostGIS)** mit Tabellen & Views:
+  - `luftqualitaet` – alle Messwerte  
+  - `latest_luftqualitaet` – jeweils aktuelle Werte pro Station  
+  - `luftqualitaet_24h` – Zeitreihe für Chart-Visualisierung  
+  - `stadtteilgrenzen_geojson` – Stadtteilgrenzen (QGIS transformiert EPSG:4647 → EPSG:4326)  
+- **Automatischer Datenimport**: GitHub Actions aktualisiert alle 30 Minuten die Luftqualitätsdaten  
+
+---
 
 ## Funktionen
 
-- **Datenbankgestützte Luftqualitätsvisualisierung** (NO₂, PM₁₀, PM₂.₅, O₃) auf interaktiver Karte
-- Farbliche Kennzeichnung der Messstationen gemäß UBA-Kategorien
-- **Echtzeitdaten aus PostgreSQL-Datenbank** (automatisch alle 30 Minuten aktualisiert)
-- Rechte Seitenleiste mit Detailinformationen je Messstation
-- **24-Stunden-Historie** mit interaktiven Charts für jede Messstation (basierend auf `luftqualitaet_24h` View)
-- **Stadtteilgrenzen-Overlay** (QGIS-aufbereitet und in PostgreSQL/PostGIS gespeichert)
-- Steuerung der Anzeige über Checkbox für „Luftqualität"
+- **Interaktive Luftqualitätsvisualisierung** mit Echtzeitdaten  
+- Farbliche Kennzeichnung der Stationen gemäß UBA-Kategorien  
+- **24-Stunden-Historie** mit interaktiven Charts  
+- **Integration von Sensordaten** (UBA-Luftqualität, Open-Meteo Wetter, Nextbike-Bike-Sharing)  
+- **Stadtteilgrenzen-Overlay** aus PostGIS  
+- Dashboard & Kartenansicht für Fachanwender und Bürger  
 
+---
 
 ## Verwendete Technologien
-- **Frontend**: HTML, CSS, JavaScript, Leaflet.js, Chart.js
-- **Datenbank**: Supabase (PostgreSQL + PostGIS)
-- **Geodaten**: QGIS (Koordinatentransformation EPSG:4647 → EPSG:4326)
-- **Backend**: Netlify Serverless Functions, GitHub Actions
 
+- **Frontend**: HTML, CSS, JavaScript, Leaflet.js, Chart.js  
+- **Backend**: Netlify Serverless Functions, GitHub Actions  
+- **Datenbank**: Supabase (PostgreSQL + PostGIS)  
+- **Geodaten**: QGIS (ETRS89 EPSG:4647 → WGS84 EPSG:4326)  
+- **APIs**: Umweltbundesamt (UBA), Open-Meteo, Nextbike  
+
+---
 
 ## Projektstruktur
 
-```
-urbane-datenplattform-Duesseldorf/
+urbane-datenplattform-essen/
 ├── public/
-│   ├── index.html              // Frontend-Hauptseite
-│   ├── style.css               // Layout und Infopanel
-│   ├── airQuality.js           // Frontend-Logik mit Datenbankanbindung
-│   ├── components.json         // Schadstoff-Mapping
-│   └── Stadtteilgrenzen_2025_ETRS89_EPSG4326.geojson  // QGIS-aufbereitete Geodaten
+│ ├── index.html # Dashboard (Startseite)
+│ ├── map.html # Kartenansicht
+│ ├── dashboard.js # Dashboard-Logik
+│ ├── airQuality.js # Luftqualitätslogik
+│ ├── dashboard.css # Dashboard-Styles
+│ ├── style.css # Globales Styling
+│ ├── script.js # Gemeinsame Funktionen
+│ └── components.json # Schadstoff-Mapping
 ├── netlify/functions/
-│   ├── supabaseProxy.js        // Sichere Datenbank-API für Frontend
-│   └── ubaProxy.js             // UBA-API-Proxy (Fallback)
+│ ├── supabaseProxy.js # Proxy für DB-Abfragen
+│ └── ubaProxy.js # Proxy für UBA-API
 ├── scripts/
-│   └── fetch_uba_to_supabase.js // Automatisierter Datenimport UBA → PostgreSQL
-└── .github/workflows/
-    └── update-air-quality.yml   // Datenbank-Aktualisierung alle 30 Minuten
-```
+│ └── fetch_uba_to_supabase.js # Automatischer Datenimport
+├── .github/workflows/
+│ └── update-air-quality.yml # Scheduler alle 30 Minuten
+├── database_setup.md # Setup-Anleitung PostGIS
+├── netlify.toml # Netlify-Konfiguration
+├── package.json # Abhängigkeiten
+└── README.md
+
+
+---
+
 ## Datenquellen
 
-- **Luftqualitätsdaten**: Umweltbundesamt (UBA) → Supabase-Datenbank
-- **Stadtteilgrenzen**: Eigene Aufbereitung auf Basis von Geojson, transformiert nach EPSG:4326
-  
+- **Luftqualität**: Umweltbundesamt (UBA) → Supabase  
+- **Geodaten**: QGIS-Aufbereitung (EPSG:4647 → EPSG:4326)  
+- **Wetter**: Open-Meteo API  
+- **Bike-Sharing**: Nextbike API  
+
+---
+
+## Bezug zur Bewerbung
+
+Dieses Demo adressiert die Anforderungen beider ausgeschriebener Stellen:  
+
+- **Geodatenmanagement** → Fokus auf PostgreSQL/PostGIS, QGIS-Datenaufbereitung, Datenqualität, Automatisierung  
+- **Sensorik & Digitaler Zwilling** → Integration externer Sensordaten (UBA, Wetter, Nextbike), Dashboard mit Echtzeitdaten, Grundlage für Smart-City-/Digital-Twin-Anwendungen  
+
+---
+
 ## Lizenz
 
-Dieses Projekt dient ausschließlich Demonstrationszwecken.
+Dieses Projekt dient **ausschließlich Demonstrationszwecken** im Rahmen meiner Bewerbung bei der **Stadt Essen**.  
