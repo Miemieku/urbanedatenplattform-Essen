@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const show = params.get("show");
 
   if (show === "airquality") {
-    // 👉 打开左侧栏（强制可见）
+    // 打开左侧栏
     const sidebarContainer = document.getElementById("sidebar-container");
     if (sidebarContainer) {
       sidebarContainer.style.display = "block";
@@ -189,15 +189,15 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.classList.add("visible");
     }
 
-    // 👉 等待 checkbox 渲染后勾选 Luftqualität
-    const interval = setInterval(() => {
-      const luftCheckbox = document.getElementById("air-quality");
-      if (luftCheckbox) {
-        if (!luftCheckbox.checked) {
+    // 等待 stationCoords 加载完成
+    const waitForStations = setInterval(() => {
+      if (Object.keys(stationCoords).length > 0) {
+        const luftCheckbox = document.getElementById("air-quality");
+        if (luftCheckbox) {
           luftCheckbox.checked = true;
           luftCheckbox.dispatchEvent(new Event("change")); // 触发 addStationsToMap()
         }
-        clearInterval(interval);
+        clearInterval(waitForStations);
       }
     }, 500);
   }
