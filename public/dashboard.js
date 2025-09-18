@@ -160,3 +160,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const stationId = params.get("station");
+
+  if (stationId) {
+    const checkInterval = setInterval(() => {
+      if (mapMarkers[stationId]) {
+        mapMarkers[stationId].fire("click"); // 模拟点击 → 弹出信息面板
+        clearInterval(checkInterval);
+      }
+    }, 500);
+  }
+});
