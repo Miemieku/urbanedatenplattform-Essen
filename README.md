@@ -61,32 +61,6 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 
 ---
 
-## Projektstruktur
-
-urbane-datenplattform-essen/
-├── public/
-│   ├── index.html
-│   ├── map.html
-│   ├── dashboard.js
-│   ├── airQuality.js
-│   ├── dashboard.css
-│   ├── style.css
-│   ├── script.js
-│   └── components.json
-├── netlify/functions/
-│   ├── supabaseProxy.js
-│   └── ubaProxy.js
-├── scripts/
-│   └── fetch_uba_to_supabase.js
-├── .github/workflows/
-│   └── update-air-quality.yml
-├── database_setup.md
-├── netlify.toml
-├── package.json
-├── package-lock.json
-└── README.md
-
-
 ## Datenquellen
 
 - **Luftqualität**: Umweltbundesamt (UBA) → Supabase  
