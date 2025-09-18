@@ -1,52 +1,33 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const lat = 51.45; // Essen
-  const lon = 7.01;
-
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=apparent_temperature,relative_humidity_2m,precipitation,cloudcover,uv_index,windspeed_10m,winddirection_10m`;
-
+async function fetchWeather() {
   try {
-    const res = await fetch(url);
-    const data = await res.json();
-    const current = data.current_weather;
-    const hourly = data.hourly;
+    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=51.45&longitude=7.01&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_direction_10m,precipitation,uv_index,cloud_cover&daily=temperature_2m_min,temperature_2m_max&timezone=auto");
+    const data = await response.json();
+    console.log("Weather API result:", data);
 
-    // Gefühlt (apparent temperature)
-    document.getElementById("apparent-temp").textContent =
-      (hourly.apparent_temperature[0] ?? "--") + "°C";
+    const weather = data.current;
+    const minTemp = data.daily.temperature_2m_min[0];
+    const maxTemp = data.daily.temperature_2m_max[0];
 
-    // Luftfeuchtigkeit
-    document.getElementById("humidity").textContent =
-      (hourly.relative_humidity_2m[0] ?? "--") + "%";
+    document.getElementById('temp-now').textContent = `${weather.temperature_2m}°C`;
+    document.getElementById('apparent-temp').textContent = `${weather.apparent_temperature}°C`;
+    document.getElementById('humidity').textContent = `${weather.relative_humidity_2m}%`;
+    document.getElementById('wind').textContent = `${weather.wind_speed_10m} m/s`;
+    document.getElementById('wind-dir').style.transform = `rotate(${weather.wind_direction_10m}deg)`;
+    document.getElementById('rain').textContent = `${weather.precipitation} mm`;
+    document.getElementById('uv').textContent = weather.uv_index;
+    document.getElementById('cloud').textContent = `${weather.cloud_cover}%`;
 
-    // Wind
-    document.getElementById("wind").textContent =
-      (current.windspeed ?? "--") + " m/s";
-
-    // Windrichtung
-    const dir = current.winddirection ?? 0;
-    const arrows = ["↑","↗","→","↘","↓","↙","←","↖"];
-    const arrow = arrows[Math.round(dir/45) % 8];
-    document.getElementById("wind-dir").textContent = arrow;
-
-    // Niederschlag
-    document.getElementById("rain").textContent =
-      (hourly.precipitation[0] ?? "--") + " mm";
-
-    // UV-Index
-    document.getElementById("uv").textContent =
-      hourly.uv_index[0] ?? "--";
-
-    // Bewölkung
-    document.getElementById("cloud").textContent =
-      (hourly.cloudcover[0] ?? "--") + "%";
+    // 🌡️ 插入 min/max 温度
+    document.getElementById('temp-min').textContent = `${minTemp}°C`;
+    document.getElementById('temp-max').textContent = `${maxTemp}°C`;
 
   } catch (err) {
-    console.error("❌ Fehler beim Laden der Wetterdaten:", err);
-    ["apparent-temp","humidity","wind","wind-dir","rain","uv","cloud"].forEach(id => {
-      document.getElementById(id).textContent = "--";
-    });
+    console.error("Weather API failed:", err);
   }
-});
+}
+
+fetchWeather();
+
 
 
 // Nextbike API 调用

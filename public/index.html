@@ -58,43 +58,55 @@
   <p class="stat-line"><strong>Wenig Bikes (Top 1):</strong> <span id="nb-top-low">--</span></p>
 </div>
 
-<!-- Wetter Card -->
-<div class="widget weather-card">
-  <h3>🌤️ Wetter</h3>
-  <div id="weather-info">Lade Wetterdaten...</div>
+<!-- Temperatur Card -->
+<div class="widget temp-card">
+  <h3>🌡️ Temperatur</h3>
+  <div class="temp-now" style="font-size:2.5rem; font-weight:bold; margin-bottom:8px;">
+    <span id="temp-now">--°C</span>
+  </div>
+  <div class="temp-range" style="font-size:1rem; opacity:0.9;">
+    Min: <span id="temp-min">--°C</span> | Max: <span id="temp-max">--°C</span>
+  </div>
 </div>
 
+<!-- Wetter Card Grid -->
 <div class="card weather-card-grid">
   <h3>🌦️ Wetter</h3>
   <div class="weather-grid">
+    
     <div class="weather-box">
       <div class="icon">🌡️</div>
       <div class="value" id="apparent-temp">--°C</div>
       <div class="label">Gefühlt</div>
     </div>
+
     <div class="weather-box">
       <div class="icon">💧</div>
       <div class="value" id="humidity">--%</div>
       <div class="label">Luftfeuchtigkeit</div>
     </div>
+
     <div class="weather-box">
       <div class="icon">🌬️</div>
       <div class="value">
         <span id="wind">-- m/s</span>
-        <span id="wind-dir">↻</span>
+        <span id="wind-dir" style="display:inline-block; transform:rotate(0deg); margin-left:4px;">↑</span>
       </div>
       <div class="label">Wind</div>
     </div>
+
     <div class="weather-box">
       <div class="icon">🌧️</div>
       <div class="value" id="rain">-- mm</div>
       <div class="label">Niederschlag</div>
     </div>
+
     <div class="weather-box">
       <div class="icon">☀️</div>
       <div class="value" id="uv">--</div>
       <div class="label">UV-Index</div>
     </div>
+
     <div class="weather-box">
       <div class="icon">☁️</div>
       <div class="value" id="cloud">--%</div>
