@@ -136,25 +136,29 @@ document.addEventListener("DOMContentLoaded", async () => {
       4: "#cc6666",
       5: "#990033",
     };
-
-    // 总体 Luftqualität
+    
     qualityEl.innerHTML = `
-      <span style="display:inline-block;width:12px;height:12px;
-             border-radius:50%;background:${colorMap[level]};
-             margin-right:6px;"></span>
-      <span style="color:${colorMap[level]}; font-weight:bold;">
+      <div style="
+        display:inline-block;
+        background: rgba(255,255,255,0.7);   /* 半透明灰白底 */
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-weight: bold;
+        color:${colorMap[level]};
+        margin-top: 6px;">
         ${qualityTextMap[level]}
-      </span>
+      </div>
     `;
+
 
     // 污染物细节
     detailsEl.innerHTML = `
       <ul>
-        <li>NO₂: ${stationData.no2 ?? "-"} µg/m³</li>
-        <li>PM₁₀: ${stationData.pm10 ?? "-"} µg/m³</li>
-        <li>PM₂.₅: ${stationData.pm2 ?? "-"} µg/m³</li>
-        <li>O₃: ${stationData.o3 ?? "-"} µg/m³</li>
-      </ul>
+      <li><strong>NO₂:</strong> ${stationData.no2 ?? "-"} µg/m³</li>
+      <li><strong>PM₁₀:</strong> ${stationData.pm10 ?? "-"} µg/m³</li>
+      <li><strong>PM₂.₅:</strong> ${stationData.pm2 ?? "-"} µg/m³</li>
+      <li><strong>O₃:</strong> ${stationData.o3 ?? "-"} µg/m³</li>
+    </ul>
     `;
   }
 });
