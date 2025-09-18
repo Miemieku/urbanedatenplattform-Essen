@@ -106,11 +106,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 按钮 → 跳转 map 页面
   openMapBtn.addEventListener("click", () => {
-    const stationId = select.value;
-    if (stationId) {
-      window.location.href = `map.html?station=${stationId}`;
-    }
+    window.location.href = `map.html?show=airquality`;
   });
+
 
   // 加载空气质量数据
   function loadAirQuality(stationId) {

@@ -173,3 +173,23 @@ function searchAddress(address) {
         })
         .catch(error => console.error("Fehler beim Suchen der Adresse:", error));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const show = params.get("show");
+
+  if (show === "airquality") {
+    // 打开右侧 Info-Panel
+    const wrapper = document.getElementById("info-panel");
+    if (wrapper) {
+      wrapper.classList.add("visible");
+    }
+
+    // 勾选 Luftqualität 复选框并触发加载
+    const luftCheckbox = document.getElementById("air-quality");
+    if (luftCheckbox && !luftCheckbox.checked) {
+      luftCheckbox.checked = true;
+      luftCheckbox.dispatchEvent(new Event("change"));
+    }
+  }
+});
