@@ -101,7 +101,7 @@ body {
 
 /* Luftqualitätsindex Card */
 .widget.air-card {
-  background: linear-gradient(135deg, #00cec9);
+  background: linear-gradient(135deg, #00cec9, #0097e6);
   color: white;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -151,7 +151,14 @@ body {
 
 
 /* Nextbike 卡片*/
+.bike-card {
+  background: linear-gradient(135deg, #55efc4, #00b894);
+  color: white;
+}
+
 .wide-card {
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  color: white;
   grid-column: span 1;   /* 占据两列 */
   font-size: 1.2rem;
   padding: 20px 25px;
