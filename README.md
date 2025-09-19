@@ -56,7 +56,7 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 - **Frontend**: HTML, CSS, JavaScript, Leaflet.js, Chart.js  
 - **Backend**: Netlify Serverless Functions, GitHub Actions  
 - **Datenbank**: Supabase (PostgreSQL + PostGIS)  
-- **Geodaten**: QGIS (ETRS89 EPSG:4647 → WGS84 EPSG:4326)  
+- **Geodaten**: QGIS  
 - **APIs**: Umweltbundesamt (UBA), Open-Meteo, Nextbike  
 
 ---
@@ -64,7 +64,7 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 ## Datenquellen
 
 - **Luftqualität**: Umweltbundesamt (UBA) → Supabase  
-- **Geodaten**: QGIS-Aufbereitung (EPSG:4647 → EPSG:4326)  
+- **Geodaten**: QGIS-Aufbereitung   
 - **Wetter**: Open-Meteo API  
 - **Bike-Sharing**: Nextbike API  
 
