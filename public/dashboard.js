@@ -176,3 +176,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   }
 });
+
+function updateGlobalTimestamp() {
+  const now = new Date();
+  const formatted = now.toLocaleString("de-DE", {
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit"
+  });
+  document.getElementById("global-update").textContent = "Letztes Update: " + formatted;
+}
+
+// 页面加载时执行
+document.addEventListener("DOMContentLoaded", updateGlobalTimestamp);
