@@ -35,7 +35,7 @@ body {
   gap: 8px;
 }
 
-/* Temperatur 卡片 */
+/* Temperatur */
 .temperature-card {
   grid-column: span 2;
   text-align: center;
@@ -50,7 +50,7 @@ body {
 }
 
 
-/* Weather 卡片 */
+/* Weather*/
 .weather-card-grid {
   grid-column: span 2;
   background: linear-gradient(135deg, #74b9ff, #0984e3);
@@ -99,7 +99,7 @@ body {
 }
 
 
-/* Luftqualitätsindex Card */
+/* Luftqualitätsindex*/
 .widget.air-card {
   background: linear-gradient(135deg, #00cec9, #0097e6);
   color: white;
@@ -112,7 +112,8 @@ body {
 
 .widget.air-card h3 {
   margin: 0 0 15px 0;
-  font-size: 16px;
+  font-size: 20px;      
+  font-weight: 600; 
   color: #2c3e50;
   display: flex;
   align-items: center;

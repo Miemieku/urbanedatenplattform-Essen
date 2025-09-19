@@ -17,7 +17,7 @@ async function fetchWeather() {
     document.getElementById('uv').textContent = weather.uv_index;
     document.getElementById('cloud').textContent = `${weather.cloud_cover}%`;
 
-    // 🌡️ 插入 min/max 温度
+    // min/max 
     document.getElementById('temp-min').textContent = `${minTemp}°C`;
     document.getElementById('temp-max').textContent = `${maxTemp}°C`;
 
@@ -30,7 +30,7 @@ fetchWeather();
 
 
 
-// Nextbike API 调用
+// Nextbike API 
 fetch("https://api.nextbike.net/maps/nextbike-live.json?city=133")
   .then(r => r.json())
   .then(data => {
