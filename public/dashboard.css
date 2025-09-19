@@ -60,9 +60,10 @@ body {
 }
 
 .weather-card-grid h3 {
-  margin-bottom: 15px;
-  font-size: 1.6rem;
-  font-weight: bold;
+  margin: 0 0 15px 0;
+  font-size: 20px;       /* 从 16px 提高到 20px */
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .weather-grid {
