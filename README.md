@@ -64,7 +64,7 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 ## Datenquellen
 
 - **Luftqualität**: Umweltbundesamt (UBA) → Supabase  
-- **Geodaten**: QGIS-Aufbereitung   
+- **Stadtteilgrenzen**: Opendata Essen → QGIS-Aufbereitung → Supabase  
 - **Wetter**: Open-Meteo API  
 - **Bike-Sharing**: Nextbike API  
 
