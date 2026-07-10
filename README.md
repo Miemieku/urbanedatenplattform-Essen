@@ -4,7 +4,7 @@
 [https://urbane-datenplattform-essen.netlify.app/](https://urbane-datenplattform-essen.netlify.app/)
 
 Dieses Projekt zeigt die grundlegende Funktionalität einer **Urban Data Platform (UDP)** zur Visualisierung und Analyse städtischer Geodaten.  
-Es wurde im Rahmen meiner Bewerbung bei der **Stadt Essen** entwickelt und dient als **technisches Demo** meiner Kompetenzen in den Bereichen **GIS, Webentwicklung und Datenbankintegration**.
+
 
 ---
 
