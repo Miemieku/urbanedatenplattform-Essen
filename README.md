@@ -72,4 +72,4 @@ Die Startseite bietet eine Übersicht zentraler urbaner Kennzahlen:
 
 ## Lizenz
 
-Dieses Projekt dient **ausschließlich Demonstrationszwecken** im Rahmen meiner Bewerbung bei der **Stadt Essen**.  
+Dieses Projekt ist ausschließlich für den persönlichen Gebrauch bestimmt.
