@@ -5,7 +5,8 @@
   "description": "Proxy for UBA API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test"
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
