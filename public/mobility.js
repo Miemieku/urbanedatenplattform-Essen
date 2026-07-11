@@ -25,7 +25,7 @@ async function fetchNextbike() {
 
   try {
     elements = getNextbikeElements();
-    const response = await fetch("/.netlify/functions/nextbikeProxy");
+    const response = await fetch("/.netlify/functions/mobilityProxy");
 
     if (!response.ok) {
       throw new Error(`Proxy returned ${response.status} ${response.statusText}`.trim());
