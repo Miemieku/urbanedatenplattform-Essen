@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         //  绑定搜索功能
     setupSearch();
 
-    //  加载 `GeoJSON`，但初始时不添加到地图
+    //  先绑定图层开关，再异步加载 `GeoJSON`
+    setupLayerToggle();
     initializeGeoJSONLayers();
 
     //  侧边栏控制逻辑
@@ -26,16 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     menuToggle.addEventListener("click", function() {
         sidebar.classList.toggle("active");
-    });
-    
-    document.getElementById("stadtteile").addEventListener("change", function (e) {
-        const checked = e.target.checked;
-        const layer = layerGroups["stadtteile"];
-        if (checked && layer) {
-            map.addLayer(layer);
-        } else if (layer) {
-            map.removeLayer(layer);
-        }
     });
 });
 
@@ -59,7 +50,8 @@ function initializeGeoJSONLayers() {
                     console.log("📍 Supabase 返回数据 (stadtteile):", data);
 
                     if (!Array.isArray(data) || data.length === 0) {
-                        console.warn("⚠️ Supabase 返回了空数组 (stadtteile).");
+                        resetLayerToggle(file.name);
+                        console.error(`❌ Supabase 未返回有效图层数据 (${file.name}).`);
                         return;
                     }
 
@@ -87,39 +79,47 @@ function initializeGeoJSONLayers() {
                     });
 
                     layerGroups[file.name] = layer;
+                    syncLayerVisibility(file.name);
                     console.log(`✅ Layer ${file.name} 已创建`);
                 })
-                .catch(error => console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error));
+                .catch(error => {
+                    resetLayerToggle(file.name);
+                    console.error(`❌ Fehler beim Laden von Supabase (${file.name}):`, error);
+                });
         }
     });
-
-    // 等数据加载完成后再绑定复选框
-    setupLayerToggle();
 }
 
-
-// 复选框控制数据可见性
+// Stadtteile 复选框由这里唯一管理；Luftqualität 继续由 airQuality.js 管理
 function setupLayerToggle() {
-    const checkboxes = document.querySelectorAll('#data-layer-list input');
-    checkboxes.forEach(input => {
-        input.addEventListener('change', function() {
-            const layer = layerGroups[this.id];
-            console.log(`处理复选框变更: ${this.id}, 勾选状态: ${this.checked}`);
-            console.log('对应的图层对象:', layer);
- 
-            if (layer) {
-                if (this.checked) {
-                    map.addLayer(layer); // 添加图层到地图
-                    console.log(`图层 ${this.id} 已添加到地图`);
-                } else {
-                    map.removeLayer(layer); // 从地图移除
-                    console.log(`图层 ${this.id} 已从地图移除`);
-                }
-            } else {
-                console.error(`未找到对应的图层: ${this.id}`);
-            }
-        });
+    const stadtteileToggle = document.getElementById("stadtteile");
+    stadtteileToggle.addEventListener("change", function() {
+        syncLayerVisibility(this.id);
     });
+}
+
+function syncLayerVisibility(layerName) {
+    const toggle = document.getElementById(layerName);
+    const layer = layerGroups[layerName];
+
+    // 数据仍在加载时保留用户选择；加载完成后会再次调用本函数
+    if (!toggle || !layer) return;
+
+    if (toggle.checked && !map.hasLayer(layer)) {
+        map.addLayer(layer);
+    } else if (!toggle.checked && map.hasLayer(layer)) {
+        map.removeLayer(layer);
+    }
+}
+
+function resetLayerToggle(layerName) {
+    const toggle = document.getElementById(layerName);
+    if (toggle) toggle.checked = false;
+
+    const layer = layerGroups[layerName];
+    if (layer && map.hasLayer(layer)) {
+        map.removeLayer(layer);
+    }
 }
 
 function setupSearch() {
