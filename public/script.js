@@ -1,4 +1,4 @@
-//  创建地图，默认Düsseldorf
+//  创建地图，默认显示 Essen
 var map;
 
 document.addEventListener("DOMContentLoaded", function() {

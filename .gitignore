@@ -1,1 +1,5 @@
 node_modules/
+.netlify/
+deno.lock
+supabase/.branches/
+supabase/.temp/

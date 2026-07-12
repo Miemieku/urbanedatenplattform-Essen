@@ -1,14 +1,22 @@
-
 {
   "name": "uba-proxy",
   "version": "1.0.0",
   "description": "Proxy for UBA API",
   "main": "server.js",
   "scripts": {
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "import:stadtteile": "node scripts/import_stadtteilgrenzen.js",
+    "netlify:dev": "netlify dev",
     "start": "node server.js",
     "test": "node --test"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "pg": "8.22.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "26.2.0",
+    "supabase": "2.109.1"
   }
 }
